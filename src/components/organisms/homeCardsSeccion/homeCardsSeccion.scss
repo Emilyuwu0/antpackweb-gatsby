@@ -1,0 +1,21 @@
+.homeCardsSeccionContainer {
+  height: 90vh;
+  background-color: black;
+  .cardsWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .homeCardsTitle {
+    text-align: center;
+    padding: 40px 0;
+    span {
+      color: #EF0C75;
+    }
+  }
+
+  .contactButton {
+    display: flex;
+    padding: 40px;
+    justify-content: center;
+  }
+}

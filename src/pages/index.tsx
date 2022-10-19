@@ -1,14 +1,18 @@
-import Title from '@/components/Title';
+import '../styles/reset.scss'
+import '../styles/globalStyle.scss'
+import HeroSeccion from '@/components/organisms/heroSeccion/heroSeccion';
+import DefaultLayout from '@/components/templates/defaultLayout/defaultLayout';
+import VideoSeccion from '@/components/organisms/videoSeccion/videoSeccion';
+import HomeCardsSeccion from '@/components/organisms/homeCardsSeccion/homeCardsSeccion';
+import HomeBioSeccion from '@/components/organisms/homeBioSeccion/homeBioSeccion';
 
 export default function Home() {
   return (
-    <main>
-      <Title>Hello TypeScript!</Title>
-      <p>A TypeScript starter for Gatsby. Great for advanced users.</p>
-      <p>
-        Follow me on Twitter (
-        <a href="https://twitter.com/jpedroschmitz">@jpedroschmitz</a>)
-      </p>
-    </main>
+    <DefaultLayout>
+      <HeroSeccion title='hola mundo' />
+      <VideoSeccion />
+      <HomeCardsSeccion />
+      <HomeBioSeccion />
+    </DefaultLayout>
   );
 }

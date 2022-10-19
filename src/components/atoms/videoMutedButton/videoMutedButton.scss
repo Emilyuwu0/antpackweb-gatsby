@@ -1,0 +1,14 @@
+.videoMutedButton {
+  position: absolute;
+  bottom: 100px;
+  cursor: pointer;
+  right: 50px;
+  font-family: 'Satoshi-Bold';
+  color: white;
+  height: 100px;
+  width: 100px;
+  border: solid white 1px;
+  border-radius: 50%;
+  background-color: transparent;
+  z-index: 1;
+}

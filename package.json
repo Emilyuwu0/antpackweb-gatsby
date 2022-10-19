@@ -31,8 +31,12 @@
     "@testing-library/jest-dom": "5.16.5",
     "gatsby": "4.24.4",
     "gatsby-plugin-pnpm": "1.2.10",
+    "gatsby-plugin-react-svg": "3.1.0",
+    "gatsby-plugin-sass": "5.24.0",
+    "html-to-react": "1.5.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "sass": "1.55.0",
     "tsconfig-paths-webpack-plugin": "4.0.0"
   },
   "devDependencies": {
@@ -70,6 +74,7 @@
     "jest-environment-jsdom": "29.2.0",
     "lint-staged": "13.0.3",
     "prettier": "2.7.1",
+    "svg-react-loader": "0.4.6",
     "ts-jest": "29.0.3",
     "typescript": "4.8.4"
   }
