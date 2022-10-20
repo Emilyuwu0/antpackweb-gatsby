@@ -1,3 +1,4 @@
+import CardAnim from '@/components/atoms/cardAnim/cardAnim';
 import Gif from '@/components/atoms/gif/gif';
 import Icon from '@/components/atoms/icon/icon'
 import React, { useState } from 'react'
@@ -46,9 +47,12 @@ export default function Cards({ cardIcon, title, properties, hoverText }: cardsP
               }
             </>
             :
-            <p>
-              {htmlParce.parse(hoverText)}
-            </p>
+            <>
+              <CardAnim type={cardIcon} />
+              <p>
+                {htmlParce.parse(hoverText)}
+              </p>
+            </>
         }
       </div>
 

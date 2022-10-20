@@ -10,7 +10,7 @@ import SliderSection from '@/components/organisms/sliderSection/sliderSection';
 export default function Home() {
   return (
     <DefaultLayout>
-      <HeroSeccion title='hola mundo' />
+      <HeroSeccion />
       <VideoSeccion />
       <HomeCardsSeccion />
       <HomeBioSeccion />

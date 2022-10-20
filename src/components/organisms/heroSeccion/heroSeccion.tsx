@@ -4,11 +4,8 @@ import Icon from '@/components/atoms/icon/icon'
 import React from 'react'
 import './heroSeccion.scss'
 
-interface heroProps {
-  title: string
-}
 
-export default function HeroSeccion({ title }: heroProps) {
+export default function HeroSeccion() {
   return (
     <div className='heroContainer'>
       <div className='logo'>

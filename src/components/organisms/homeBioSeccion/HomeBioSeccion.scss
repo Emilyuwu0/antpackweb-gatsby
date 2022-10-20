@@ -1,6 +1,7 @@
 .homeBioSeccionContainer {
   height: 90vh;
   background-color: white;
+  padding: 0 100px;
   .infoWrapper {
     width: 60%;
     display: flex;
@@ -8,12 +9,21 @@
     align-items: flex-start;
     justify-content: space-evenly;
     height: 100%;
-    padding-left: 70px;
     p {
       color: black;
     }
   }
+
+  .primary{
+    color: rgba(239, 12, 117, 1);  
+  }
+
   .title {
     color: rgb(0, 0, 0);
+  }
+  .bioAnim {
+    position: absolute;
+    width: 290px;
+    right: 100px;
   }
 }

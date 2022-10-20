@@ -1,4 +1,6 @@
 .cardContainer {
+  position: relative;
+  padding: 0 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,11 +36,11 @@
 
 .cardContainer:hover {
   background-color: white;
+  padding-top: 50px;
   p {
     color: rgb(0, 0, 0);
     font-family: 'Satoshi-Light';
     font-size: 14px;
-    margin: 10px 0;
     text-transform: capitalize;
     text-align: center;
   }
