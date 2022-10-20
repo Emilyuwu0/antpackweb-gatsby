@@ -5,6 +5,7 @@ import DefaultLayout from '@/components/templates/defaultLayout/defaultLayout';
 import VideoSeccion from '@/components/organisms/videoSeccion/videoSeccion';
 import HomeCardsSeccion from '@/components/organisms/homeCardsSeccion/homeCardsSeccion';
 import HomeBioSeccion from '@/components/organisms/homeBioSeccion/homeBioSeccion';
+import SliderSection from '@/components/organisms/sliderSection/sliderSection';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <VideoSeccion />
       <HomeCardsSeccion />
       <HomeBioSeccion />
+      <SliderSection />
     </DefaultLayout>
   );
 }

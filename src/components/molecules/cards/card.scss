@@ -7,7 +7,7 @@
   border-radius: 20px;
   height: 390px;
   width: 290px;
-
+  transition: 1s;
   .title_wrapper {
     display: flex;
     flex-direction: column;
@@ -32,23 +32,8 @@
   }
 }
 
-.cardContainerHover {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.cardContainer:hover {
   background-color: white;
-  border-radius: 20px;
-  height: 390px;
-  width: 290px;
-  h3 {
-    color: rgb(0, 0, 0);
-    font-family: 'Satoshi-Bold';
-    font-size: 24px;
-    margin: 20px 0;
-    text-transform: uppercase;
-  } 
-  
   p {
     color: rgb(0, 0, 0);
     font-family: 'Satoshi-Light';

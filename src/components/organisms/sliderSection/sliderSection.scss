@@ -1,0 +1,47 @@
+
+  .banner_slider_container {
+    height: 90vh;
+    position: relative;
+    
+    .swiper-pagination-bullet {
+      background-color: rgb(255, 255, 255);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: solid black 1px;
+      opacity: 1
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: rgb(0, 0, 0);
+      color: black;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: solid black 1px;
+      opacity: 1
+    }
+
+    .bannerSlider {
+      overflow: hidden;
+      .backgroundImage {
+        height: 90vh;
+      }
+      &.swiper-slide-active,
+      &.swiper-slide-duplicate-active {
+        .backgroundImage {
+            animation: sliderImageAnim 2s;
+          }
+        }
+    }
+  }
+
+  @keyframes sliderImageAnim {
+    0% {
+      scale: (1.5);
+    }
+    100% {
+      scale: (1);
+    }
+  }
+

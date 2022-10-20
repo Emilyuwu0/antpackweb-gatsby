@@ -5,6 +5,27 @@ const config: GatsbyConfig = {
   // don't need to define it here (just if you need to change the options)
   plugins: [
     `gatsby-plugin-pnpm`,
+    `gatsby-plugin-image`,
+    {
+      resolve: 'gatsby-plugin-sharp',
+      options: {
+        defaults: {
+          quality: 98,
+          formats: ['auto', 'webp', 'avif'],
+          breakpoints: [640, 769, 1024, 1366, 1920],
+          backgroundColor: 'transparent'
+        }
+      }
+    },
+    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: `${__dirname}/src/assets/images`
+      },
+      __key: 'images'
+    },
     {
       resolve: `gatsby-plugin-sass`,
       options: {

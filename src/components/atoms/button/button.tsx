@@ -4,11 +4,12 @@ import './button.scss'
 
 interface buttonProps {
   text: string,
-  to: string
+  to: string,
+  color?: string
 }
 
-export default function Button({ text, to }: buttonProps) {
+export default function Button({ text, to, color }: buttonProps) {
   return (
-    <Link className='button' to={to}>{text}</Link>
+    <Link style={{ color: color, borderColor: color }} className='button' to={to}>{text}</Link>
   )
 }

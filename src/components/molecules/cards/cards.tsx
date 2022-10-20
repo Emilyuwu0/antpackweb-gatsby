@@ -28,32 +28,30 @@ export default function Cards({ cardIcon, title, properties, hoverText }: cardsP
   };
   return (
     <>
-      {
-        !isHovering
-          ?
-          <div key={'key' + title} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} className='cardContainer'>
-            <div className='title_wrapper'>
-              <Icon type={cardIcon} />
-              <h3>{title}</h3>
-            </div>
-            {
-              properties.map((prop: string, index: number) => {
-                return (
-                  <p key={`paragraph${index}`}>{prop}</p>
-                )
-              })
-            }
-          </div>
-          :
-          <div key={title} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} className='cardContainerHover'>
-            <div>
-              {/* <Gif type={cardIcon} /> */}
-            </div>
+      <div key={'key' + title} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} className='cardContainer'>
+        {
+          !isHovering
+            ?
+            <>
+              <div className='title_wrapper'>
+                <Icon type={cardIcon} />
+                <h3>{title}</h3>
+              </div>
+              {
+                properties.map((prop: string, index: number) => {
+                  return (
+                    <p key={`paragraph${index}`}>{prop}</p>
+                  )
+                })
+              }
+            </>
+            :
             <p>
               {htmlParce.parse(hoverText)}
             </p>
-          </div>
-      }
+        }
+      </div>
+
     </>
   )
 }

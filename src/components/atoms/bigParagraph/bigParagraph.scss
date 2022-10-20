@@ -1,6 +1,9 @@
-p {
-  font-family: Satoshi-Regular;
+.bigParagraph {
+  font-family: Satoshi-Light;
   font-size: 56px;
   color: white;
   width: 70%;
+  span {
+    color: yellow;
+  }
 }

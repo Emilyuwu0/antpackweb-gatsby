@@ -1,0 +1,20 @@
+.sliderInfoContainer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  padding: 60px 90px;
+  .date {
+    font-weight: 700;
+  }
+  li {
+    margin: 12px 0;
+  }
+  .buttonWrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
