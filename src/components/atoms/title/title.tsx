@@ -15,6 +15,7 @@ export default function Title({ level, text, titleClass }: titleProps) {
       {level === 'h1' && <h1 className={titleClass}>{htmlParce.parse(text)}</h1>}
       {level === 'h2' && <h2 className={titleClass}>{htmlParce.parse(text)}</h2>}
       {level === 'h3' && <h3 className={titleClass}>{htmlParce.parse(text)}</h3>}
+      {level === 'h4' && <h4 className={titleClass}>{htmlParce.parse(text)}</h4>}
     </>
   )
 }

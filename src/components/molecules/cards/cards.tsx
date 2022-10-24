@@ -41,7 +41,7 @@ export default function Cards({ cardIcon, title, properties, hoverText }: cardsP
               {
                 properties.map((prop: string, index: number) => {
                   return (
-                    <p key={`paragraph${index}`}>{prop}</p>
+                    <p className='propertiesText' key={`paragraph${index}`}>{prop}</p>
                   )
                 })
               }

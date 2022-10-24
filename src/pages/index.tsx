@@ -6,6 +6,8 @@ import VideoSeccion from '@/components/organisms/videoSeccion/videoSeccion';
 import HomeCardsSeccion from '@/components/organisms/homeCardsSeccion/homeCardsSeccion';
 import HomeBioSeccion from '@/components/organisms/homeBioSeccion/homeBioSeccion';
 import SliderSection from '@/components/organisms/sliderSection/sliderSection';
+import BrandsSeccion from '@/components/organisms/brandsSeccion/brandsSeccion';
+import ContactSeccion from '@/components/organisms/contactSeccion/contactSeccion';
 
 export default function Home() {
   return (
@@ -15,6 +17,8 @@ export default function Home() {
       <HomeCardsSeccion />
       <HomeBioSeccion />
       <SliderSection />
+      <BrandsSeccion />
+      <ContactSeccion />
     </DefaultLayout>
   );
 }

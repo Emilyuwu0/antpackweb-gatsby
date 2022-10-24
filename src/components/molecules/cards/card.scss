@@ -25,12 +25,16 @@
   } 
   
   p {
-    color: white;
     font-family: 'Satoshi-Light';
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .propertiesText {
+    color: white;
     font-size: 24px;
     margin: 10px 0;
     text-transform: capitalize;
-    text-align: center;
   }
 }
 
@@ -39,9 +43,6 @@
   padding-top: 50px;
   p {
     color: rgb(0, 0, 0);
-    font-family: 'Satoshi-Light';
-    font-size: 14px;
-    text-transform: capitalize;
-    text-align: center;
+    text-transform: initial;
   }
 }
