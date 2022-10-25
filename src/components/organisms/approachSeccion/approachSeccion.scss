@@ -1,0 +1,139 @@
+// html, body {
+//   overflow-x:hidden;
+//   background:#000000;
+//   color: white;
+//   max-width: 22000;
+// }
+
+.approachSeccionContainer {
+  background-color: black;
+  height: 90vh;
+  width: 100%;
+  iframe {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+// #container, #scrollDist, .road {
+//   position:absolute;
+//   top: 0;
+//   height: 1000px;
+//   left: 20%;
+//   // overflow: visible;
+// }
+
+// #container {
+//   padding-top: 20px;
+// }
+// #c {
+//   z-index: 1;
+// }
+
+// .one {
+//   position: absolute;
+//   opacity: 1 !important;
+//   top: 100px;
+//   left: 120px;
+//   text-transform: uppercase;
+// }
+
+// .one > hr{
+//   width: 100px;
+//   margin-left: 0;
+//   border: 4px solid #EF0C75;
+  
+// }
+
+// .one > div > h3 {
+//   font-family: 'Satoshi-Bold';
+//   color: #FFF100;
+//   font-size: 18px;
+//   font-weight: bold;
+// }
+// .one > p {
+//   font-family: 'Satoshi-Bold';
+//   color: white;
+//   font-size: 40px;
+//   font-weight: 300;
+// }
+
+// .one > p > span {
+//   font-family: 'Satoshi-Light';
+// }
+
+// .two {
+//   margin-top: 700px;
+//   margin-left: 410px;
+// }
+
+// .two > .image {
+//   height: 200px;
+//   display: flex;
+//   justify-content: center;
+// }
+
+// .three {
+//   margin-top: 0px;
+//   margin-left: 310px;
+  
+// }
+
+// .three > .image {
+//   height: 190px;
+//   display: flex;
+//   justify-content: center;
+// }
+
+// .four {
+//   margin-top: 20px;
+//   margin-left: 380px;
+// }
+
+// .four > .image {
+//   height: 200px;
+// }
+
+// .five {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: column;
+//   width: 420px !important;
+//   font-size: 32px;
+//   margin-top: 10px;
+//   margin-left: 650px;
+// }
+// .five > button {
+//   border-radius: 100px;
+//   outline: none;
+//   border-style: none;
+//   width: 310px;
+//   padding: 20px 35px;
+//   background: #EF0C75;
+//   font-family: 'Satoshi-Bold';
+//   font-size: 18px;
+//   color: white;
+//   text-transform: uppercase;
+// }
+
+// .step {
+//   width: 240px;
+// }
+
+// .step > p {
+//   font-family: 'Satoshi-Light';
+// }
+// .step > p > span{
+//   font-family: 'Satoshi-Bold';
+// }
+
+// .step > h3{
+//   font-size: 40px;
+//   line-height: 0;
+//   font-family: 'Satoshi-Bold';
+// }
+
+// .panel {
+//   opacity: 0;
+// }

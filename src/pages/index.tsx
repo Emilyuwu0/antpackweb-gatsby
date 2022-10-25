@@ -8,17 +8,44 @@ import HomeBioSeccion from '@/components/organisms/homeBioSeccion/homeBioSeccion
 import SliderSection from '@/components/organisms/sliderSection/sliderSection';
 import BrandsSeccion from '@/components/organisms/brandsSeccion/brandsSeccion';
 import ContactSeccion from '@/components/organisms/contactSeccion/contactSeccion';
+import ApproachSeccion from '@/components/organisms/approachSeccion/approachSeccion';
+
+import '../styles/home.scss'
 
 export default function Home() {
   return (
-    <DefaultLayout>
-      <HeroSeccion />
-      <VideoSeccion />
-      <HomeCardsSeccion />
-      <HomeBioSeccion />
-      <SliderSection />
-      <BrandsSeccion />
-      <ContactSeccion />
-    </DefaultLayout>
+    <div className='container'>
+      <DefaultLayout>
+        <div className='child'>
+          <HeroSeccion />
+        </div>
+        <div className='child'>
+          <VideoSeccion />
+        </div>
+        <div className='child'>
+          <HomeCardsSeccion />
+        </div>
+
+        <div className='child'>
+          <HomeBioSeccion />
+        </div>
+
+        <div className='child'>
+          <SliderSection />
+        </div>
+
+        <div className='child'>
+          <ApproachSeccion />
+        </div>
+
+        <div className='child'>
+          <BrandsSeccion />
+        </div>
+
+        <div className='child'>
+          <ContactSeccion />
+        </div>
+      </DefaultLayout>
+    </div>
   );
 }
