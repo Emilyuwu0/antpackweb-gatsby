@@ -5,6 +5,9 @@ $bold-font: Satoshi-Bold;
 
 html, body {
   height: 100%;
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(150vh);
+  scroll-snap-type: y mandatory;
 }
 
 @font-face {

@@ -14,8 +14,8 @@ import '../styles/home.scss'
 
 export default function Home() {
   return (
-    <div className='container'>
-      <DefaultLayout>
+    <DefaultLayout>
+      <main className='mainWrapper'>
         <div className='child'>
           <HeroSeccion />
         </div>
@@ -45,7 +45,7 @@ export default function Home() {
         <div className='child'>
           <ContactSeccion />
         </div>
-      </DefaultLayout>
-    </div>
+      </main>
+    </DefaultLayout>
   );
 }

@@ -1,8 +1,6 @@
-.container {
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-
-}
-.child {
-  scroll-snap-align: start;
+.mainWrapper {
+  height: 100%;
+  .child {
+    scroll-snap-align: start;
+  }
 }
