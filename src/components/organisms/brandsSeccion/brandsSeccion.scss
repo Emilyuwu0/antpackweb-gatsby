@@ -14,9 +14,10 @@
     width: 90%;
     overflow: hidden;
     display: grid;
+    justify-content: center;
     gap: 80px 20px;
-    grid-template-columns: repeat(6, 200px);
-    overflow: hidden;
+    grid-template-columns: repeat(6, 15%);
+    background-color: white;
   }
 
   span {
