@@ -1,5 +1,6 @@
 import Logo from '../../../assets/icons/Logo.svg'
 import Menu from '../../../assets/icons/menuIcon.svg'
+import Menu2 from '../../../assets/icons/MenuBlack.svg'
 import Card1 from '../../../assets/icons/cardIcon1.svg'
 import Card2 from '../../../assets/icons/cardIcon2.svg'
 import Card3 from '../../../assets/icons/cardIcon3.svg'
@@ -18,6 +19,7 @@ const Icon = ({ type }: iconProps) => {
     <>
       {type === 'logo' && <Logo />}
       {type === 'menu' && <Menu />}
+      {type === 'menu2' && <Menu2 />}
       {type === 'card1' && <Card1 />}
       {type === 'card2' && <Card2 />}
       {type === 'card3' && <Card3 />}

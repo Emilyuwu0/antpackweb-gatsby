@@ -1,6 +1,5 @@
 .mainWrapper {
-  height: 100%;
-  .child {
+  &.child {
     scroll-snap-align: start;
   }
 }

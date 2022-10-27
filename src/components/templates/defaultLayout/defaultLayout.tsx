@@ -2,6 +2,8 @@ import Footer from '@/components/organisms/footer/footer'
 import Header from '@/components/organisms/header/header'
 import React from 'react'
 
+import './defaultLayout.scss'
+
 interface defaultLayoutProps {
   children: object
 }
