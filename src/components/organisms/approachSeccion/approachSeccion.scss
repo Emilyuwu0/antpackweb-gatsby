@@ -23,6 +23,9 @@
       display: none;
     }
   }
+  @include mobile {
+    height: 90vh;
+  }
 }
 
 // #container, #scrollDist, .road {

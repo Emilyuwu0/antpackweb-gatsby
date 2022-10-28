@@ -62,15 +62,15 @@ export default function Home() {
       <div onMouseEnter={() => setMenu('black')} className='child'>
         <VideoSeccion />
       </div>
-      <div onMouseEnter={() => setMenu('white')} className='child'>
+      <div id='services' onMouseEnter={() => setMenu('white')} className='child'>
         <HomeCardsSeccion />
       </div>
 
-      <div onMouseEnter={() => setMenu('black')} className='child'>
+      <div id='company' onMouseEnter={() => setMenu('black')} className='child'>
         <HomeBioSeccion />
       </div>
 
-      <div onMouseEnter={() => setMenu('black')} className='child'>
+      <div id='ourCraft' onMouseEnter={() => setMenu('black')} className='child'>
         <SliderSection />
       </div>
 
@@ -82,7 +82,7 @@ export default function Home() {
         <BrandsSeccion />
       </div>
 
-      <div onMouseEnter={() => setMenu('white')} className='child'>
+      <div id='contact' onMouseEnter={() => setMenu('white')} className='child'>
         <ContactSeccion />
       </div>
 

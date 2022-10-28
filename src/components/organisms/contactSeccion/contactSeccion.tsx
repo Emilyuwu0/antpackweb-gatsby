@@ -6,12 +6,7 @@ import './contactSeccion.scss'
 export default function ContactSeccion() {
   return (
     <div className='contactSeccionContainer'>
-      <StaticImage
-        src='../../../assets/images/contactUsBackground.png'
-        alt="A dinosaur"
-        placeholder="blurred"
-        className='backgroundImage'
-      />
+      <iframe src="https://jskxdvrjmoh.typeform.com/to/D0Ku1Zq5"></iframe>
     </div>
   )
 }

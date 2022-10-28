@@ -77,7 +77,7 @@ export default function HomeCardsSeccion() {
       </div>
       {/* <CardsSwiperMobile data={cards} /> */}
       <div className='contactButton'>
-        <Button text='CONTACT US' to='page2' />
+        <Button text='CONTACT US' to='#contact' />
       </div>
     </div>
   )

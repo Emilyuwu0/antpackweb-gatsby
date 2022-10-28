@@ -13,14 +13,142 @@
   @include mobile {
     padding: 0 30px;
   }
-  .menuAnim {
-    animation: menuAnim 2s;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
   }
+
+  .close {
+    cursor: pointer;
+    margin: 50px 0;
+    margin-left: 80%;
+  }
+
+  ul {
+    li {
+      font-weight: 500;
+      h3, a {
+        text-decoration: none;
+        color: black;
+        margin-bottom: 30px;
+        @include mobile {
+          font-size: 24px;
+        }
+        
+        @include tablet-mini {
+          
+        }
+        
+        @include tablet {
+        }
+        
+        @include desktop {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+
+  .navigation-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 500px;
+    height: 500px;
+
+    // transform: translateX(1000px);
+    width: 500px;
+    overflow: hidden;
+  }
+
+  .menuAnim {
+    z-index: 10000;
+    cursor: pointer;
+    animation: menuAnim 2s;
+    padding: 15px;
+    border-radius: 40%;
+  }
+  // .menuAnim:hover {
+  //   z-index: 10000;
+  //   position: absolute;
+  //   transition: 1s;
+  //   background-color: black;
+    
+  // }
+  
   .menuAnim2 {
+    animation: menuAnim 2s;
+    padding: 20px;
+    border-radius: 40%;
+    cursor: pointer;
     animation: menuAnim2 2s;
   }
-}
 
+.backdrop {
+  display: block !important;
+  background-color: #bb2c2c;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 10000;
+  animation-name: anim;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  // overflow: scroll !important;
+ }
+ .backdrop2 {
+  // overflow: scroll !important;
+  display: block !important;
+  background-color: #f9f9f9;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 10;
+  animation-name: anim;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+}
+.hidden {
+  display: block !important;
+  position: fixed;
+  top: -2000px;
+  right:  -3000px;
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+  z-index: 10000;
+  animation-name: animHidden;
+  animation-duration: 1.8s;
+  animation-iteration-count: 1;
+  
+  /* display: none !important; */
+}
+.hidden2 {
+  display: block !important;
+  position: fixed;
+  top: -2000px;
+  right:  -3000px;
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+  z-index: 10000;
+  animation-name: animHidden;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  /* display: none !important; */
+}
+}
 
 @keyframes menuAnim {
   0% {
@@ -38,3 +166,14 @@
     opacity: 1;
   }
 }
+
+@keyframes anim {
+  0% { clip-path: circle(0% at 100% 0%)}
+  100% { clip-path: circle(150%);}
+ }
+
+@keyframes animHidden {
+  100% { clip-path: circle(0% at 100% 0%); top: 0; right: 0;}
+  0% { clip-path: circle(150%); top: 0; right: 0;}
+ }
+

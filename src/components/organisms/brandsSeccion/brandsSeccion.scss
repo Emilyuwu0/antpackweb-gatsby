@@ -1,3 +1,7 @@
+@charset "UTF-8";
+@import "src/styles/mixins.scss";
+@import "src/styles/variables.scss";
+
 .brandsSeccionContainer {
   height: 90vh;
   display: flex;
@@ -10,14 +14,59 @@
     width: 80%;
     justify-content: space-evenly;
   }
-  .brandsContainer {
+  .brandsContainerDesktop {
     width: 90%;
     overflow: hidden;
-    display: grid;
     justify-content: center;
-    gap: 80px 20px;
-    grid-template-columns: repeat(6, 15%);
     background-color: white;
+
+    display: grid;
+    grid-gap: 46px;
+    padding: 16px;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    grid-template-columns: repeat(6, 1fr);
+    svg {
+      margin: auto;
+    }
+    @include mobile {
+      display: none;
+      grid-gap: 20px 20px;
+      width: 100%;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include tablet-mini {
+      grid-gap: 20px 20px;
+      width: 100%;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include tablet {
+      grid-gap: 26px;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include desktop {
+      grid-gap: 36px;
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  .brandsContainerMobile {
+    display: none;
+    .marque {
+      svg {
+        margin: 0 20px;
+        @include mobile {
+          height: 80px;
+        }
+      }
+    }
+    @include mobile {
+      display: block;
+    }
   }
 
   span {

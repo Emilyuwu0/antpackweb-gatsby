@@ -12,7 +12,7 @@ export default function HeroSeccion() {
         <Icon type='logo' />
       </div>
       <BigParagraph text='We create and market <span> technology </span> with <br/> craft and simplicity to transform <br/> companies, solve their problems, and <br/> better human lives.' />
-      < Button to='page2' text='CONTACT US' />
+      < Button to='#contact' text='CONTACT US' />
     </div >
   )
 }

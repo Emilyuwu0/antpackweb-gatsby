@@ -16,22 +16,22 @@ export default function Footer() {
       <div className='seccion1'>
         <ul>
           <li>
-            <Link to=''>
+            <Link to='#ourCraft'>
               <Title level='h3' text='Our craft' />
             </Link>
           </li>
           <li>
-            <Link to=''>
+            <Link to='#services'>
               <Title level='h3' text='Services' />
             </Link>
           </li>
           <li>
-            <Link to=''>
+            <Link to='#company'>
               <Title level='h3' text='Company' />
             </Link>
           </li>
           <li>
-            <Link to=''>
+            <Link to='#contact'>
               <Title level='h3' text='Contact' />
             </Link>
           </li>
