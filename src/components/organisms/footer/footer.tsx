@@ -36,7 +36,9 @@ export default function Footer() {
             </Link>
           </li>
         </ul>
-        <LogoAntpackBlack />
+        <div className='logo'>
+          <LogoAntpackBlack />
+        </div>
       </div>
       <div className='seccion2'>
         <div>
@@ -46,21 +48,23 @@ export default function Footer() {
               Calle 94 #14-45 OF 403</p>
           </div>
           <div className='InfoText'>
-            <Title level='h4' text='BOGOTÁ' />
+            <Title level='h4' text='CDMX' />
+            <p>
+              +57 601 310 7911 <br />
+              Calle 94 #14-45 OF 403</p>
+          </div>
+          <div className='InfoText'>
+            <Title level='h4' text='MIAMI' />
             <p>+57 601 310 7911 <br />
               Calle 94 #14-45 OF 403</p>
           </div>
           <div className='InfoText'>
-            <Title level='h4' text='BOGOTÁ' />
-            <p>+57 601 310 7911 <br />
-              Calle 94 #14-45 OF 403</p>
-          </div>
-          <div className='InfoText'>
-            <Title level='h4' text='BOGOTÁ' />
-            <p>+57 601 310 7911 <br />
-              Calle 94 #14-45 OF 403</p>
+            <Title level='h4' text='ANTPACK' />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           </div>
         </div>
+
+        <hr />
 
         <div className='linksContainer'>
           <div>
@@ -81,7 +85,7 @@ export default function Footer() {
             </Link>
           </div>
 
-          <div>
+          <div className='terms'>
             <Link to='https://www.facebook.com'>Terms & Privacy</Link>
           </div>
 

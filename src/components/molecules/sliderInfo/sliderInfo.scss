@@ -1,3 +1,7 @@
+@charset "UTF-8";
+@import "src/styles/mixins.scss";
+@import "src/styles/variables.scss";
+
 .sliderInfoContainer {
   position: absolute;
   display: flex;
@@ -6,7 +10,21 @@
   z-index: 10;
   height: 100%;
   width: 100%;
-  padding: 60px 90px;
+  @include mobile {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.481);
+  }
+  @include tablet-mini {
+    padding: 40px;
+    background-color: transparent;
+  }
+  @include tablet {
+  }
+  
+  @include desktop {
+    padding: 60px 90px;
+    background-color: transparent;
+  }
   .date {
     font-weight: 700;
   }

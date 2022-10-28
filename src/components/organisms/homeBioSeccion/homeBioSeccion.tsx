@@ -10,7 +10,7 @@ export default function HomeBioSeccion() {
   return (
     <div className='homeBioSeccionContainer'>
       <div className='infoWrapper'>
-        <Title level='h1' titleClass='title' text={`We are dreamers with a <span className='primary'>hunger</span> for <br/> <span>knowledge</span> and a crazy <span className='primary'>drive</span> for <br/> execution.`} />
+        <Title level='h1' titleClass='title' text={`We are dreamers with a <span className='primary'>hunger</span> for <span>knowledge</span> and a crazy <span className='primary'>drive</span> for execution.`} />
         <Paragraph text='Our team has more than 60 <span> strategists, product and experience designers, multi-disciplinary developers, testers, copywriters, digital marketers, and optimizers </span> distributed across 15 cities with a common passion for building beautiful products.' />
         <Lottie className='bioAnim' animationData={BioAnim} loop={true} />;
       </div>

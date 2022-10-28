@@ -1,0 +1,45 @@
+@import 'src/styles/variables.scss';
+
+@mixin mobile {
+  @media screen and (max-width: $phone) {
+      @content;
+  }
+}
+
+@mixin tablet-mini {
+  @media screen and (min-width: $tablet-mini) {
+      @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: $tablet) {
+      @content;
+  }
+}
+
+
+@mixin desktop {
+  @media screen and (min-width: $desktop) {
+      @content;
+  }
+}
+
+@mixin custom {
+  @media screen and (min-width: 970px) {
+      @content;
+  }
+}
+
+
+// @mixin from($device) {
+//   @media screen and (min-width: $device) {
+//       @content;
+//   }
+// }
+
+// @mixin until($device) {
+//   @media screen and (max-width: $device - 1px) {
+//       @content;
+//   }
+// }

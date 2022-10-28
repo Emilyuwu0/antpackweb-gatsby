@@ -331,7 +331,8 @@ import React from 'react'
 export default function ApproachSeccion() {
   return (
     <div className='approachSeccionContainer'>
-      <iframe src='https://yeissonstik.github.io/animationAntpack/'></iframe>
+      <iframe className='animationDesktop' src='https://yeissonstik.github.io/animationAntpack/'></iframe>
+      <iframe className='animationMobile' src='https://yeissongutierrrez.github.io/animationAntpackMobile/'></iframe>
     </div>
   )
 }

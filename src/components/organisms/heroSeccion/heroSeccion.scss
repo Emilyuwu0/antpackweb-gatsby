@@ -1,15 +1,45 @@
+@charset "UTF-8";
+@import "src/styles/mixins.scss";
+@import "src/styles/variables.scss";
+
 .heroContainer {
   height: 90vh;
   background-color: #EF0C75;
-  padding: 80px;
-  padding-top: 250px;
   display: flex; 
   justify-content: space-between;
   flex-direction: column;
   align-items: flex-start;
+  p {
+    margin-bottom: 20px;
+  }
   .logo {
     position: absolute;
     top: 20px;
+  }
+  @include mobile {
+    padding: 30px;
+    padding-top: 150px;
+    padding-bottom: 70px;
+    .logo > svg {
+      width: 80px;
+    }
+  }
+  
+  @include tablet-mini {
+    min-height: 430px;
+    padding: 40px;
+    padding-top: 150px;  
+  }
+  
+  @include tablet {
+    min-height: 530px;
+    padding-top: 200px;  
+  }
+  
+  @include desktop {
+    min-height: 630px;
+    padding: 80px;
+    padding-top: 200px;
   }
   span {
     color: yellow;

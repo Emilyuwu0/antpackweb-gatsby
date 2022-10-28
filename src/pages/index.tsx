@@ -55,8 +55,8 @@ export default function Home() {
 
   return (
     <>
-      <Header color={menu} />
       <div onMouseEnter={() => setMenu('white')} className='child'>
+        <Header color={menu} />
         <HeroSeccion />
       </div>
       <div onMouseEnter={() => setMenu('black')} className='child'>

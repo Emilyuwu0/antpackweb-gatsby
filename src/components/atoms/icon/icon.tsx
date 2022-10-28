@@ -6,6 +6,7 @@ import Card2 from '../../../assets/icons/cardIcon2.svg'
 import Card3 from '../../../assets/icons/cardIcon3.svg'
 import Card4 from '../../../assets/icons/cardIcon4.svg'
 import Mubico from '../../../assets/icons/mubico.svg'
+import Mubico2 from '../../../assets/icons/mibicoLogoWhite.svg'
 import WarnerMedia from '../../../assets/icons/WM.svg'
 import Siigo from '../../../assets/icons/siigoLogo.svg'
 import Verdi from '../../../assets/icons/LogoVERDI.svg'
@@ -25,6 +26,7 @@ const Icon = ({ type }: iconProps) => {
       {type === 'card3' && <Card3 />}
       {type === 'card4' && <Card4 />}
       {type === 'mubico' && <Mubico />}
+      {type === 'mubicoWhite' && <Mubico2 />}
       {type === 'hbo' && <WarnerMedia />}
       {type === 'siigo' && <Siigo />}
       {type === 'verdi' && <Verdi />}

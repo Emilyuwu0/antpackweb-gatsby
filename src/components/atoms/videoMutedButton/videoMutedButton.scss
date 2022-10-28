@@ -1,14 +1,30 @@
+@charset "UTF-8";
+@import "src/styles/mixins.scss";
+@import "src/styles/variables.scss";
+
 .videoMutedButton {
   position: absolute;
-  bottom: 100px;
   cursor: pointer;
-  right: 50px;
   font-family: 'Satoshi-Bold';
   color: white;
-  height: 100px;
-  width: 100px;
   border: solid white 1px;
   border-radius: 50%;
   background-color: transparent;
   z-index: 1;
+  text-transform: capitalize;
+  @include mobile {
+    right: 20px;
+    bottom: 30px;
+    height: 50px;
+    font-size: 12px;
+    width: 50px;
+  }
+
+  @include tablet-mini {
+    right: 40px;
+    bottom: 40px;
+    height: 80px;
+    width: 80px;
+    font-size: 14px;
+  }
 }

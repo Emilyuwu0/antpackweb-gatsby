@@ -1,4 +1,9 @@
+@charset "UTF-8";
+@import "src/styles/mixins.scss";
+@import "src/styles/variables.scss";
+
 .cardContainer {
+  margin: 0 20px;
   position: relative;
   padding: 0 20px;
   display: flex;
@@ -8,8 +13,10 @@
   border: solid white 1px;
   border-radius: 20px;
   height: 340px;
-  width: 260px;
+  min-width: 250px;
+  max-width: 250px;
   transition: 1s;
+  scroll-snap-align: start;
   .title_wrapper {
     display: flex;
     flex-direction: column;
@@ -19,24 +26,38 @@
   h3 {
     color: white;
     font-family: 'Satoshi-Bold';
-    font-size: 24px;
     margin: 20px 0;
     text-transform: uppercase;
   } 
   
-  p {
+  
+  .propertiesText {
     font-family: 'Satoshi-Light';
     font-size: 14px;
     text-align: center;
-  }
-
-  .propertiesText {
     color: white;
-    font-size: 24px;
     margin: 10px 0;
     text-transform: capitalize;
+    @include tablet-mini {
+      font-size: 18px ;
+    }
+    @include desktop {
+      font-size: 24px;
+    }
   }
+
+
+  // @include tablet {
+  //   height: 340px;
+  //   width: 200px;
+  // }
+  
+  // @include desktop {
+  //   height: 340px;
+  //   width: 260px;
+  // }
 }
+
 
 .cardContainer:hover {
   background-color: white;

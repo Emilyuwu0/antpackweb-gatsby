@@ -1,5 +1,22 @@
+@charset "UTF-8";
+@import "src/styles/mixins.scss";
+@import "src/styles/variables.scss";
+
 .paragraph {
   font-family: Satoshi-Regular;
-  font-size: 32px;
-  line-height: 40px;
+  @include mobile {
+    line-height: 30px;
+    font-size: 20px;
+  }
+  @include tablet-mini {
+    line-height: 36px;
+    font-size: 24px;
+  }
+  @include tablet {
+    font-size: 24px;
+  }
+  @include desktop {
+    font-size: 32px;
+    line-height: 50px;
+  }
 }

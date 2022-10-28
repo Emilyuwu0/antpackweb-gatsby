@@ -22,7 +22,8 @@ export default function SliderSection() {
     <Swiper
       className='banner_slider_container'
       direction={'vertical'}
-      grabCursor={true}
+      grabCursor={false}
+      allowTouchMove={false}
       onSliderMove={() => console.log('movee')}
       // onSlideChange={() => alert('slide change')}
       onSlideChangeTransitionStart={() => {
@@ -32,15 +33,20 @@ export default function SliderSection() {
       }}
       loop={true}
       pagination={{
-        "clickable": true
+        "clickable": true,
       }}
       autoplay={{
         delay: 5500,
-        disableOnInteraction: false,
+        disableOnInteraction: true,
       }}
     >
       <SwiperSlide className='bannerSlider'>
-        <SliderInfo date='2022' name='mubico' colorText='black' categories={mubico} />
+        {
+          window.innerWidth < 560 ?
+            <SliderInfo date='2022' name='mubicoWhite' colorText='white' categories={mubico} />
+            :
+            <SliderInfo date='2022' name='mubico' colorText='black' categories={mubico} />
+        }
         <StaticImage
           src='../../../assets/images/sliderImages/mubicoScreen.jpg'
           alt="A dinosaur"

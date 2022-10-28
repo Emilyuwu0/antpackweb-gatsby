@@ -1,9 +1,13 @@
+@charset "UTF-8";
+@import "src/styles/mixins.scss";
+@import "src/styles/variables.scss";
+
 .homeBioSeccionContainer {
+  position: relative;
   height: 90vh;
   background-color: white;
-  padding: 0 100px;
+  width: 100%;
   .infoWrapper {
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -12,6 +16,16 @@
     p {
       color: black;
       max-width: 65%;
+      @include mobile {
+        padding-bottom: 90px;
+        max-width: 90%;
+      }
+      @include tablet {
+        max-width: 75%;
+      }
+      @include desktop {
+        max-width: 65%;
+      }
     }
   }
 
@@ -21,10 +35,49 @@
 
   .title {
     color: rgb(0, 0, 0);
+    @include mobile {
+      max-width: 90%;
+    }
+    @include tablet-mini {
+      max-width: 65%;
+    }
+    @include desktop {
+      max-width: 65%;
+    }
   }
   .bioAnim {
     position: absolute;
-    width: 290px;
-    right: 100px;
+    @include mobile {
+      width: 125px;
+      left: 25px;
+      bottom: 10px;
+    }
+    @include tablet-mini {
+      width: 160px;
+      right: 40px;
+    }
+    @include tablet {
+      width: 220px;
+      right: 40px;
+    }
+    
+    @include desktop {
+      width: 290px;
+      right: 100px;
+    }
+  }
+  @include mobile {
+    min-height: 650px;
+    padding: 0 25px;
+  }
+  @include tablet-mini {
+    padding: 0 25px;
+  }
+  @include tablet {
+    padding: 0 50px;
+  }
+  
+  @include desktop {
+    padding: 0 100px;
   }
 }

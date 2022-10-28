@@ -1,3 +1,7 @@
+@charset "UTF-8";
+@import "src/styles/mixins.scss";
+@import "src/styles/variables.scss";
+
 .headerContainer {
   position: fixed;
   top: 20px;
@@ -6,6 +10,9 @@
   justify-content: flex-end;
   padding: 0 90px;
   z-index: 1000;
+  @include mobile {
+    padding: 0 30px;
+  }
   .menuAnim {
     animation: menuAnim 2s;
   }

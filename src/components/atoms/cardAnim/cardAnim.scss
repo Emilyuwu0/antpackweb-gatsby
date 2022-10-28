@@ -1,6 +1,30 @@
+@charset "UTF-8";
+@import "src/styles/mixins.scss";
+@import "src/styles/variables.scss";
+
 .cardAnim {
   position: absolute;
   top: 0;
-  height: 160px;
-  width: 160px;
+  @include mobile {
+    top: -30px;
+    height: 140px;
+    width: 140px;
+    
+  }
+  
+  @include tablet-mini {
+    top: -30px;
+    height: 140px;
+    width: 140px;
+  }
+  
+  @include tablet {
+    height: 140px;
+    width: 140px;
+  }
+  
+  @include desktop {
+    height: 160px;
+    width: 160px;
+  }
 }

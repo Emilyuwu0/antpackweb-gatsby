@@ -1,14 +1,21 @@
+@charset "UTF-8";
+@import "src/styles/mixins.scss";
+@import "src/styles/variables.scss";
+
 .homeCardsSeccionContainer {
   height: 90vh;
+  min-height: 630px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   background-color: black;
+  overflow: hidden;
   .cardsWrapper {
-    display: grid;
-    gap: 24px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 80%;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
   }
   .homeCardsTitle {
     text-align: center;
@@ -21,7 +28,25 @@
 
   .contactButton {
     display: flex;
-    padding: 40px;
+    padding: 20px 40px;
     justify-content: center;
+  }
+
+  h1 {
+    @include mobile {
+      width: 80%;
+    }
+
+    @include tablet-mini {
+      width: 70%;
+    }
+
+    @include tablet {
+      width: 75%;
+    }
+
+    @include desktop {
+      width: 65%;
+    }
   }
 }

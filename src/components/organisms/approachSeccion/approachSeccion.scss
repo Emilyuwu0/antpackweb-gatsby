@@ -1,17 +1,27 @@
-// html, body {
-//   overflow-x:hidden;
-//   background:#000000;
-//   color: white;
-//   max-width: 22000;
-// }
+@charset "UTF-8";
+@import "src/styles/mixins.scss";
+@import "src/styles/variables.scss";
 
 .approachSeccionContainer {
   background-color: black;
   height: 90vh;
   width: 100%;
+  min-height: 700px;
   iframe {
     height: 100%;
     width: 100%;
+  }
+  .animationDesktop {
+    display: none;
+    @include custom {
+      display: block;
+    }
+  }
+  .animationMobile {
+    display: block;
+    @include custom {
+      display: none;
+    }
   }
 }
 

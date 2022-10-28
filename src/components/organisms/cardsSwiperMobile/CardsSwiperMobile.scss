@@ -1,0 +1,16 @@
+
+.ReviewsSwiper {
+  box-sizing: "border-box";
+  .swiper-slide {
+    background-color: red;
+    width: 250px !important;
+  }
+}
+
+
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+  display: 'none',
+}
+.swiper-button-next, .swiper-button-prev {
+  display: 'none'
+}

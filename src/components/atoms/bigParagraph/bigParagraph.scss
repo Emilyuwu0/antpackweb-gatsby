@@ -1,8 +1,30 @@
+@charset "UTF-8";
+@import "src/styles/mixins.scss";
+@import "src/styles/variables.scss";
+
 .bigParagraph {
   font-family: Satoshi-Light;
-  font-size: 48px;
-  line-height: 60px;
   color: white;
+
+  @include mobile {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  @include tablet-mini {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  @include tablet {
+    font-size: 38px;
+    line-height: 50px;
+  }
+  @include desktop {
+    font-size: 48px;
+    line-height: 60px;
+  }
+
 }
 
 span {
