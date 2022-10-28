@@ -41,26 +41,16 @@ export default function Footer() {
         </div>
       </div>
       <div className='seccion2'>
-        <div>
+        <div className='infoSec'>
           <div className='InfoText'>
             <Title level='h4' text='BOGOTÁ' />
-            <p>+57 601 310 7911 <br />
+            <p>+57 (601)4813202 <br />
               Calle 94 #14-45 OF 403</p>
           </div>
-          <div className='InfoText'>
-            <Title level='h4' text='CDMX' />
-            <p>
-              +57 601 310 7911 <br />
-              Calle 94 #14-45 OF 403</p>
-          </div>
-          <div className='InfoText'>
-            <Title level='h4' text='MIAMI' />
-            <p>+57 601 310 7911 <br />
-              Calle 94 #14-45 OF 403</p>
-          </div>
+
           <div className='InfoText'>
             <Title level='h4' text='ANTPACK' />
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>hello@antpack.co</p>
           </div>
         </div>
 
@@ -68,26 +58,26 @@ export default function Footer() {
 
         <div className='linksContainer'>
           <div>
-            <Link to='https://www.facebook.com'>
+            <Link to='https://www.facebook.com/AntPackCo/'>
               <Linkedin />
             </Link>
 
-            <Link to='https://www.facebook.com'>
+            <Link to='https://www.instagram.com/ant.pack/'>
               <Intagram />
             </Link>
 
-            <Link to='https://www.facebook.com'>
+            <Link to='https://www.behance.net/antpack'>
               <Be />
             </Link>
 
-            <Link to='https://www.facebook.com'>
+            <Link to='https://api.whatsapp.com/send?phone=576014813202&text=Hello'>
               <Whatsapp />
             </Link>
           </div>
 
-          <div className='terms'>
+          {/* <div className='terms'>
             <Link to='https://www.facebook.com'>Terms & Privacy</Link>
-          </div>
+          </div> */}
 
         </div>
       </div>
