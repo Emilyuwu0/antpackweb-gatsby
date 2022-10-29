@@ -12,12 +12,14 @@ import SwiperCore, {
   Autoplay,
 } from 'swiper';
 import SliderInfo from '@/components/molecules/sliderInfo/sliderInfo'
+import useWindowDimensions from '@/hooks/useWindowDimensions'
 
 SwiperCore.use([Pagination, Navigation, Autoplay]);
 
 const mubico = ['Platform', 'Website']
 
 export default function SliderSection() {
+  const { height, width } = useWindowDimensions();
   return (
     <Swiper
       className='banner_slider_container'
@@ -42,7 +44,8 @@ export default function SliderSection() {
     >
       <SwiperSlide className='bannerSlider'>
         {
-          window.innerWidth < 560 ?
+          //window.innerWidth < 560 ?
+          width < 560 ?
             <SliderInfo date='2022' name='mubicoWhite' colorText='white' categories={mubico} />
             :
             <SliderInfo date='2022' name='mubico' colorText='black' categories={mubico} />
