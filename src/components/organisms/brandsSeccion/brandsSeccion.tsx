@@ -1,7 +1,7 @@
 import Button from '@/components/atoms/button/button'
 import Icon from '@/components/atoms/icon/icon'
 import Title from '@/components/atoms/title/title'
-import React, { useEffect, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Marquee from "react-fast-marquee";
 
 import './brandsSeccion.scss'
@@ -30,10 +30,6 @@ import NextU from '../../../assets/icons/brands/Next-U.svg'
 import Verdi from '../../../assets/icons/brands/VERDI.svg'
 import ScottBolden from '../../../assets/icons/brands/Logo_ScottBolden.svg'
 import HalfMoon from '../../../assets/icons/brands/HalfMoon.svg'
-
-import BrandButton from '@/components/atoms/brandButton/brandButton'
-
-
 
 
 const brands2 = [

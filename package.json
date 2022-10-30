@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@testing-library/jest-dom": "5.16.5",
+    "@typeform/embed-react": "2.1.0",
     "gatsby": "4.24.4",
     "gatsby-plugin-image": "2.24.0",
     "gatsby-plugin-pnpm": "1.2.10",

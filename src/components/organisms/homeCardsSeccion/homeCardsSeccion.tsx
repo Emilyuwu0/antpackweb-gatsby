@@ -68,10 +68,10 @@ export default function HomeCardsSeccion() {
         } />
       <div className='cardsWrapper'>
         {
-          cards.map((card) => (
-            <>
+          cards.map((card, index) => (
+            <div key={index}>
               {card}
-            </>
+            </div>
           ))
         }
       </div>

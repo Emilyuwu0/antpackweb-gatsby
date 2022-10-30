@@ -58,21 +58,21 @@ export default function Footer() {
 
         <div className='linksContainer'>
           <div>
-            <Link to='https://www.facebook.com/AntPackCo/'>
+            <a target={'_blank'} href='https://www.facebook.com/AntPackCo/'>
               <Linkedin />
-            </Link>
+            </a>
 
-            <Link to='https://www.instagram.com/ant.pack/'>
+            <a target={'_blank'} href='https://www.instagram.com/ant.pack/'>
               <Intagram />
-            </Link>
+            </a>
 
-            <Link to='https://www.behance.net/antpack'>
+            <a target={'_blank'} href='https://www.behance.net/antpack'>
               <Be />
-            </Link>
+            </a>
 
-            <Link to='https://api.whatsapp.com/send?phone=576014813202&text=Hello'>
+            <a target={'_blank'} href='https://api.whatsapp.com/send?phone=576014813202&text=Hello'>
               <Whatsapp />
-            </Link>
+            </a>
           </div>
 
           {/* <div className='terms'>

@@ -16,79 +16,158 @@ import '../styles/home.scss'
 import { useEffect, useRef, useState } from 'react';
 import Footer from '@/components/organisms/footer/footer';
 import Header from '@/components/organisms/header/header';
+import useIsInViewport from '@/hooks/useIsInViewport';
 
 export default function Home() {
 
   const [menu, setMenu] = useState('white')
-  // gsap.registerPlugin(ScrollTrigger);
-  const main = useRef<any>(null)
+
+  const container0 = useRef<any>(null)
+  const container1 = useRef<any>(null)
+  const container2 = useRef<any>(null)
+  const container3 = useRef<any>(null)
+  const container4 = useRef<any>(null)
+  const container5 = useRef<any>(null)
+  const container6 = useRef<any>(null)
+  const container7 = useRef<any>(null)
+
+
+  const isInViewport0 = useIsInViewport(container0);
+  const isInViewport1 = useIsInViewport(container1);
+  const isInViewport2 = useIsInViewport(container2);
+  const isInViewport3 = useIsInViewport(container3);
+  const isInViewport4 = useIsInViewport(container4);
+  const isInViewport5 = useIsInViewport(container5);
+  const isInViewport6 = useIsInViewport(container6);
+  const isInViewport7 = useIsInViewport(container7);
+
 
   useEffect(() => {
-    // gsap.set('.mainWrapper', { height: window.innerHeight, })
+    let currentView: string = ''
 
-    // let sections = gsap.utils.toArray(".child");
+    if (isInViewport0 === true) {
+      currentView = 'seccion0'
+      // setCurrentView('seccion0')
+      console.log('isInViewport0: ', isInViewport0);
+    } else if (isInViewport1 === true) {
+      currentView = 'seccion1'
+      // setCurrentView('seccion1')
+      console.log('isInViewport1: ', isInViewport1);
+    } else if (isInViewport2 === true) {
+      currentView = 'seccion2'
+      // setCurrentView('seccion2')
+      console.log('isInViewport2: ', isInViewport2);
+    } else if (isInViewport3 === true) {
+      currentView = 'seccion3'
+      // setCurrentView('seccion3')
+      console.log('isInViewport3: ', isInViewport3);
+    } else if (isInViewport4 === true) {
+      currentView = 'seccion4'
+      // setCurrentView('seccion4')
+      console.log('isInViewport4: ', isInViewport4);
+    } else if (isInViewport5 === true) {
+      currentView = 'seccion5'
+      // setCurrentView('seccion5')
+      console.log('isInViewport5: ', isInViewport5);
+    } else if (isInViewport6 === true) {
+      currentView = 'seccion6'
+      // setCurrentView('seccion6')
+      console.log('isInViewport6: ', isInViewport6);
+    } else if (isInViewport7 === true) {
+      currentView = 'seccion7'
+      // setCurrentView('seccion7')
+      console.log('isInViewport7: ', isInViewport7);
+    }
 
-    // gsap.to(sections, {
-    //   yPercent: -90 * (sections.length - 1),
-    //   ease: "none",
-    //   scrollTrigger: {
-    //     trigger: ".mainWrapper",
-    //     pin: true,
-    //     pinSpacing: true,
-    //     scrub: 1,
-    //     markers: true,
-    //     snap: {
-    //       snapTo: 1 / (sections.length - 1),
-    //       duration: 1,
-    //       delay: 0.1,
-    //       ease: "power1.inOut"
-    //     },
-    //     // base vertical scrolling on how wide the container is so it feels more natural.
-    //     end: window.innerHeight
-    //   }
-    // });
+    switch (currentView) {
+      case 'seccion0':
+        setMenu('white')
+        console.log('0')
+        break;
+
+      case 'seccion1':
+        setMenu('white')
+        console.log('1')
+        break;
+
+      case 'seccion2':
+        setMenu('white')
+        console.log('2')
+        break;
+
+      case 'seccion3':
+        setMenu('black')
+        console.log('3')
+        break;
+
+      case 'seccion4':
+        setMenu('white')
+        console.log('4')
+        break;
+
+      case 'seccion5':
+        setMenu('white')
+        console.log('5')
+        break;
+
+      case 'seccion6':
+        setMenu('black')
+        console.log('6')
+        break;
+
+      case 'seccion7':
+        setMenu('white')
+        console.log('7')
+        break;
+
+      default:
+        break;
+    }
+
+  }, [isInViewport0, isInViewport1, isInViewport2, isInViewport3, isInViewport4, isInViewport5, isInViewport6, isInViewport7])
 
 
-  }, [])
 
 
 
   return (
-    <>
-      <div onMouseEnter={() => setMenu('white')} className='child'>
-        <Header color={menu} />
+    <div className='mainWrapper'>
+      <Header color={menu} />
+      <div ref={container0} className='child'>
         <HeroSeccion />
       </div>
-      <div onMouseEnter={() => setMenu('black')} className='child'>
+
+      <div ref={container1} className='child'>
         <VideoSeccion />
       </div>
-      <div id='services' onMouseEnter={() => setMenu('white')} className='child'>
+
+      <div ref={container2} id='services' className='child'>
         <HomeCardsSeccion />
       </div>
 
-      <div id='company' onMouseEnter={() => setMenu('black')} className='child'>
+      <div ref={container3} id='company' className='child'>
         <HomeBioSeccion />
       </div>
 
-      <div id='ourCraft' onMouseEnter={() => setMenu('black')} className='child'>
+      <div ref={container4} id='ourCraft' className='child'>
         <SliderSection />
       </div>
 
-      <div onMouseEnter={() => setMenu('white')} className='child'>
+      <div ref={container5} className='child'>
         <ApproachSeccion />
       </div>
 
-      <div onMouseEnter={() => setMenu('black')} className='child'>
+      <div ref={container6} className='child'>
         <BrandsSeccion />
       </div>
 
-      <div id='contact' onMouseEnter={() => setMenu('white')} className='child'>
+      <div ref={container7} id='contact' className='child'>
         <ContactSeccion />
       </div>
 
       <div className='child'>
         <Footer />
       </div>
-    </>
+    </div>
   );
 }
