@@ -326,12 +326,28 @@ import './approachSeccion.scss'
 //   )
 // }
 
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+
 
 export default function ApproachSeccion() {
+  const [first, setfirst] = useState('')
+  const contain = useRef<any>(null)
+  useEffect(() => {
+    window.addEventListener(
+      "message",
+      (ev: any) => {
+        if (ev.data.toContact === 'true') {
+          document.location.href = "#contact";
+        }
+        setfirst(ev.data);
+        console.log(ev)
+      }
+    );
+    console.log(first)
+  }, [])
   return (
     <div className='approachSeccionContainer'>
-      <iframe className='animationDesktop' src='https://yeissonstik.github.io/animationAntpack/'></iframe>
+      <iframe ref={contain} className='animationDesktop' src='https://yeissonstik.github.io/animationAntpack/'></iframe>
       <iframe className='animationMobile' src='https://yeissongutierrrez.github.io/animationAntpackMobile/'></iframe>
     </div>
   )
