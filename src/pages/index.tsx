@@ -17,6 +17,8 @@ import { useEffect, useRef, useState } from 'react';
 import Footer from '@/components/organisms/footer/footer';
 import Header from '@/components/organisms/header/header';
 import useIsInViewport from '@/hooks/useIsInViewport';
+import { SEO } from '@/components/SEO/Seo';
+import { Script } from 'gatsby';
 
 export default function Home() {
 
@@ -131,43 +133,59 @@ export default function Home() {
 
 
   return (
-    <div className='mainWrapper'>
-      <div ref={container0} onMouseEnter={() => setMenu('white')} className='child'>
-        <Header color={menu} />
-        <HeroSeccion />
-      </div>
+    <>
+      <SEO title="Antpack">
+        <Script type="application/ld+json">{`
+            <cript>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-M3QWL64');</cript>
+            <!-- End Google Tag Manager -->
+            este va en el body 
+            <!-- Google Tag Manager (noscript) -->
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3QWL64"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        `}</Script>
+      </SEO>
+      <div className='mainWrapper'>
+        <div ref={container0} onMouseEnter={() => setMenu('white')} className='child'>
+          <Header color={menu} />
+          <HeroSeccion />
+        </div>
 
-      <div ref={container1} onMouseEnter={() => setMenu('black')} className='child'>
-        <VideoSeccion />
-      </div>
+        <div ref={container1} onMouseEnter={() => setMenu('black')} className='child'>
+          <VideoSeccion />
+        </div>
 
-      <div ref={container2} onMouseEnter={() => setMenu('white')} id='services' className='child'>
-        <HomeCardsSeccion />
-      </div>
+        <div ref={container2} onMouseEnter={() => setMenu('white')} id='services' className='child'>
+          <HomeCardsSeccion />
+        </div>
 
-      <div ref={container3} onMouseEnter={() => setMenu('black')} id='company' className='child'>
-        <HomeBioSeccion />
-      </div>
+        <div ref={container3} onMouseEnter={() => setMenu('black')} id='company' className='child'>
+          <HomeBioSeccion />
+        </div>
 
-      <div ref={container4} onMouseEnter={() => setMenu('black')} id='ourCraft' className='child'>
-        <SliderSection />
-      </div>
+        <div ref={container4} onMouseEnter={() => setMenu('black')} id='ourCraft' className='child'>
+          <SliderSection />
+        </div>
 
-      <div ref={container5} onMouseEnter={() => setMenu('white')} className='child'>
-        <ApproachSeccion />
-      </div>
+        <div ref={container5} onMouseEnter={() => setMenu('white')} className='child'>
+          <ApproachSeccion />
+        </div>
 
-      <div ref={container6} onMouseEnter={() => setMenu('black')} className='child'>
-        <BrandsSeccion />
-      </div>
+        <div ref={container6} onMouseEnter={() => setMenu('black')} className='child'>
+          <BrandsSeccion />
+        </div>
 
-      <div ref={container7} onMouseEnter={() => setMenu('white')} id='contact' className='child'>
-        <ContactSeccion />
-      </div>
+        <div ref={container7} onMouseEnter={() => setMenu('white')} id='contact' className='child'>
+          <ContactSeccion />
+        </div>
 
-      <div className='child'>
-        <Footer />
+        <div className='child'>
+          <Footer />
+        </div>
       </div>
-    </div>
+    </>
   );
 }

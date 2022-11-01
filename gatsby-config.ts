@@ -7,13 +7,24 @@ const config: GatsbyConfig = {
     `gatsby-plugin-pnpm`,
     `gatsby-plugin-image`,
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        icon: `src/assets/images/favIcon.png`,
+        icon_options: {
+          // For all the options available,
+          // please see the section "Additional Resources" below.
+          purpose: `any maskable`,
+        },
+      },
+    },
+    {
       resolve: 'gatsby-plugin-sharp',
       options: {
         defaults: {
           quality: 98,
           formats: ['auto', 'webp', 'avif'],
           breakpoints: [640, 769, 1024, 1366, 1920],
-          backgroundColor: 'transparent'
+          backgroundColor: 'transparent',
         }
       }
     },
