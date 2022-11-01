@@ -6,9 +6,9 @@ import CardsSwiperMobile from '../cardsSwiperMobile/cardsSwiperMobile'
 import './homeCardsSeccion.scss'
 
 const propertiesCard1 = ['Apps', 'Platforms', 'Integrations', 'Middleware']
-const propertiesCard2 = ['Apps', 'Platforms', 'Integrations', 'Middleware']
-const propertiesCard3 = ['Apps', 'Platforms', 'Integrations', 'Middleware']
-const propertiesCard4 = ['Apps', 'Platforms', 'Integrations', 'Middleware']
+const propertiesCard2 = ['CMS', 'E-commerce', 'Landing pages', 'Headless sites']
+const propertiesCard3 = ['SEO/SEM', 'Analytics', 'Social', 'Paid Media']
+const propertiesCard4 = ['Metaverse', 'Blockchain', 'VR / AR', 'AI / ML']
 
 
 const cards = [
@@ -39,7 +39,7 @@ const cards = [
   We offer an analytics solution for marketing actions and  results.
 `}
     properties={propertiesCard3}
-    title='Code3'
+    title='marketing'
     cardIcon='card3' />,
   <Cards
     hoverText={`
@@ -48,7 +48,7 @@ const cards = [
   We built an AI image recognition engine for a property management company, a branded VR video game experience, an orchid exhibition in the metaverse for a museum, and a blockchain-powered proposal platform for a presidential candidate.
 `}
     properties={propertiesCard4}
-    title='marketing'
+    title='Antpack lab'
     cardIcon='card4' />
 
 ]
