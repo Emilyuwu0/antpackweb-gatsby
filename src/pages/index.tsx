@@ -32,99 +32,99 @@ export default function Home() {
   const container7 = useRef<any>(null)
 
 
-  const isInViewport0 = useIsInViewport(container0);
-  const isInViewport1 = useIsInViewport(container1);
-  const isInViewport2 = useIsInViewport(container2);
-  const isInViewport3 = useIsInViewport(container3);
-  const isInViewport4 = useIsInViewport(container4);
-  const isInViewport5 = useIsInViewport(container5);
-  const isInViewport6 = useIsInViewport(container6);
-  const isInViewport7 = useIsInViewport(container7);
+  // const isInViewport0 = useIsInViewport(container0);
+  // const isInViewport1 = useIsInViewport(container1);
+  // const isInViewport2 = useIsInViewport(container2);
+  // const isInViewport3 = useIsInViewport(container3);
+  // const isInViewport4 = useIsInViewport(container4);
+  // const isInViewport5 = useIsInViewport(container5);
+  // const isInViewport6 = useIsInViewport(container6);
+  // const isInViewport7 = useIsInViewport(container7);
 
 
-  useEffect(() => {
-    let currentView: string = ''
+  // useEffect(() => {
+  //   let currentView: string = ''
 
-    if (isInViewport0 === true) {
-      currentView = 'seccion0'
-      // setCurrentView('seccion0')
-      console.log('isInViewport0: ', isInViewport0);
-    } else if (isInViewport1 === true) {
-      currentView = 'seccion1'
-      // setCurrentView('seccion1')
-      console.log('isInViewport1: ', isInViewport1);
-    } else if (isInViewport2 === true) {
-      currentView = 'seccion2'
-      // setCurrentView('seccion2')
-      console.log('isInViewport2: ', isInViewport2);
-    } else if (isInViewport3 === true) {
-      currentView = 'seccion3'
-      // setCurrentView('seccion3')
-      console.log('isInViewport3: ', isInViewport3);
-    } else if (isInViewport4 === true) {
-      currentView = 'seccion4'
-      // setCurrentView('seccion4')
-      console.log('isInViewport4: ', isInViewport4);
-    } else if (isInViewport5 === true) {
-      currentView = 'seccion5'
-      // setCurrentView('seccion5')
-      console.log('isInViewport5: ', isInViewport5);
-    } else if (isInViewport6 === true) {
-      currentView = 'seccion6'
-      // setCurrentView('seccion6')
-      console.log('isInViewport6: ', isInViewport6);
-    } else if (isInViewport7 === true) {
-      currentView = 'seccion7'
-      // setCurrentView('seccion7')
-      console.log('isInViewport7: ', isInViewport7);
-    }
+  //   if (isInViewport0 === true) {
+  //     currentView = 'seccion0'
+  //     // setCurrentView('seccion0')
+  //     console.log('isInViewport0: ', isInViewport0);
+  //   } else if (isInViewport1 === true) {
+  //     currentView = 'seccion1'
+  //     // setCurrentView('seccion1')
+  //     console.log('isInViewport1: ', isInViewport1);
+  //   } else if (isInViewport2 === true) {
+  //     currentView = 'seccion2'
+  //     // setCurrentView('seccion2')
+  //     console.log('isInViewport2: ', isInViewport2);
+  //   } else if (isInViewport3 === true) {
+  //     currentView = 'seccion3'
+  //     // setCurrentView('seccion3')
+  //     console.log('isInViewport3: ', isInViewport3);
+  //   } else if (isInViewport4 === true) {
+  //     currentView = 'seccion4'
+  //     // setCurrentView('seccion4')
+  //     console.log('isInViewport4: ', isInViewport4);
+  //   } else if (isInViewport5 === true) {
+  //     currentView = 'seccion5'
+  //     // setCurrentView('seccion5')
+  //     console.log('isInViewport5: ', isInViewport5);
+  //   } else if (isInViewport6 === true) {
+  //     currentView = 'seccion6'
+  //     // setCurrentView('seccion6')
+  //     console.log('isInViewport6: ', isInViewport6);
+  //   } else if (isInViewport7 === true) {
+  //     currentView = 'seccion7'
+  //     // setCurrentView('seccion7')
+  //     console.log('isInViewport7: ', isInViewport7);
+  //   }
 
-    switch (currentView) {
-      case 'seccion0':
-        setMenu('white')
-        console.log('0')
-        break;
+  //   switch (currentView) {
+  //     case 'seccion0':
+  //       setMenu('white')
+  //       console.log('0')
+  //       break;
 
-      case 'seccion1':
-        setMenu('white')
-        console.log('1')
-        break;
+  //     case 'seccion1':
+  //       setMenu('white')
+  //       console.log('1')
+  //       break;
 
-      case 'seccion2':
-        setMenu('white')
-        console.log('2')
-        break;
+  //     case 'seccion2':
+  //       setMenu('white')
+  //       console.log('2')
+  //       break;
 
-      case 'seccion3':
-        setMenu('black')
-        console.log('3')
-        break;
+  //     case 'seccion3':
+  //       setMenu('black')
+  //       console.log('3')
+  //       break;
 
-      case 'seccion4':
-        setMenu('white')
-        console.log('4')
-        break;
+  //     case 'seccion4':
+  //       setMenu('white')
+  //       console.log('4')
+  //       break;
 
-      case 'seccion5':
-        setMenu('white')
-        console.log('5')
-        break;
+  //     case 'seccion5':
+  //       setMenu('white')
+  //       console.log('5')
+  //       break;
 
-      case 'seccion6':
-        setMenu('black')
-        console.log('6')
-        break;
+  //     case 'seccion6':
+  //       setMenu('black')
+  //       console.log('6')
+  //       break;
 
-      case 'seccion7':
-        setMenu('white')
-        console.log('7')
-        break;
+  //     case 'seccion7':
+  //       setMenu('white')
+  //       console.log('7')
+  //       break;
 
-      default:
-        break;
-    }
+  //     default:
+  //       break;
+  //   }
 
-  }, [isInViewport0, isInViewport1, isInViewport2, isInViewport3, isInViewport4, isInViewport5, isInViewport6, isInViewport7])
+  // }, [isInViewport0, isInViewport1, isInViewport2, isInViewport3, isInViewport4, isInViewport5, isInViewport6, isInViewport7])
 
 
 
@@ -132,36 +132,36 @@ export default function Home() {
 
   return (
     <div className='mainWrapper'>
-      <Header color={menu} />
-      <div ref={container0} className='child'>
+      <div ref={container0} onMouseEnter={() => setMenu('white')} className='child'>
+        <Header color={menu} />
         <HeroSeccion />
       </div>
 
-      <div ref={container1} className='child'>
+      <div ref={container1} onMouseEnter={() => setMenu('black')} className='child'>
         <VideoSeccion />
       </div>
 
-      <div ref={container2} id='services' className='child'>
+      <div ref={container2} onMouseEnter={() => setMenu('white')} id='services' className='child'>
         <HomeCardsSeccion />
       </div>
 
-      <div ref={container3} id='company' className='child'>
+      <div ref={container3} onMouseEnter={() => setMenu('black')} id='company' className='child'>
         <HomeBioSeccion />
       </div>
 
-      <div ref={container4} id='ourCraft' className='child'>
+      <div ref={container4} onMouseEnter={() => setMenu('black')} id='ourCraft' className='child'>
         <SliderSection />
       </div>
 
-      <div ref={container5} className='child'>
+      <div ref={container5} onMouseEnter={() => setMenu('white')} className='child'>
         <ApproachSeccion />
       </div>
 
-      <div ref={container6} className='child'>
+      <div ref={container6} onMouseEnter={() => setMenu('black')} className='child'>
         <BrandsSeccion />
       </div>
 
-      <div ref={container7} id='contact' className='child'>
+      <div ref={container7} onMouseEnter={() => setMenu('white')} id='contact' className='child'>
         <ContactSeccion />
       </div>
 
