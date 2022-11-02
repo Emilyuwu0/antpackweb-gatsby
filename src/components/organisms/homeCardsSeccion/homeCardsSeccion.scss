@@ -17,6 +17,9 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
   }
+  .cardsWrapper::-webkit-scrollbar {
+    display: none;
+  }
   .homeCardsTitle {
     text-align: center;
     padding: 40px 0;

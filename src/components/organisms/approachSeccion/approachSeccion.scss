@@ -13,13 +13,13 @@
   }
   .animationDesktop {
     display: none;
-    @include custom {
+    @include custom(970px, 3000px) {
       display: block;
     }
   }
   .animationMobile {
     display: block;
-    @include custom {
+    @include custom(970px, 3000px) {
       display: none;
     }
   }

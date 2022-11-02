@@ -36,7 +36,8 @@
   .title {
     color: rgb(0, 0, 0);
     @include mobile {
-      max-width: 90%;
+      margin-top: -30px;
+      max-width: 100%;
     }
     @include tablet-mini {
       max-width: 65%;
@@ -45,9 +46,25 @@
       max-width: 65%;
     }
   }
+  p {
+    @include mobile {
+      margin-top: -35px;
+    }
+    @include custom(340px, 556px ) {
+      margin-top: -70px;
+    }
+  }
   .bioAnim {
     position: absolute;
+
+    @include custom(340px, 556px ) {
+      width: 145px !important;
+      left: 25px;
+      bottom: 20px !important;
+    }
+
     @include mobile {
+      margin: auto;
       width: 125px;
       left: 25px;
       bottom: 10px;

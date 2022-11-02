@@ -12,6 +12,10 @@ html, body {
   margin: auto;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 .child {
   scroll-snap-align: start end;
 }

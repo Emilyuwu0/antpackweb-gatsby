@@ -44,13 +44,16 @@ export default function Footer() {
         <div className='infoSec'>
           <div className='InfoText'>
             <Title level='h4' text='BOGOTÁ' />
-            <p>+57 (601)4813202 <br />
-              Calle 94 #14-45 OF 403</p>
+            <p> <a href="tel:+57(601)4813202">+57 (601)4813202</a>
+              <br />
+              Calle 100 #13-21 OF. 701</p>
           </div>
 
           <div className='InfoText'>
             <Title level='h4' text='ANTPACK' />
-            <p>hello@antpack.co</p>
+            <p>
+              <a href='mailto:hello@antpack.co'>hello@antpack.co</a>
+            </p>
           </div>
         </div>
 

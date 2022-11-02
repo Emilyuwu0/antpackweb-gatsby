@@ -11,9 +11,30 @@
   align-items: flex-start;
   p {
     margin-bottom: 20px;
+    @include tablet {
+      max-width: 700px;
+    }
+
+    @include desktop {
+      max-width: 900px;
+    }
   }
   .logo {
-    margin-top: -180px;
+    @include mobile {
+      margin-top: -120px;
+    }
+
+    @include tablet-mini {
+      margin-top: -120px;
+    }
+
+    @include tablet {
+      margin-top: -180px;
+    }
+
+    @include desktop {
+      margin-top: -180px;
+    }
   }
   @include mobile {
     padding: 30px;

@@ -11,7 +11,7 @@ export default function HeroSeccion() {
       <div className='logo'>
         <Icon type='logo' />
       </div>
-      <BigParagraph text='We create and market <span> technology </span> with <br/> craft and simplicity to transform <br/> companies, solve their problems, and <br/> better human lives.' />
+      <BigParagraph text='We create and market <span> technology </span> with craft and simplicity to transform companies, solve their problems, and  better human lives.' />
       < Button to='#contact' text='CONTACT US' />
     </div >
   )
