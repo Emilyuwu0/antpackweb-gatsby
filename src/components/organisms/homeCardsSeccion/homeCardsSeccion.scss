@@ -2,54 +2,62 @@
 @import "src/styles/mixins.scss";
 @import "src/styles/variables.scss";
 
-.homeCardsSeccionContainer {
-  height: 90vh;
-  min-height: 630px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
+
+.homeCardsSeccionWrapper {
   background-color: black;
-  overflow: hidden;
-  .cardsWrapper {
-    width: 80%;
+  .homeCardsSeccionContainer {
+    height: 90vh;
+    min-height: 630px;
+    max-width: 2000px;
+    max-height: 1500px;
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-  }
-  .cardsWrapper::-webkit-scrollbar {
-    display: none;
-  }
-  .homeCardsTitle {
-    text-align: center;
-    padding: 40px 0;
-    color: white;
-    span {
-      color: #EF0C75;
-    }
-  }
-
-  .contactButton {
-    display: flex;
-    padding: 20px 40px;
-    justify-content: center;
-  }
-
-  h1 {
-    @include mobile {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow: hidden;
+    margin: auto;
+    .cardsWrapper {
       width: 80%;
+      display: flex;
+      justify-content: center;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
     }
-
-    @include tablet-mini {
-      width: 70%;
+    .cardsWrapper::-webkit-scrollbar {
+      display: none;
     }
-
-    @include tablet {
-      width: 75%;
+    .homeCardsTitle {
+      text-align: center;
+      padding: 40px 0;
+      color: white;
+      span {
+        color: #EF0C75;
+      }
     }
-
-    @include desktop {
-      width: 65%;
+  
+    .contactButton {
+      display: flex;
+      padding: 20px 40px;
+      justify-content: center;
+    }
+  
+    h1 {
+      max-width: 900px;
+      @include mobile {
+        width: 80%;
+      }
+  
+      @include tablet-mini {
+        width: 70%;
+      }
+  
+      @include tablet {
+        width: 75%;
+      }
+  
+      @include desktop {
+        width: 65%;
+      }
     }
   }
 }

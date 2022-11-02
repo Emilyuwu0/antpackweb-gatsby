@@ -13,9 +13,7 @@
     justify-content: space-between;
     .logo {
       @include mobile {
-        position: absolute;
-        left: 15px;
-        bottom: 30px;
+        display: none;
       }
       @include tablet-mini {
         position: relative;
@@ -47,7 +45,7 @@
     }
     @include mobile {
       width: 70%;
-      padding: 20px;
+      padding: 15px;
     }
     
     @include tablet-mini {
@@ -71,6 +69,15 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: flex-start;
+    
+    .logo {
+      display: none;
+      margin-left: 20px;
+      @include mobile {
+        display: block;
+      }
+    }
+
     .infoSec {
       display: flex;
     }
@@ -186,7 +193,7 @@
   @include mobile {
     padding-top: 50px;
     flex-direction: column;
-    height: 1000px;
+    height: 700px;
     overflow: hidden;
   }
   

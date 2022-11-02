@@ -83,6 +83,9 @@ export default function Footer() {
           </div> */}
 
         </div>
+        <div className='logo'>
+          <LogoAntpackBlack />
+        </div>
       </div>
     </div>
   )

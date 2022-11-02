@@ -2,31 +2,38 @@
 @import "src/styles/mixins.scss";
 @import "src/styles/variables.scss";
 
-.approachSeccionContainer {
+
+.approachSeccionWrapper {
   background-color: black;
-  height: 90vh;
-  width: 100%;
-  min-height: 700px;
-  iframe {
-    height: 100%;
-    width: 100%;
-  }
-  .animationDesktop {
-    display: none;
-    @include custom(970px, 3000px) {
-      display: block;
-    }
-  }
-  .animationMobile {
-    display: block;
-    @include custom(970px, 3000px) {
-      display: none;
-    }
-  }
-  @include mobile {
+  .approachSeccionContainer {
     height: 90vh;
+    width: 100%;
+    max-width: 1800px;
+    max-height: 800px;
+    min-height: 700px;
+    margin: auto;
+    iframe {
+      height: 100%;
+      width: 100%;
+    }
+    .animationDesktop {
+      display: none;
+      @include custom(970px, 3000px) {
+        display: block;
+      }
+    }
+    .animationMobile {
+      display: block;
+      @include custom(970px, 3000px) {
+        display: none;
+      }
+    }
+    @include mobile {
+      height: 90vh;
+    }
   }
 }
+
 
 // #container, #scrollDist, .road {
 //   position:absolute;

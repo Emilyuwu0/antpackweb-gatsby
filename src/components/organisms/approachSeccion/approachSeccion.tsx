@@ -346,9 +346,11 @@ export default function ApproachSeccion() {
     console.log(first)
   }, [])
   return (
-    <div className='approachSeccionContainer'>
-      <iframe ref={contain} className='animationDesktop' src='https://yeissonstik.github.io/animationAntpack/'></iframe>
-      <iframe className='animationMobile' src='https://yeissongutierrrez.github.io/animationAntpackMobile/'></iframe>
+    <div className='approachSeccionWrapper'>
+      <div className='approachSeccionContainer'>
+        <iframe ref={contain} className='animationDesktop' src='https://yeissonstik.github.io/animationAntpack/'></iframe>
+        <iframe className='animationMobile' src='https://yeissongutierrrez.github.io/animationAntpackMobile/'></iframe>
+      </div>
     </div>
   )
 }

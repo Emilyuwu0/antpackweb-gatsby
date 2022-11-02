@@ -5,6 +5,7 @@
 .videoContainer {
   position: relative;
   height: 90vh;
+  max-height: 1500px;
   background-color: black;
   @include mobile {
     height: 300px;

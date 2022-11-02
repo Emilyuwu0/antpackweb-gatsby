@@ -57,27 +57,29 @@ const cards = [
 export default function HomeCardsSeccion() {
 
   return (
-    <div className='homeCardsSeccionContainer'>
-      <Title level='h1'
-        text={
-          `
-          <div className='homeCardsTitle'>
-            <span>We build technology that makes sense</span> and make sure the world sees it
-          </div>
-          `
-        } />
-      <div className='cardsWrapper'>
-        {
-          cards.map((card, index) => (
-            <div key={index}>
-              {card}
+    <div className='homeCardsSeccionWrapper'>
+      <div className='homeCardsSeccionContainer'>
+        <Title level='h1'
+          text={
+            `
+            <div className='homeCardsTitle'>
+              <span>We build technology that makes sense</span> and make sure the world sees it
             </div>
-          ))
-        }
-      </div>
-      {/* <CardsSwiperMobile data={cards} /> */}
-      <div className='contactButton'>
-        <Button text='CONTACT US' to='#contact' />
+            `
+          } />
+        <div className='cardsWrapper'>
+          {
+            cards.map((card, index) => (
+              <div key={index}>
+                {card}
+              </div>
+            ))
+          }
+        </div>
+        {/* <CardsSwiperMobile data={cards} /> */}
+        <div className='contactButton'>
+          <Button text='CONTACT US' to='#contact' />
+        </div>
       </div>
     </div>
   )

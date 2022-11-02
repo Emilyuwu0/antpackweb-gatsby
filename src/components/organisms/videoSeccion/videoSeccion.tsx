@@ -6,7 +6,7 @@ import './videoSeccion.scss'
 export default function VideoSeccion() {
   return (
     <div className='videoContainer'>
-      <PrimaryVideo src='https://antpack.s3.us-east-2.amazonaws.com/videos/Preview.mp4' />
+      <PrimaryVideo src='https://antpack.s3.us-east-2.amazonaws.com/videos/VH+Ingle%CC%81s.mp4' />
     </div>
   )
 }

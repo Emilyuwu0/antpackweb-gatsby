@@ -2,99 +2,106 @@
 @import "src/styles/mixins.scss";
 @import "src/styles/variables.scss";
 
-.homeBioSeccionContainer {
-  position: relative;
-  height: 90vh;
+
+.homeBioSeccionWrapper {
   background-color: white;
-  width: 100%;
-  .infoWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    height: 100%;
-    p {
-      color: black;
-      max-width: 65%;
-      @include mobile {
-        padding-bottom: 90px;
-        max-width: 90%;
+  .homeBioSeccionContainer {
+    position: relative;
+    height: 90vh;
+    max-width: 2000px;
+    max-height: 1300px;
+    margin: auto;
+    width: 100%;
+    .infoWrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-evenly;
+      height: 100%;
+      p {
+        color: black;
+        max-width: 65%;
+        @include mobile {
+          padding-bottom: 90px;
+          max-width: 90%;
+        }
+        @include tablet {
+          max-width: 75%;
+        }
+        @include desktop {
+          max-width: 65%;
+        }
       }
-      @include tablet {
-        max-width: 75%;
+    }
+  
+    .primary{
+      color: rgba(239, 12, 117, 1);  
+    }
+  
+    .title {
+      color: rgb(0, 0, 0);
+      @include mobile {
+        margin-top: -30px;
+        max-width: 100%;
+      }
+      @include tablet-mini {
+        max-width: 65%;
       }
       @include desktop {
         max-width: 65%;
       }
     }
-  }
-
-  .primary{
-    color: rgba(239, 12, 117, 1);  
-  }
-
-  .title {
-    color: rgb(0, 0, 0);
+    p {
+      @include mobile {
+        margin-top: -35px;
+      }
+      @include custom(340px, 556px ) {
+        margin-top: -70px;
+      }
+    }
+    .bioAnim {
+      position: absolute;
+  
+      @include custom(340px, 556px ) {
+        width: 145px !important;
+        left: 25px;
+        bottom: 20px !important;
+      }
+  
+      @include mobile {
+        margin: auto;
+        width: 125px;
+        left: 25px;
+        bottom: 10px;
+      }
+      @include tablet-mini {
+        width: 160px;
+        right: 40px;
+      }
+      @include tablet {
+        width: 220px;
+        right: 40px;
+      }
+      
+      @include desktop {
+        width: 290px;
+        right: 100px;
+      }
+    }
     @include mobile {
-      margin-top: -30px;
-      max-width: 100%;
+      min-height: 650px;
+      padding: 0 25px;
     }
     @include tablet-mini {
-      max-width: 65%;
-    }
-    @include desktop {
-      max-width: 65%;
-    }
-  }
-  p {
-    @include mobile {
-      margin-top: -35px;
-    }
-    @include custom(340px, 556px ) {
-      margin-top: -70px;
-    }
-  }
-  .bioAnim {
-    position: absolute;
-
-    @include custom(340px, 556px ) {
-      width: 145px !important;
-      left: 25px;
-      bottom: 20px !important;
-    }
-
-    @include mobile {
-      margin: auto;
-      width: 125px;
-      left: 25px;
-      bottom: 10px;
-    }
-    @include tablet-mini {
-      width: 160px;
-      right: 40px;
+      padding: 0 25px;
     }
     @include tablet {
-      width: 220px;
-      right: 40px;
+      padding: 0 50px;
     }
     
     @include desktop {
-      width: 290px;
-      right: 100px;
+      padding: 0 100px;
     }
   }
-  @include mobile {
-    min-height: 650px;
-    padding: 0 25px;
-  }
-  @include tablet-mini {
-    padding: 0 25px;
-  }
-  @include tablet {
-    padding: 0 50px;
-  }
-  
-  @include desktop {
-    padding: 0 100px;
-  }
+
 }
