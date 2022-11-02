@@ -73,7 +73,7 @@ export default function Footer() {
               <Be />
             </a>
 
-            <a target={'_blank'} href='https://api.whatsapp.com/send?phone=576014813202&text=Hello'>
+            <a target={'_blank'} href='https://api.whatsapp.com/send?phone=573214444727&text=Hello'>
               <Whatsapp />
             </a>
           </div>
