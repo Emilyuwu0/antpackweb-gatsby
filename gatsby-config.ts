@@ -7,6 +7,12 @@ const config: GatsbyConfig = {
     `gatsby-plugin-pnpm`,
     `gatsby-plugin-image`,
     {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -100
+      }
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         icon: `src/assets/images/favIcon.png`,

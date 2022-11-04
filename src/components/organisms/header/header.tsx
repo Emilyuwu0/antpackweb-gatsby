@@ -1,5 +1,6 @@
 import Icon from '@/components/atoms/icon/icon'
 import React, { useEffect, useRef, useState } from 'react'
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 import './header.scss'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -12,7 +13,7 @@ interface headerProps {
 
 export default function Header({ color }: headerProps) {
   gsap.registerPlugin(ScrollTrigger);
-  const [isOpen, setisOpen] = useState(false)
+  const [isOpen, setisOpen] = useState('')
 
   useEffect(() => {
 
@@ -23,50 +24,43 @@ export default function Header({ color }: headerProps) {
     <div className='headerContainer'>
       {
         color === 'white' ?
-          <div onClick={() => setisOpen(!isOpen)} className='menuAnim'>
+          <div onClick={() => setisOpen('show')} className='menuAnim'>
             <Icon type='menu' />
           </div>
           : color === 'black' ?
-            <div onClick={() => setisOpen(!isOpen)} className='menuAnim2'>
+            <div onClick={() => setisOpen('show')} className='menuAnim2'>
               <Icon type='menu2' />
             </div>
             : <></>
       }
-      <div className={`navigation-menu ${isOpen ? "backdrop" : "" || !isOpen ? "hidden" : ""}`}>
-        <div className={`${isOpen ? "backdrop2" : "" || !isOpen ? "hidden2" : ""}`}>
-          <div className={`${isOpen ? "content" : "" || !isOpen ? "hidden2" : ""}`}>
-            {
-              isOpen ?
-                <>
-                  <div onClick={() => setisOpen(!isOpen)} className='close'>
-                    <Title level='h1' text='X' />
-                  </div>
-                  <ul>
-                    <li>
-                      <Link onClick={() => setisOpen(false)} to='#ourCraft'>
-                        <Title level='h3' text='Our craft' />
-                      </Link>
-                    </li>
-                    <li>
-                      <Link onClick={() => setisOpen(false)} to='#services'>
-                        <Title level='h3' text='Services' />
-                      </Link>
-                    </li>
-                    <li>
-                      <Link onClick={() => setisOpen(false)} to='#company'>
-                        <Title level='h3' text='Company' />
-                      </Link>
-                    </li>
-                    <li>
-                      <Link onClick={() => setisOpen(false)} to='#contact'>
-                        <Title level='h3' text='Contact' />
-                      </Link>
-                    </li>
-                  </ul>
-                </>
-                :
-                <></>
-            }
+      <div style={{ display: 'none' }} className={`${isOpen === 'show' ? "backdrop" : "" || isOpen === 'hidden' ? "hidden" : ""}`}>
+        <div className={`${isOpen === 'show' ? "backdrop2" : "" || isOpen === 'hidden' ? "hidden2" : ""}`}>
+          <div className='content'>
+            <div onClick={() => setisOpen('hidden')} className='close'>
+              <Title level='h1' text='X' />
+            </div>
+            <ul>
+              <li>
+                <Link onClick={() => setisOpen('hidden')} to='#ourCraft'>
+                  <Title level='h3' text='Our craft' />
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => setisOpen('hidden')} to='#services'>
+                  <Title level='h3' text='Services' />
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => setisOpen('hidden')} to='#company'>
+                  <Title level='h3' text='Company' />
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => setisOpen('hidden')} to='#contact'>
+                  <Title level='h3' text='Contact' />
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
