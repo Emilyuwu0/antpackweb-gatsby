@@ -29,9 +29,9 @@ export default function SliderInfo({ name, categories, date, colorText, url }: s
           ))
         }
       </ul>
-      <div className='buttonWrapper'>
+      {/* <div className='buttonWrapper'>
         <Button color={`${colorText}`} to={url || ''} text='VIEW' />
-      </div>
+      </div> */}
     </div>
   )
 }
