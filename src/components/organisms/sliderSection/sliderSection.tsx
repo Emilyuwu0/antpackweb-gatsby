@@ -16,7 +16,7 @@ import SwiperCore, {
 import SliderInfo from '@/components/molecules/sliderInfo/sliderInfo'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
 
-SwiperCore.use([Pagination, Navigation, Mousewheel]);
+SwiperCore.use([Pagination, Navigation, Mousewheel, Autoplay]);
 
 const mubico = ['Platform', 'Website']
 
@@ -24,77 +24,147 @@ export default function SliderSection() {
   const { height, width } = useWindowDimensions();
   return (
     <div className='bannerSliderWrapper'>
-      <Swiper
-        className='banner_slider_container'
-        direction={'vertical'}
-        mousewheel={{
-          "releaseOnEdges": true,
-          "forceToAxis": true,
-        }}
-        preventInteractionOnTransition={true}
-        onSliderMove={() => console.log('movee')}
-        // onSlideChange={() => alert('slide change')}
-        onSlideChangeTransitionStart={(e) => {
-          console.log(e)
-          let currentImage: any = document.querySelector('.backgroundImage')
-          if (e.activeIndex === 0) {
-            currentImage.style.scale = 1
-          } else {
-            currentImage.style.scale = 2
-          }
-          // console.log(currentImage)
-        }}
-        pagination={{
-          "clickable": true,
-        }}
-      >
-        <SwiperSlide className='bannerSlider'>
-          {
-            //window.innerWidth < 560 ?
-            width < 560 ?
+      {
+        width <= 500 ?
+          <Swiper
+            className='banner_slider_container'
+            direction={'vertical'}
+            // preventInteractionOnTransition
+            grabCursor={false}
+            freeMode={false}
+            loop
+            autoplay={{
+              delay: 4000
+            }}
+            allowTouchMove={false}
+            onSliderMove={() => console.log('movee')}
+            // onSlideChange={() => alert('slide change')}
+            onSlideChangeTransitionStart={(e) => {
+              console.log(e)
+              let currentImage: any = document.querySelector('.backgroundImage')
+              if (e.activeIndex === 0) {
+                currentImage.style.scale = 1
+              } else {
+                currentImage.style.scale = 2
+              }
+              // console.log(currentImage)
+            }}
+            pagination={{
+              "clickable": true,
+            }}
+          >
+            <SwiperSlide className='bannerSlider'>
               <SliderInfo date='2022' name='mubicoWhite' colorText='white' categories={mubico} />
-              :
+              <StaticImage
+                src='../../../assets/images/sliderImages/mubicoScreen.jpg'
+                alt="A dinosaur"
+                placeholder="blurred"
+                className='backgroundImage'
+              />
+            </SwiperSlide>
+
+            <SwiperSlide className='bannerSlider'>
+              <SliderInfo date='2022' name='hbo' colorText='white' categories={mubico} />
+              <StaticImage
+                src='../../../assets/images/sliderImages/hboScreen.jpg'
+                alt="A dinosaur"
+                placeholder="blurred"
+                className='backgroundImage'
+              />
+            </SwiperSlide>
+
+
+            <SwiperSlide className='bannerSlider'>
+              <SliderInfo date='2022' name='verdi' colorText='white' categories={mubico} />
+              <StaticImage
+                src='../../../assets/images/sliderImages/verdiScreen.jpg'
+                alt="A dinosaur"
+                placeholder="blurred"
+                className='backgroundImage'
+              />
+            </SwiperSlide>
+
+            <SwiperSlide className='bannerSlider'>
+              <SliderInfo date='2022' name='siigo' colorText='white' categories={mubico} />
+              <StaticImage
+                src='../../../assets/images/sliderImages/sigoScreen.jpg'
+                alt="A dinosaur"
+                placeholder="blurred"
+                className='backgroundImage'
+              />
+            </SwiperSlide>
+          </Swiper >
+          :
+          <Swiper
+            className='banner_slider_container'
+            direction={'vertical'}
+            mousewheel={{
+              "releaseOnEdges": true,
+              "forceToAxis": true,
+            }}
+            // preventInteractionOnTransition
+            grabCursor={false}
+            freeMode={false}
+            allowTouchMove={true}
+            onSliderMove={() => console.log('movee')}
+            // onSlideChange={() => alert('slide change')}
+            onSlideChangeTransitionStart={(e) => {
+              console.log(e)
+              let currentImage: any = document.querySelector('.backgroundImage')
+              if (e.activeIndex === 0) {
+                currentImage.style.scale = 1
+              } else {
+                currentImage.style.scale = 2
+              }
+              // console.log(currentImage)
+            }}
+            pagination={{
+              "clickable": true,
+            }}
+          >
+            <SwiperSlide className='bannerSlider'>
               <SliderInfo date='2022' name='mubico' colorText='black' categories={mubico} />
-          }
-          <StaticImage
-            src='../../../assets/images/sliderImages/mubicoScreen.jpg'
-            alt="A dinosaur"
-            placeholder="blurred"
-            className='backgroundImage'
-          />
-        </SwiperSlide>
 
-        <SwiperSlide className='bannerSlider'>
-          <SliderInfo date='2022' name='hbo' colorText='white' categories={mubico} />
-          <StaticImage
-            src='../../../assets/images/sliderImages/hboScreen.jpg'
-            alt="A dinosaur"
-            placeholder="blurred"
-            className='backgroundImage'
-          />
-        </SwiperSlide>
+              <StaticImage
+                src='../../../assets/images/sliderImages/mubicoScreen.jpg'
+                alt="A dinosaur"
+                placeholder="blurred"
+                className='backgroundImage'
+              />
+            </SwiperSlide>
+
+            <SwiperSlide className='bannerSlider'>
+              <SliderInfo date='2022' name='hbo' colorText='white' categories={mubico} />
+              <StaticImage
+                src='../../../assets/images/sliderImages/hboScreen.jpg'
+                alt="A dinosaur"
+                placeholder="blurred"
+                className='backgroundImage'
+              />
+            </SwiperSlide>
 
 
-        <SwiperSlide className='bannerSlider'>
-          <SliderInfo date='2022' name='verdi' colorText='white' categories={mubico} />
-          <StaticImage
-            src='../../../assets/images/sliderImages/verdiScreen.jpg'
-            alt="A dinosaur"
-            placeholder="blurred"
-            className='backgroundImage'
-          />
-        </SwiperSlide>
+            <SwiperSlide className='bannerSlider'>
+              <SliderInfo date='2022' name='verdi' colorText='white' categories={mubico} />
+              <StaticImage
+                src='../../../assets/images/sliderImages/verdiScreen.jpg'
+                alt="A dinosaur"
+                placeholder="blurred"
+                className='backgroundImage'
+              />
+            </SwiperSlide>
 
-        <SwiperSlide className='bannerSlider'>
-          <SliderInfo date='2022' name='siigo' colorText='white' categories={mubico} />
-          <StaticImage
-            src='../../../assets/images/sliderImages/sigoScreen.jpg'
-            alt="A dinosaur"
-            placeholder="blurred"
-            className='backgroundImage'
-          />
-        </SwiperSlide>
-      </Swiper >
+            <SwiperSlide className='bannerSlider'>
+              <SliderInfo date='2022' name='siigo' colorText='white' categories={mubico} />
+              <StaticImage
+                src='../../../assets/images/sliderImages/sigoScreen.jpg'
+                alt="A dinosaur"
+                placeholder="blurred"
+                className='backgroundImage'
+              />
+            </SwiperSlide>
+          </Swiper >
+      }
     </div>
   )
 }
