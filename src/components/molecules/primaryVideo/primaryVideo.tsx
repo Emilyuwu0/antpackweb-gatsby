@@ -1,5 +1,5 @@
 import VideoMutedButton from '@/components/atoms/videoMutedButton/videoMutedButton';
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import './primaryVideo.scss'
 
 interface primaryVideoProps {
@@ -11,6 +11,7 @@ interface primaryVideoProps {
 
 export default function PrimaryVideo({ src, src2 }: primaryVideoProps) {
   const first = useRef<any>(null)
+
   return (
     <div className='primaryVideoContainer'>
       <video ref={first} className='video' loop autoPlay muted playsInline>

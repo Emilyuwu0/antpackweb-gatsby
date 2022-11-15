@@ -356,7 +356,7 @@ export default function BrandsSeccion() {
   return (
     <div className='brandsSeccionWrapper'>
       <div className='brandsSeccionContainer'>
-        <Title level='h1' text='These brand <span>trust us</span>' />
+        <Title level='h1' text='These brands <span>trust us</span>' />
         {/* <div className='brandsFilterMenu'>
 
           <BrandButton text='Financial' toDO={() => setCategorie('Financial')} />
