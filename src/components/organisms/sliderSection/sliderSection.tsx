@@ -10,11 +10,13 @@ import SwiperCore, {
   Pagination,
   Navigation,
   Autoplay,
+  Mousewheel,
+  Parallax
 } from 'swiper';
 import SliderInfo from '@/components/molecules/sliderInfo/sliderInfo'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
 
-SwiperCore.use([Pagination, Navigation, Autoplay]);
+SwiperCore.use([Pagination, Navigation, Mousewheel]);
 
 const mubico = ['Platform', 'Website']
 
@@ -25,22 +27,25 @@ export default function SliderSection() {
       <Swiper
         className='banner_slider_container'
         direction={'vertical'}
-        grabCursor={false}
-        allowTouchMove={false}
+        mousewheel={{
+          "releaseOnEdges": true,
+          "forceToAxis": true,
+        }}
+        preventInteractionOnTransition={true}
         onSliderMove={() => console.log('movee')}
         // onSlideChange={() => alert('slide change')}
-        onSlideChangeTransitionStart={() => {
+        onSlideChangeTransitionStart={(e) => {
+          console.log(e)
           let currentImage: any = document.querySelector('.backgroundImage')
-          currentImage.style.scale = 2
-          console.log(currentImage)
+          if (e.activeIndex === 0) {
+            currentImage.style.scale = 1
+          } else {
+            currentImage.style.scale = 2
+          }
+          // console.log(currentImage)
         }}
-        loop={true}
         pagination={{
           "clickable": true,
-        }}
-        autoplay={{
-          delay: 5500,
-          disableOnInteraction: true,
         }}
       >
         <SwiperSlide className='bannerSlider'>
