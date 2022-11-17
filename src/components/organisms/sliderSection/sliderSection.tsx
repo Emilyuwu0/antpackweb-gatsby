@@ -18,7 +18,8 @@ import useWindowDimensions from '@/hooks/useWindowDimensions'
 
 SwiperCore.use([Pagination, Navigation, Mousewheel, Autoplay]);
 
-const mubico = ['Platform', 'Website']
+const defaultData = ['Platform', 'Website']
+const mubico = ['Platform', 'Metaverse']
 
 export default function SliderSection() {
   const { height, width } = useWindowDimensions();
@@ -55,6 +56,7 @@ export default function SliderSection() {
           >
             <SwiperSlide className='bannerSlider'>
               <SliderInfo date='2022' name='mubicoWhite' colorText='white' categories={mubico} />
+              <SliderInfo date='2022' name='mubicoWhite' colorText='white' categories={mubico} />
               <StaticImage
                 src='../../../assets/images/sliderImages/mubicoScreen.jpg'
                 alt="A dinosaur"
@@ -64,7 +66,7 @@ export default function SliderSection() {
             </SwiperSlide>
 
             <SwiperSlide className='bannerSlider'>
-              <SliderInfo date='2022' name='hbo' colorText='white' categories={mubico} />
+              <SliderInfo date='2022' name='hbo' colorText='white' categories={defaultData} />
               <StaticImage
                 src='../../../assets/images/sliderImages/hboScreen.jpg'
                 alt="A dinosaur"
@@ -75,7 +77,7 @@ export default function SliderSection() {
 
 
             <SwiperSlide className='bannerSlider'>
-              <SliderInfo date='2022' name='verdi' colorText='white' categories={mubico} />
+              <SliderInfo date='2022' name='verdi' colorText='white' categories={defaultData} />
               <StaticImage
                 src='../../../assets/images/sliderImages/verdiScreen.jpg'
                 alt="A dinosaur"
@@ -85,7 +87,7 @@ export default function SliderSection() {
             </SwiperSlide>
 
             <SwiperSlide className='bannerSlider'>
-              <SliderInfo date='2022' name='siigo' colorText='white' categories={mubico} />
+              <SliderInfo date='2022' name='siigo' colorText='white' categories={defaultData} />
               <StaticImage
                 src='../../../assets/images/sliderImages/sigoScreen.jpg'
                 alt="A dinosaur"
@@ -134,7 +136,7 @@ export default function SliderSection() {
             </SwiperSlide>
 
             <SwiperSlide className='bannerSlider'>
-              <SliderInfo date='2022' name='hbo' colorText='white' categories={mubico} />
+              <SliderInfo date='2022' name='hbo' colorText='white' categories={defaultData} />
               <StaticImage
                 src='../../../assets/images/sliderImages/hboScreen.jpg'
                 alt="A dinosaur"
@@ -145,7 +147,7 @@ export default function SliderSection() {
 
 
             <SwiperSlide className='bannerSlider'>
-              <SliderInfo date='2022' name='verdi' colorText='white' categories={mubico} />
+              <SliderInfo date='2022' name='verdi' colorText='white' categories={defaultData} />
               <StaticImage
                 src='../../../assets/images/sliderImages/verdiScreen.jpg'
                 alt="A dinosaur"
@@ -155,7 +157,7 @@ export default function SliderSection() {
             </SwiperSlide>
 
             <SwiperSlide className='bannerSlider'>
-              <SliderInfo date='2022' name='siigo' colorText='white' categories={mubico} />
+              <SliderInfo date='2022' name='siigo' colorText='white' categories={defaultData} />
               <StaticImage
                 src='../../../assets/images/sliderImages/sigoScreen.jpg'
                 alt="A dinosaur"

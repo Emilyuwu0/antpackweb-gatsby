@@ -61,7 +61,7 @@ export default function Footer() {
 
         <div className='linksContainer'>
           <div>
-            <a target={'_blank'} href='https://www.facebook.com/AntPackCo/'>
+            <a target={'_blank'} href='https://co.linkedin.com/company/antpack'>
               <Linkedin />
             </a>
 
