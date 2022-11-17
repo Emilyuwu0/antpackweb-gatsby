@@ -26,11 +26,14 @@
         width: 100%;
         justify-content: start;
       }
-      
       @include tablet-mini {
         justify-content: start;
         width: 90%;
       }
+      @include desktop {
+        justify-content: center;
+      }
+      
   
     }
     .cardsWrapper::-webkit-scrollbar {
