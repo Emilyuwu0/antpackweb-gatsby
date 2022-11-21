@@ -21,41 +21,35 @@ export default function Cards({ cardIcon, title, properties, hoverText }: cardsP
   const htmlParce = new HtmlToReactParser();
 
   const handleMouseOver = () => {
-    setIsHovering(true);
+    setIsHovering(!isHovering);
   };
 
-  const handleMouseOut = () => {
-    setIsHovering(false);
-  };
   return (
     <>
-      <div key={'key' + title} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} className='cardContainer'>
-        {
-          !isHovering
-            ?
-            <>
-              <div className='title_wrapper'>
-                <Icon type={cardIcon} />
-                <h3>{title}</h3>
-              </div>
-              {
-                properties.map((prop: string, index: number) => {
-                  return (
-                    <p className='propertiesText' key={`paragraph${index}`}>{prop}</p>
-                  )
-                })
-              }
-            </>
-            :
-            <>
-              <CardAnim type={cardIcon} />
-              <p>
-                {htmlParce.parse(hoverText)}
-              </p>
-            </>
-        }
-      </div>
-
+      {
+        !isHovering
+          ?
+          <div key={'key' + title} className='cardContainer' onClick={handleMouseOver} >
+            <div className='title_wrapper'>
+              <Icon type={cardIcon} />
+              <h3>{title}</h3>
+            </div>
+            {
+              properties.map((prop: string, index: number) => {
+                return (
+                  <p className='propertiesText' key={`paragraph${index}`}>{prop}</p>
+                )
+              })
+            }
+          </div>
+          :
+          <div style={{ backgroundColor: 'white', paddingTop: '50px' }} key={'key' + title} className='cardContainer' onClick={handleMouseOver}>
+            <CardAnim type={cardIcon} />
+            <p style={{ fontFamily: 'Satoshi-Light', fontSize: '14px', color: 'black', textTransform: 'initial' }}>
+              {htmlParce.parse(hoverText)}
+            </p>
+          </div>
+      }
     </>
   )
 }
