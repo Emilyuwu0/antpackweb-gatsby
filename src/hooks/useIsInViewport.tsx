@@ -7,23 +7,27 @@ const options = {
   threshold: 1,
 }
 
-
+// new IntersectionObserver(([entry]) =>
+//   setIsIntersecting(entry.isIntersecting), options
+// ),
 export default function useIsInViewport(ref: any) {
+  const customIntersectionObserver = typeof IntersectionObserver !== 'undefined' && IntersectionObserver;
   const [isIntersecting, setIsIntersecting] = useState(false);
 
   const observer = useMemo(
-    () =>
-      new IntersectionObserver(([entry]) =>
-        setIsIntersecting(entry.isIntersecting), options
-      ),
+    () => {
+      if (customIntersectionObserver) {
+        return new customIntersectionObserver(([entry]) => setIsIntersecting(entry.isIntersecting), options)
+      }
+    },
     [],
   );
 
   useEffect(() => {
-    observer.observe(ref.current);
+    observer?.observe(ref.current);
     console.log(observer)
     return () => {
-      observer.disconnect();
+      observer?.disconnect();
     };
   }, [ref, observer]);
 
