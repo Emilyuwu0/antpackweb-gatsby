@@ -1,0 +1,60 @@
+@charset "UTF-8";
+@import "src/styles/mixins.scss";
+@import "src/styles/variables.scss";
+
+.wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  min-height: 900px;
+  .heroImage {
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+  }
+  .heroContainer {            
+    padding-top: 184px;
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      margin-left: 100px;
+      .heroParagraph {
+        display: inline-block;
+        color: #000;
+        font-family: 'Satoshi-Medium';
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 10px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+      .heroTitle {
+        display: inline-block;
+          font-family: 'Satoshi-Medium';
+          color: #000;
+          font-size: 72px;
+          font-weight: 900;
+          letter-spacing: 40px;
+          text-transform: uppercase
+      }
+      @include desktop {
+        marginTop: 80px;
+        marginLeft: 240px;
+      }
+      @include tablet {
+        marginTop: 120px;
+        .hero-paragraph {
+            font-size: 16px;
+        }
+      }
+      @include tablet-mini {
+        min-height: 400px;
+        height: 600px;
+    
+      }
+    }
+    @include tablet-mini {
+      height: 400px;
+      // padding: 80px 0;
+    }
+}
