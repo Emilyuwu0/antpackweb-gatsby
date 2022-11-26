@@ -1,0 +1,44 @@
+.dragComponentProjectContainer {
+  padding: 50px 0;
+  min-height: 500px;
+  .swiperMobile .swiper-slide-active {
+    .page {
+      position: absolute;
+      top: 10;
+      width: 220px !important;
+      margin: auto;
+      transition-duration: 1s;
+    }
+  }
+
+  .swiperDesk {
+    .swiper-slide {
+      width: 300px;
+      .page {
+        width: 270px;
+      }
+    }
+  }
+
+  .swiperMobile {
+    display: none;
+    .swiper-slide {
+      height: 500px;
+      width: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto 0;
+      transition-duration: 1s;
+      .activo {
+        display: none;
+      }
+
+      .page {
+        width: 169px;
+        margin: auto;
+        // scale: 2
+      }
+    }
+  }
+}
