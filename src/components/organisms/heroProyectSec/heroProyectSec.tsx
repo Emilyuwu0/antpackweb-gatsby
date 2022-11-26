@@ -10,12 +10,7 @@ export default function HeroProyectSec({ data, enterHoverText, leaveHoverText }:
         data
           ?
           <div className="wrapper" style={{ backgroundImage: 'url(../../../assets/images/sliderImages/mubicoScreen.jpg)' }} data-scroll>
-            <StaticImage
-              src='../../../assets/images/sliderImages/mubicoScreen.jpg'
-              alt=""
-              style={{ position: 'absolute' }}
-              className='heroImage'
-            />
+            {data.img}
             <div className="heroContainer">
               <div
                 onMouseEnter={enterHoverText}
