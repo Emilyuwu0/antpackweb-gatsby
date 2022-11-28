@@ -1,3 +1,5 @@
+import Footer from '@/components/organisms/footer/footer'
+import Header from '@/components/organisms/header/header'
 import HeroProyectSec from '@/components/organisms/heroProyectSec/heroProyectSec'
 import ProjectsTemplate from '@/components/templates/defaultLayout/projectsTemplate'
 import { StaticImage } from 'gatsby-plugin-image'
@@ -5,10 +7,11 @@ import React from 'react'
 
 const data = {
   header: {
+    colorText: '#fff',
     paragraph: 'website design',
-    title: 'redflag swimwear',
+    title: 'redflag <br/> swimwear',
     img: <StaticImage
-      src='../../../assets/images/sliderImages/mubicoScreen.jpg'
+      src='../../assets/images/projects/Banner_principalRF.png'
       alt=""
       style={{ position: 'absolute' }}
       className='heroImage'
@@ -58,7 +61,7 @@ const data = {
     subtitle: 'overview',
     title: 'PLATFORM',
     img: <StaticImage
-      src='../../../assets/images/sliderImages/mubicoScreen.jpg'
+      src='../../assets/images/projects/Web-redflag.png'
       alt=""
       className="image"
       style={{ height: '200vh' }}
@@ -68,7 +71,7 @@ const data = {
   },
   section_5: {
     img: <StaticImage
-      src='../../../assets/images/sliderImages/mubicoScreen.jpg'
+      src='../../assets/images/projects/redflagBanner3.png'
       alt=""
       style={{ position: 'absolute' }}
       className='img'
@@ -83,41 +86,78 @@ const data = {
   section_7: {
     background_color: '#000000',
     data: [
-      <StaticImage
-        src='../../../assets/images/sliderImages/mubicoScreen.jpg'
-        alt=""
-        className='page'
-      />,
-      <StaticImage
-        src='../../../assets/images/sliderImages/mubicoScreen.jpg'
-        alt=""
-        className='page'
-      />,
-      <StaticImage
-        src='../../../assets/images/sliderImages/mubicoScreen.jpg'
-        alt=""
-        className='page'
-      />,
-      <StaticImage
-        src='../../../assets/images/sliderImages/mubicoScreen.jpg'
-        alt=""
-        className='page'
-      />,
-      <StaticImage
-        src='../../../assets/images/sliderImages/mubicoScreen.jpg'
-        alt=""
-        className='page'
-      />,
+      {
+        img: <StaticImage
+          src='../../assets/images/projects/mobile1redflag_.png'
+          alt=""
+          className='page'
+        />
+      },
+      {
+        img: <StaticImage
+          src='../../assets/images/projects/mobile2redflag_.png'
+          alt=""
+          className='page'
+        />
+      },
+      {
+        img: <StaticImage
+          src='../../assets/images/projects/mobile3redflag_.png'
+          alt=""
+          className='page'
+        />
+      },
+      {
+        img: <StaticImage
+          src='../../assets/images/projects/mobile4redflag_.png'
+          alt=""
+          className='page'
+        />
+      },
+      {
+        img: <StaticImage
+          src='../../assets/images/projects/mobile5redflag_.png'
+          alt=""
+          className='page'
+        />
+      },
+      {
+        img: <StaticImage
+          src='../../assets/images/projects/mobile6redflag_.png'
+          alt=""
+          className='page'
+        />
+      },
+      {
+        img: <StaticImage
+          src='../../assets/images/projects/mobile7redflag_.png'
+          alt=""
+          className='page'
+        />
+      },
+      {
+        img: <StaticImage
+          src='../../assets/images/projects/mobile8redflag_.png'
+          alt=""
+          className='page'
+        />
+      },
     ]
   },
   section_8: {
     title: 'Next project',
     subtitle: 'Captiva',
-    img: '/images/section_8_img.png',
-    content: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod' +
-      'tempor incididunt ut labore et dolore magna aliqua.</p>',
+    img: <StaticImage
+      src='../../assets/images/projects/BannerPrincipalCap.png'
+      alt=""
+      style={{ position: 'absolute' }}
+      className='img'
+    />,
+    content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod <br />
+      tempor incididunt ut labore et dolore magna aliqua.`,
     background_color: '#FFF100',
-    link: '#'
+    link: '#',
+    arrowColor: 'white'
   }
 }
 

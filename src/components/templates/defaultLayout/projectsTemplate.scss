@@ -86,6 +86,19 @@
         color: #202230;
       }
     }
+    .infoContent {
+      h3 {
+        font-family: $FontSecondary;
+        color: #ef0c75;
+      }
+      ul {
+        margin: 30px 0;
+        li {
+          margin: 10px 0;
+          font-family: $FontNormal;
+        }
+      }
+    }
   }
 
   .projSection2 {
@@ -106,7 +119,7 @@
     .content {
       margin-left: 205px;
       h1 {
-        font-family: FontSecondary;
+        font-family: $FontSecondary;
         font-weight: bold;
         font-size: 48px;
         line-height: 114.5%;
@@ -116,7 +129,7 @@
         margin-bottom: 67px;
       }
       h2 {
-        font-family: FontSecondary;
+        font-family: $FontNormal;
         font-weight: bold;
         font-size: 18px;
         line-height: 24px;
@@ -126,7 +139,7 @@
         margin-bottom: 16px;
       }
       p {
-        font-family: FontSecondary;
+        font-family: $FontNormal;
         font-style: normal;
         font-weight: normal;
         font-size: 24px;
@@ -300,9 +313,9 @@
   }
 
   .projSection6 {
-    margin-bottom: 130px;
     margin-top: 130px;
     padding: 0 100px;
+    padding-bottom: 130px;
     display: grid;
     grid-template-columns: 33.33% 33.33% 33.33%;
     .content {
@@ -329,5 +342,66 @@
       margin-left: 80px;
     }
   }
-  
+
+  .projSection8 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: 662px;
+    width: 100%;
+    padding: 60px 100px;
+
+    h1 {
+      font-family: $FontSecondary;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 64px;
+      line-height: 69px;
+      margin-bottom: 40px;
+    }
+    .content {
+      margin-left: 105px;
+
+      h2 {
+        font-family: $FontSecondary;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 52px;
+        line-height: 70px;
+        margin-bottom: 24px;
+      }
+      p {
+        font-family: $FontNormal;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 27px;
+        color: #202230;
+        margin-bottom: 70px;
+      }
+    }
+    img {
+      width: 715px;
+      height: 468px;
+      margin-left: auto;
+    }
+    .icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      background: #000;
+      border-radius: 50%;
+      font-size: 40px;
+      padding: 15px;
+      width: 85px;
+      height: 85px;
+      fill: none;
+      svg {
+        fill: inherit !important;
+        path {
+          fill: inherit !important;
+        }
+      }
+    }
+  }
 }

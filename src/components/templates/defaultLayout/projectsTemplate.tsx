@@ -1,10 +1,14 @@
 import DragComponentProject from '@/components/organisms/DragComponentProject/DragComponentProject';
+import Footer from '@/components/organisms/footer/footer';
+import Header from '@/components/organisms/header/header';
 import HeroProyectSec from '@/components/organisms/heroProyectSec/heroProyectSec'
 import { StaticImage } from 'gatsby-plugin-image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import React, { useEffect, useRef, useState } from 'react'
 import Marquee from 'react-fast-marquee';
+
+import Arrow from '../../../assets/icons/arrow.svg'
 
 const HtmlToReactParser = require('html-to-react').Parser;
 
@@ -204,9 +208,9 @@ export default function ProjectsTemplate({ projectInfo }: projectsTemplateProps)
     if (show) {
       console.log('entro')
       gsap.to(contain.querySelector('.cursor-dot-outline'), {
-        backgroundImage: 'url(/images/dragIcon.svg)',
-        backgroundPosition: 'center',
-        backgroundSize: 'contain',
+        // backgroundImage: 'url(../../../assets/images/dragIcon.svg)',
+        // backgroundPosition: 'center',
+        // backgroundSize: 'contain',
       })
     } else {
       console.log('salio')
@@ -216,113 +220,83 @@ export default function ProjectsTemplate({ projectInfo }: projectsTemplateProps)
     }
   }
   return (
-    <div className='wrapper' ref={containerRef}>
-      <div ref={dotOutline} className={'cursor-dot-outline'}></div>
-      <div ref={dot} className={'cursor-dot'}></div>
+    <>
+      <Header color='black' />
+      <div className='wrapper' ref={containerRef}>
+        <div ref={dotOutline} className={'cursor-dot-outline'}></div>
+        <div ref={dot} className={'cursor-dot'}></div>
 
-      <HeroProyectSec data={projectInfo.header}
-        enterHoverText={() => {
-          onPositionTitle.current = true
-          toggleCursorTitles()
-        }
-        }
-
-        leaveHoverText={() => {
-          onPositionTitle.current = false
-          toggleCursorTitles()
-        }} />
-
-      <div className="projSection1">
-        <div className='projectsNavbar'>
-          <button>BACK</button>
-          <button>SCROLL</button>
-          <button>NEXT</button>
-        </div>
-        <div className='content'>
-          <div
-            onMouseEnter={() => {
-              onPositionTitle.current = true
-              toggleCursorTitles()
-            }}
-            onMouseLeave={() => {
-              onPositionTitle.current = false
-              toggleCursorTitles()
-            }}
-          >
-            <h2 data-scroll data-scroll-repeat data-scroll-class='text_anim' >{htmlToReactParser.parse(projectInfo?.section_1.subtitle)}</h2>
-            <h1 data-scroll data-scroll-repeat data-scroll-class='text_anim'>{htmlToReactParser.parse(projectInfo?.section_1.title)}</h1>
-          </div>
-
-          <p>{htmlToReactParser.parse(projectInfo?.section_1.paragraph)}</p>
-        </div>
-        <div className='infoContent'>
-          {
-            projectInfo?.section_1.data.map((item: any) => {
-              return (
-                <>
-                  <h3 data-scroll data-scroll-repeat data-scroll-class='text_anim'>{item.title}</h3>
-                  <ul>
-                    {
-                      item.elements.map((elem: any) => {
-                        return (
-                          <>
-                            <li data-scroll data-scroll-repeat data-scroll-class='text_anim'>{elem.title}</li>
-                          </>
-                        )
-                      })
-                    }
-                  </ul>
-                </>
-              )
-            })
+        <HeroProyectSec data={projectInfo.header}
+          enterHoverText={() => {
+            onPositionTitle.current = true
+            toggleCursorTitles()
           }
-        </div>
-      </div>
+          }
 
-      <div className="projSection2">
-        <StaticImage
-          src='../../../assets/images/sliderImages/mubicoScreen.jpg'
-          alt=""
-          className="parallaxImageSec2"
-        />
-      </div>
+          leaveHoverText={() => {
+            onPositionTitle.current = false
+            toggleCursorTitles()
+          }} />
 
-      <div className="projSection3">
-        <div>
-          <div>
-            <div className='content'>
-              <div
-                onMouseEnter={() => {
-                  onPositionTitle.current = true
-                  toggleCursorTitles()
-                }}
-                onMouseLeave={() => {
-                  onPositionTitle.current = false
-                  toggleCursorTitles()
-                }}
-              >
-                <h2 data-scroll data-scroll-repeat data-scroll-class='text_anim'>{projectInfo?.section_3.subtitle}</h2>
-                <h1 data-scroll data-scroll-repeat data-scroll-class='text_anim'>{projectInfo?.section_3.title}</h1>
-              </div>
-              <div data-scroll data-scroll-repeat data-scroll-class='text_anim' dangerouslySetInnerHTML={{ __html: projectInfo?.section_3.content || '' }}></div>
+        <div className="projSection1">
+          <div className='projectsNavbar'>
+            <button>BACK</button>
+            <button>SCROLL</button>
+            <button>NEXT</button>
+          </div>
+          <div className='content'>
+            <div
+              onMouseEnter={() => {
+                onPositionTitle.current = true
+                toggleCursorTitles()
+              }}
+              onMouseLeave={() => {
+                onPositionTitle.current = false
+                toggleCursorTitles()
+              }}
+            >
+              <h2 >{htmlToReactParser.parse(projectInfo?.section_1.subtitle)}</h2>
+              <h1 >{htmlToReactParser.parse(projectInfo?.section_1.title)}</h1>
             </div>
+
+            <p>{htmlToReactParser.parse(projectInfo?.section_1.paragraph)}</p>
+          </div>
+          <div className='infoContent'>
+            {
+              projectInfo?.section_1.data.map((item: any) => {
+                return (
+                  <>
+                    <h3 >{item.title}</h3>
+                    <ul>
+                      {
+                        item.elements.map((elem: any) => {
+                          return (
+                            <>
+                              <li >{elem.title}</li>
+                            </>
+                          )
+                        })
+                      }
+                    </ul>
+                  </>
+                )
+              })
+            }
           </div>
         </div>
-      </div>
 
-      <div className="projSection4"
-        style={{ backgroundColor: projectInfo?.section_4.background_color }}
-        onMouseEnter={() => {
-          bgChange(projectInfo?.section_4.background_color_hover || '')
-        }}
-        onMouseLeave={() => {
-          bgChange(projectInfo?.section_4.background_color || '')
-        }}>
-        {
-          projectInfo?.section_4.scrollImage
-            ?
-            <>
-              <div className="content">
+        <div className="projSection2">
+          <StaticImage
+            src='../../../assets/images/sliderImages/mubicoScreen.jpg'
+            alt=""
+            className="parallaxImageSec2"
+          />
+        </div>
+
+        <div className="projSection3">
+          <div>
+            <div>
+              <div className='content'>
                 <div
                   onMouseEnter={() => {
                     onPositionTitle.current = true
@@ -332,32 +306,31 @@ export default function ProjectsTemplate({ projectInfo }: projectsTemplateProps)
                     onPositionTitle.current = false
                     toggleCursorTitles()
                   }}
-                  className='titles'>
-                  <h2 data-scroll data-scroll-repeat data-scroll-class='text_anim' >{projectInfo?.section_4.subtitle}</h2>
-                  <h1 data-scroll data-scroll-repeat data-scroll-class='text_anim'>{projectInfo?.section_4.title}</h1>
+                >
+                  <h2 >{projectInfo?.section_3.subtitle}</h2>
+                  <h1 >{projectInfo?.section_3.title}</h1>
                 </div>
+                <p>
+                  {htmlToReactParser.parse(projectInfo?.section_3.content)}
+                </p>
               </div>
+            </div>
+          </div>
+        </div>
 
-              <div className="page">
-                <div className='scrollImages' style={{ display: 'flex' }}>
-                  {/* <PhonesSliders over={mouseOverEvent} out={mouseOutEvent} enterPointer={() => pointerChangeScroll(true)} leavePointer={() => pointerChangeScroll(false)} data={projectInfo.section_4.images}></PhonesSliders> */}
-                  {/* {
-                                    projectInfo.section_4.images.map((item: any) => {
-                                        return (
-                                        <>
-                                        <CardMedia component="img" image={item?.img} className="page" alt="AntPack" />                           
-                                        </>
-                                        )
-                                        })
-                                    } */}
-
-                </div>
-              </div>
-            </>
-            :
-            <>
-              <div id='sec4_fixed_title' className="content">
-                <div data-scroll data-scroll-sticky data-scroll-offset='0, 700' data-scroll-target="#sec4" className='titles'>
+        <div className="projSection4"
+          style={{ backgroundColor: projectInfo?.section_4.background_color }}
+          onMouseEnter={() => {
+            bgChange(projectInfo?.section_4.background_color_hover || '')
+          }}
+          onMouseLeave={() => {
+            bgChange(projectInfo?.section_4.background_color || '')
+          }}>
+          {
+            projectInfo?.section_4.scrollImage
+              ?
+              <>
+                <div className="content">
                   <div
                     onMouseEnter={() => {
                       onPositionTitle.current = true
@@ -367,98 +340,152 @@ export default function ProjectsTemplate({ projectInfo }: projectsTemplateProps)
                       onPositionTitle.current = false
                       toggleCursorTitles()
                     }}
-                  >
-                    <h2 data-scroll data-scroll-repeat data-scroll-class='text_anim' >{projectInfo?.section_4.subtitle}</h2>
-                    <h1 data-scroll data-scroll-repeat data-scroll-class='text_anim'>{projectInfo?.section_4.title}</h1>
+                    className='titles'>
+                    <h2  >{projectInfo?.section_4.subtitle}</h2>
+                    <h1 >{projectInfo?.section_4.title}</h1>
+                  </div>
+                </div>
+
+                <div className="page">
+                  <div className='scrollImages' style={{ display: 'flex' }}>
+                    {/* <PhonesSliders over={mouseOverEvent} out={mouseOutEvent} enterPointer={() => pointerChangeScroll(true)} leavePointer={() => pointerChangeScroll(false)} data={projectInfo.section_4.images}></PhonesSliders> */}
+                    {/* {
+                                    projectInfo.section_4.images.map((item: any) => {
+                                        return (
+                                        <>
+                                        <CardMedia component="img" image={item?.img} className="page" alt="AntPack" />                           
+                                        </>
+                                        )
+                                        })
+                                    } */}
 
                   </div>
                 </div>
-              </div>
-              <div className="page">
-
-                <div onMouseEnter={() => pointerChangeScroll(true)} onMouseLeave={() => pointerChangeScroll(false)} className='bg'>
-                  {projectInfo?.section_4.img}
-                </div>
-              </div>
-            </>
-        }
-      </div>
-
-
-      <div className="resultsSection"
-        onMouseEnter={() => {
-          onPositionTitle.current = true
-          toggleCursorTitles()
-        }}
-        onMouseLeave={() => {
-          onPositionTitle.current = false
-          toggleCursorTitles()
-        }}
-      >
-        <Marquee
-          speed={100}
-          className='sliderText'
-          gradient={false}
-          delay={-20}
-          style={{ cursor: 'none' }}
-        >
-          <div className="ctnTitle">
-            <label className='text1'>
-              Results Results Results
-            </label>
-            <label className='text2'>
-              Results &nbsp; Results &nbsp; Results &nbsp;
-            </label>
-          </div>
-        </Marquee>
-
-        <Marquee
-          speed={50}
-          className='sliderTextMobile'
-          gradient={false}
-          delay={-20}
-        >
-          <div className="ctn-title">
-            <label className='text-2'>
-              Result  Result  Result  &nbsp;
-            </label>
-          </div>
-        </Marquee>
-      </div>
-
-      <div className="projSection5">
-        <div>
-          {projectInfo?.section_5.img}
-        </div>
-        <div>
-          <p>
-            {htmlToReactParser.parse(projectInfo?.section_5.content)}
-          </p>
-        </div>
-      </div>
-
-      <div className="projSection6">
-        {
-          projectInfo?.section_6.map((item: any) => {
-            return (
+              </>
+              :
               <>
-                <div className='content'>
-                  <h1 data-scroll data-scroll-repeat data-scroll-class='text_anim'>{item.title}</h1>
-                  <h2 data-scroll data-scroll-repeat data-scroll-class='text_anim'>{item.subtitle}</h2>
+                <div id='sec4_fixed_title' className="content">
+                  <div data-scroll data-scroll-sticky data-scroll-offset='0, 700' data-scroll-target="#sec4" className='titles'>
+                    <div
+                      onMouseEnter={() => {
+                        onPositionTitle.current = true
+                        toggleCursorTitles()
+                      }}
+                      onMouseLeave={() => {
+                        onPositionTitle.current = false
+                        toggleCursorTitles()
+                      }}
+                    >
+                      <h2  >{projectInfo?.section_4.subtitle}</h2>
+                      <h1 >{projectInfo?.section_4.title}</h1>
+
+                    </div>
+                  </div>
+                </div>
+                <div className="page">
+
+                  <div onMouseEnter={() => pointerChangeScroll(true)} onMouseLeave={() => pointerChangeScroll(false)} className='bg'>
+                    {projectInfo?.section_4.img}
+                  </div>
                 </div>
               </>
-            )
-          })
-        }
-      </div>
+          }
+        </div>
 
-      <div onMouseEnter={() => pointerChangeScroll(true)} onMouseLeave={() => pointerChangeScroll(false)} className="projSection7">
-        <DragComponentProject over={mouseOverEvent} out={mouseOutEvent} data={projectInfo?.section_7}></DragComponentProject>
-      </div>
 
-      <div>
-        <h1>hey</h1>
+        <div className="resultsSection"
+          onMouseEnter={() => {
+            onPositionTitle.current = true
+            toggleCursorTitles()
+          }}
+          onMouseLeave={() => {
+            onPositionTitle.current = false
+            toggleCursorTitles()
+          }}
+        >
+          <Marquee
+            speed={100}
+            className='sliderText'
+            gradient={false}
+            delay={-20}
+            style={{ cursor: 'none' }}
+          >
+            <div className="ctnTitle">
+              <label className='text1'>
+                Results Results Results
+              </label>
+              <label className='text2'>
+                Results &nbsp; Results &nbsp; Results &nbsp;
+              </label>
+            </div>
+          </Marquee>
+
+          <Marquee
+            speed={50}
+            className='sliderTextMobile'
+            gradient={false}
+            delay={-20}
+          >
+            <div className="ctn-title">
+              <label className='text-2'>
+                Result  Result  Result  &nbsp;
+              </label>
+            </div>
+          </Marquee>
+        </div>
+
+        <div className="projSection5">
+          <div>
+            {projectInfo?.section_5.img}
+          </div>
+          <div>
+            <p>
+              {htmlToReactParser.parse(projectInfo?.section_5.content)}
+            </p>
+          </div>
+        </div>
+
+        <div className="projSection6">
+          {
+            projectInfo?.section_6.map((item: any) => {
+              return (
+                <>
+                  <div className='content'>
+                    <h1 >{item.title}</h1>
+                    <h2 >{item.subtitle}</h2>
+                  </div>
+                </>
+              )
+            })
+          }
+        </div>
+
+        <div onMouseEnter={() => pointerChangeScroll(true)} onMouseLeave={() => pointerChangeScroll(false)} className="projSection7">
+          <DragComponentProject over={mouseOverEvent} out={mouseOutEvent} data={projectInfo?.section_7}></DragComponentProject>
+        </div>
+
+
+        <div className="projSection8" style={{ backgroundColor: projectInfo?.section_8.background_color, color: projectInfo?.section_8.color }}>
+
+          <div>
+            <h1 >{projectInfo?.section_8.title}</h1>
+            <div className='content'>
+              <h2  >{projectInfo?.section_8.subtitle}</h2>
+              <p style={{ color: projectInfo?.section_8.color }}> {htmlToReactParser.parse(projectInfo?.section_8.content)}</p>
+              <a href={projectInfo?.section_8.link}>
+
+                <div style={{ background: projectInfo?.section_8.arrowBg, fill: projectInfo?.section_8.arrowColor }} className='icon'>
+                  <Arrow />
+                </div>
+              </a>
+            </div>
+          </div>
+          <div>
+            {projectInfo?.section_8.img}
+          </div>
+        </div>
+        <Footer />
       </div>
-    </div>
+    </>
   )
 }
