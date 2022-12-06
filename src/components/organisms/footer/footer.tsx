@@ -5,6 +5,7 @@ import Linkedin from '../../../assets/icons/Linkedin.svg'
 import Whatsapp from '../../../assets/icons/whatsappIco.svg'
 import Intagram from '../../../assets/icons/instagram.svg'
 import Be from '../../../assets/icons/be.svg'
+import { OutboundLink } from "gatsby-plugin-google-gtag"
 
 import LogoAntpackBlack from '../../../assets/icons/LogoAntpackBlack.svg'
 
@@ -16,24 +17,24 @@ export default function Footer() {
       <div className='seccion1'>
         <ul>
           <li>
-            <Link to='#ourCraft'>
+            <OutboundLink href='#ourCraft'>
               <Title level='h3' text='Our craft' />
-            </Link>
+            </OutboundLink>
           </li>
           <li>
-            <Link to='#services'>
+            <OutboundLink href='#services'>
               <Title level='h3' text='Services' />
-            </Link>
+            </OutboundLink>
           </li>
           <li>
-            <Link to='#company'>
+            <OutboundLink href='#company'>
               <Title level='h3' text='Company' />
-            </Link>
+            </OutboundLink>
           </li>
           <li>
-            <Link to='#contact'>
+            <OutboundLink href='#contact'>
               <Title level='h3' text='Contact' />
-            </Link>
+            </OutboundLink>
           </li>
         </ul>
         <div className='logo'>
@@ -44,7 +45,7 @@ export default function Footer() {
         <div className='infoSec'>
           <div className='InfoText'>
             <Title level='h4' text='BOGOTÁ' />
-            <p> <a href="tel:+57(601)4813202">+57 (601)4813202</a>
+            <p> <OutboundLink href="tel:+57(601)4813202">+57 (601)4813202</OutboundLink>
               <br />
               Calle 100 #13-21 OF. 701</p>
           </div>
@@ -52,7 +53,7 @@ export default function Footer() {
           <div className='InfoText'>
             <Title level='h4' text='ANTPACK' />
             <p>
-              <a href='mailto:hello@antpack.co'>hello@antpack.co</a>
+              <OutboundLink href='mailto:hello@antpack.co'>hello@antpack.co</OutboundLink>
             </p>
           </div>
         </div>
@@ -61,21 +62,21 @@ export default function Footer() {
 
         <div className='linksContainer'>
           <div>
-            <a target={'_blank'} href='https://co.linkedin.com/company/antpack'>
+            <OutboundLink target={'_blank'} href='https://co.linkedin.com/company/antpack'>
               <Linkedin />
-            </a>
+            </OutboundLink>
 
-            <a target={'_blank'} href='https://www.instagram.com/ant.pack/'>
+            <OutboundLink target={'_blank'} href='https://www.instagram.com/ant.pack/'>
               <Intagram />
-            </a>
+            </OutboundLink>
 
-            <a target={'_blank'} href='https://www.behance.net/antpack'>
+            <OutboundLink target={'_blank'} href='https://www.behance.net/antpack'>
               <Be />
-            </a>
+            </OutboundLink>
 
-            <a target={'_blank'} href='https://api.whatsapp.com/send?phone=573214444727&text=Hello'>
+            <OutboundLink target={'_blank'} href='https://api.whatsapp.com/send?phone=573214444727&text=Hello'>
               <Whatsapp />
-            </a>
+            </OutboundLink>
           </div>
 
           {/* <div className='terms'>

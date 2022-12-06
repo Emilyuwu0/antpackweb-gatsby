@@ -4,6 +4,7 @@ import { AnchorLink } from "gatsby-plugin-anchor-links";
 import './header.scss'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { OutboundLink } from "gatsby-plugin-google-gtag"
 import { Link } from 'gatsby';
 import Title from '@/components/atoms/title/title';
 
@@ -41,24 +42,24 @@ export default function Header({ color }: headerProps) {
             </div>
             <ul>
               <li>
-                <Link onClick={() => setisOpen('hidden')} to='#ourCraft'>
+                <OutboundLink onClick={() => setisOpen('hidden')} href='#ourCraft'>
                   <Title level='h3' text='Our craft' />
-                </Link>
+                </OutboundLink>
               </li>
               <li>
-                <Link onClick={() => setisOpen('hidden')} to='#services'>
+                <OutboundLink onClick={() => setisOpen('hidden')} href='#services'>
                   <Title level='h3' text='Services' />
-                </Link>
+                </OutboundLink>
               </li>
               <li>
-                <Link onClick={() => setisOpen('hidden')} to='#company'>
+                <OutboundLink onClick={() => setisOpen('hidden')} href='#company'>
                   <Title level='h3' text='Company' />
-                </Link>
+                </OutboundLink>
               </li>
               <li>
-                <Link onClick={() => setisOpen('hidden')} to='#contact'>
+                <OutboundLink onClick={() => setisOpen('hidden')} href='#contact'>
                   <Title level='h3' text='Contact' />
-                </Link>
+                </OutboundLink>
               </li>
             </ul>
           </div>
