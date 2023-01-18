@@ -15,14 +15,18 @@ import SwiperCore, {
 } from 'swiper';
 import SliderInfo from '@/components/molecules/sliderInfo/sliderInfo'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
+import { useTranslation } from 'react-i18next'
 
 SwiperCore.use([Pagination, Navigation, Mousewheel, Autoplay]);
 
-const defaultData = ['Platform', 'Website']
-const mubico = ['Platform', 'Metaverse']
 
 export default function SliderSection() {
   const { height, width } = useWindowDimensions();
+
+  const [t] = useTranslation('global')
+
+  const defaultData = [t('SliderSection.platform'), t('SliderSection.website')]
+  const mubico = [t('SliderSection.platform'), t('SliderSection.metaverse')]
   return (
     <div className='bannerSliderWrapper'>
       {

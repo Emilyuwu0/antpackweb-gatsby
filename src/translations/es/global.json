@@ -1,0 +1,35 @@
+{
+  "hero": {
+    "title": "Creamos y comercializamos <span> tecnología </span> con artesanía y sencillez para transformar empresas, resolver sus problemas y mejorar la vida de las personas."
+  },
+  "cards": {
+    "title": "<span> Creamos tecnología que tiene sentido </span> y asegúrate de que el mundo lo vea",
+    "card1": {
+      "title": "code"
+    },
+    "card2": {
+      "title": "websites"
+    },
+    "card3": {
+      "title": "marketing"
+    },
+    "card4": {
+      "title": "Antpack lab"
+    }
+  },
+
+  "HomeBioSeccion": {
+    "title": "Somos soñadores con <span className='primary'>hambre</span> de <span>conocimiento</span> y un loco <span className='primary'>impulso</span> de <span>ejecución.</span>",
+    "paragraph": "Nuestro equipo cuenta con más de 60 <span> estrategas, diseñadores de productos y experiencias, desarrolladores multidisciplinarios, evaluadores, redactores, especialistas en marketing digital y optimizadores </span> distribuidos en 15 ciudades con una pasión común por crear productos hermosos."
+  },
+
+  "SliderSection": {
+    "platform": "Plataforma",
+    "website": "Web",
+    "metaverse": "Metaverso"
+  },
+
+  "contactButton": {
+    "text": "CONTÁCTANOS"
+  }
+}

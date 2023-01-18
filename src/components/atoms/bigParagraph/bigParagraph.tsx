@@ -9,6 +9,7 @@ interface titleProps {
 
 export default function BigParagraph({ text }: titleProps) {
   const htmlParce = new HtmlToReactParser();
+
   return (
     <p className='bigParagraph'>{htmlParce.parse(text)}</p>
   )

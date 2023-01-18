@@ -12,6 +12,12 @@ import ApproachSeccion from '@/components/organisms/approachSeccion/approachSecc
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+import i18next from 'i18next';
+import { I18nextProvider } from 'react-i18next'
+
+import globalES from '../translations/es/global.json'
+import globalEN from '../translations/en/global.json'
+
 import '../styles/home.scss'
 import { useEffect, useRef, useState } from 'react';
 import Footer from '@/components/organisms/footer/footer';
@@ -19,6 +25,7 @@ import Header from '@/components/organisms/header/header';
 import useIsInViewport from '@/hooks/useIsInViewport';
 import { SEO } from '@/components/SEO/Seo';
 import { Script } from 'gatsby';
+import Partners from '@/components/organisms/partners/partners';
 
 export default function Home() {
 
@@ -129,13 +136,24 @@ export default function Home() {
   }, [isInViewport0, isInViewport1, isInViewport2, isInViewport3, isInViewport4, isInViewport5, isInViewport6, isInViewport7])
 
 
-
-
+  i18next.init({
+    interpolation: { escapeValue: false },
+    lng: 'es',
+    resources: {
+      es: {
+        global: globalES
+      },
+      en: {
+        global: globalEN
+      },
+    }
+  })
 
   return (
     <>
-      <SEO title="Antpack">
-        <Script type="application/ld+json">{`
+      <I18nextProvider i18n={i18next}>
+        <SEO title="Antpack">
+          <Script type="application/ld+json">{`
             <cript>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -147,45 +165,50 @@ export default function Home() {
             <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3QWL64"
             height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         `}</Script>
-      </SEO>
-      <div className='mainWrapper'>
-        <div ref={container0} className='child'>
-          <Header color={menuColor} />
-          <HeroSeccion />
-        </div>
+        </SEO>
+        <div className='mainWrapper'>
+          <div ref={container0} className='child'>
+            <Header color={menuColor} />
+            <HeroSeccion />
+          </div>
 
-        <div ref={container1} className='child'>
-          <VideoSeccion />
-        </div>
+          <div ref={container1} className='child'>
+            <VideoSeccion />
+          </div>
 
-        <div ref={container2} id='services' className='child'>
-          <HomeCardsSeccion />
-        </div>
+          <div ref={container2} id='services' className='child'>
+            <HomeCardsSeccion />
+          </div>
 
-        <div ref={container3} id='company' className='child'>
-          <HomeBioSeccion />
-        </div>
+          <div ref={container3} id='company' className='child'>
+            <HomeBioSeccion />
+          </div>
 
-        <div ref={container4} id='ourCraft' className='child'>
-          <SliderSection />
-        </div>
+          <div ref={container4} id='ourCraft' className='child'>
+            <SliderSection />
+          </div>
 
-        <div ref={container5} className='child'>
-          <ApproachSeccion />
-        </div>
+          <div ref={container5} className='child'>
+            <ApproachSeccion />
+          </div>
 
-        <div ref={container6} className='child'>
-          <BrandsSeccion />
-        </div>
+          <div ref={container6} className='child'>
+            <BrandsSeccion />
+          </div>
 
-        <div ref={container7} id='contact' className='child'>
-          <ContactSeccion />
-        </div>
+          <div ref={container7} id='contact' className='child'>
+            <ContactSeccion />
+          </div>
 
-        <div className='child'>
-          <Footer />
+          <div className='child'>
+            <Footer />
+          </div>
+
+          <div className='child'>
+            <Partners />
+          </div>
         </div>
-      </div>
+      </I18nextProvider>
     </>
   );
 }

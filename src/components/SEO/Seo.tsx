@@ -1,5 +1,7 @@
 import React from "react"
 
+import { useTranslation } from 'react-i18next'
+
 interface SeoProps {
   title: string,
   description?: string,
@@ -8,6 +10,8 @@ interface SeoProps {
 }
 
 export const SEO = ({ title, description, pathname, children }: SeoProps) => {
+
+  const [t, i18n] = useTranslation('global')
 
   const seo = {
     title: title || 'antpack',

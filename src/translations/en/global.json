@@ -1,0 +1,35 @@
+{
+  "hero": {
+    "title": "We create and market <span> technology </span> with craft and simplicity to transform companies, solve their problems, and  better human lives."
+  },
+  "cards": {
+    "title": "<span>We build technology that makes sense</span> and make sure the world sees it",
+    "card1": {
+      "title": "code"
+    },
+    "card2": {
+      "title": "websites"
+    },
+    "card3": {
+      "title": "marketing"
+    },
+    "card4": {
+      "title": "Antpack lab"
+    }
+  },
+
+  "HomeBioSeccion": {
+    "title": "We are dreamers with a <span className='primary'>hunger</span> for <span>knowledge</span> and a crazy <span className='primary'>drive</span> for <span>execution.</span>",
+    "paragraph": "Our team has more than 60 <span> strategists, product and experience designers, multi-disciplinary developers, testers, copywriters, digital marketers, and optimizers </span> distributed across 15 cities with a common passion for building beautiful products."
+  },
+
+  "SliderSection": {
+    "platform": "Platform",
+    "website": "Website",
+    "metaverse": "Metaverse"
+  },
+
+  "contactButton": {
+    "text": "CONTACT US"
+  }
+}

@@ -40,9 +40,13 @@
       display: none;
     }
     .homeCardsTitle {
+      display: flex;
+      justify-content: center;
       text-align: center;
       padding: 40px 0;
       color: white;
+      width: 90%;
+      margin: auto;
       span {
         color: #EF0C75;
       }
