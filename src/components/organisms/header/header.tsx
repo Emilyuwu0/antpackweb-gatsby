@@ -6,8 +6,9 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { OutboundLink } from "gatsby-plugin-google-gtag"
 import { Link } from 'gatsby';
-import Title from '@/components/atoms/title/title';
 
+import Title from '@/components/atoms/title/title';
+import LenguageIcon from '../../../assets/icons/language.svg'
 
 import { useTranslation } from 'react-i18next'
 
@@ -21,13 +22,21 @@ export default function Header({ color }: headerProps) {
 
   const [t, i18n] = useTranslation('global')
 
-
+  console.log(i18n)
 
   return (
     <div className='headerContainer'>
-      <div>
-        <button onClick={() => i18n.changeLanguage('es')}>ES</button>
-        <button onClick={() => i18n.changeLanguage('en')}>EN</button>
+      <div className='lenguageButtons'>
+        <LenguageIcon />
+        {
+          i18n.language === 'es'
+            ?
+            <button onClick={() => i18n.changeLanguage('en')}>EN</button>
+            : i18n.language === 'en'
+              ?
+              <button onClick={() => i18n.changeLanguage('es')}>ES</button>
+              : <></>
+        }
       </div>
       {
         color === 'white' ?

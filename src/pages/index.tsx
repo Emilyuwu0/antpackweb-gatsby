@@ -138,7 +138,7 @@ export default function Home() {
 
   i18next.init({
     interpolation: { escapeValue: false },
-    lng: 'es',
+    lng: 'en',
     resources: {
       es: {
         global: globalES

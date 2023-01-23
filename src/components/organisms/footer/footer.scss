@@ -133,10 +133,11 @@
         display: flex;
         padding: 12px;
         justify-content: space-between;
-        align-items: flex-end;
+    
         .terms {
           @include mobile {
             margin-top: 10px;
+            margin-left: 10px;
           }
           @include tablet {
             margin-bottom: 0px;
