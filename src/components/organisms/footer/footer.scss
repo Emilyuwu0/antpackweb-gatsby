@@ -3,211 +3,219 @@
 @import "src/styles/variables.scss";
 
 .footerContainer {
-  background-color: #FFF100;
-  display: flex;
-  box-sizing: border-box;
   position: relative;
-  .seccion1 {
+  background-color: #FFF100;
+  .footerWrapper {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    .logo {
-      @include mobile {
-        display: none;
+    box-sizing: border-box;
+    position: relative;
+    width: 90%;
+    margin: auto;
+    .seccion1 {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .logo {
+        @include mobile {
+          position: absolute;
+          bottom: 40px;
+        }
+        @include tablet-mini {
+          position: relative;
+        }
       }
+      ul {
+        margin-bottom: 50px;
+        li {
+          h3, a {
+            font-family: Satoshi-Bold;
+            font-weight: 500;
+            text-decoration: none;
+            color: black;
+            margin-bottom: 30px;
+            @include mobile {
+              font-size: 24px;
+            }
+            
+            @include tablet-mini {
+              
+            }
+            
+            @include tablet {
+            }
+            
+            @include desktop {
+              font-size: 30px;
+            }
+          }
+        }
+      }
+      @include mobile {
+        width: 70%;
+      }
+      
       @include tablet-mini {
-        position: relative;
+        width: 25%;
+        justify-content: space-evenly;
+      }
+      
+      @include tablet {
+        width: 40%;
+      }
+      
+      @include desktop {
+        width: 60%;
       }
     }
-    ul {
-      li {
-        h3, a {
-          font-family: Satoshi-Bold;
-          font-weight: 500;
-          text-decoration: none;
-          color: black;
-          margin-bottom: 30px;
+    .seccion2 {
+      position: relative;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+  
+      .infoSec {
+        display: flex;
+        @include mobile {
+          flex-direction: column;
+        }
+      }
+      .InfoText {
+        display: inline-block;
+        padding: 30px 14px;
+        padding-top: 0;
+        
+        h4 {
+          font-weight: bold;
+          margin-bottom: 17px;
           @include mobile {
-            font-size: 24px;
+            font-size: 16px;
           }
           
           @include tablet-mini {
-            
+            font-size: 18px;
           }
           
           @include tablet {
           }
           
           @include desktop {
-            font-size: 30px;
+            font-size: 24px;
           }
         }
+        p {
+          font-family: Satoshi-Regular;
+          line-height: 25px;
+          max-width: 300px;
+          @include mobile {
+            font-size: 14px;
+          }
+          
+          @include tablet-mini {
+            font-size: 16px;
+          }
+          
+          @include tablet {
+          }
+          
+          @include desktop {
+            font-size: 18px;
+          }
+        }
+        a {
+          color: black;
+          text-decoration: none;
+        }
       }
-    }
-    @include mobile {
-      width: 70%;
-      padding: 15px;
-    }
-    
-    @include tablet-mini {
-      width: 25%;
-      padding: 20px;
-      justify-content: space-evenly;
-    }
-    
-    @include tablet {
-      width: 40%;
-    }
-    
-    @include desktop {
-      width: 60%;
-      padding: 100px 200px;
-    }
-  }
-  .seccion2 {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    
-    .logo {
-      display: none;
-      margin-left: 20px;
-      @include mobile {
-        display: block;
-      }
-    }
-
-    .infoSec {
-      display: flex;
-    }
-    .InfoText {
-      display: inline-block;
-      padding: 30px 14px;
-      padding-top: 0;
       
-      h4 {
-        font-weight: bold;
-        margin-bottom: 17px;
-        @include mobile {
-          font-size: 16px;
+      .linksContainer {
+        display: flex;
+        padding: 12px;
+        justify-content: space-between;
+        align-items: flex-end;
+        .terms {
+          @include mobile {
+            margin-top: 10px;
+          }
+          @include tablet {
+            margin-bottom: 0px;
+          }
         }
+        @include mobile {
+          width: 100%;
+          margin-top: 40px;
+          flex-direction: column;
         
+        }
         @include tablet-mini {
-          font-size: 18px;
+          width: 100%;
+          padding-top: 30px;
         }
-        
-        @include tablet {
-        }
-        
         @include desktop {
-          font-size: 24px;
+          font-size: 12px;
         }
-      }
-      p {
-        font-family: Satoshi-Regular;
-        line-height: 25px;
-        max-width: 300px;
-        @include mobile {
-          font-size: 14px;
+        svg {
+          margin: 5px;
         }
         
-        @include tablet-mini {
-          font-size: 16px;
-        }
-        
-        @include tablet {
-        }
-        
-        @include desktop {
+        a {
+          font-family: Satoshi-Regular;
           font-size: 18px;
-        }
-      }
-      a {
-        color: black;
-        text-decoration: none;
-      }
-    }
-
-    hr {
-      width: 100%;
-      border:solid 0.5px black;
-      @include mobile {
-        display: block;
-      }
-      @include tablet-mini {
-        display: none;
-      }
-    }
-    
-    .linksContainer {
-      display: flex;
-      padding: 12px;
-      padding-right: 50px;
-      justify-content: space-between;
-      .terms {
-        @include mobile {
-          margin-bottom: 30px;
-        }
-        @include tablet {
-          margin-bottom: 0px;
+          text-decoration: none;
+          color: black;
         }
       }
       @include mobile {
         width: 100%;
-        flex-direction: column-reverse;
+        height: 100px;
       }
+      
       @include tablet-mini {
-        width: 100%;
-        padding-top: 30px;
+        width: 75%;
       }
+      
+      @include tablet {
+      }
+      
       @include desktop {
-        font-size: 12px;
-      }
-      svg {
-        margin: 5px;
-      }
-      
-      a {
-        font-family: Satoshi-Regular;
-        font-size: 18px;
-        text-decoration: none;
-        color: black;
+        font-size: 24px;
       }
     }
     @include mobile {
-      width: 100%;
+      padding-top: 50px;
+      flex-direction: row;
+      height: 400px;
+      overflow: hidden;
     }
     
     @include tablet-mini {
-      width: 75%;
+      padding-top: 80px;
+      padding-bottom: 40px;
     }
     
     @include tablet {
+  
     }
     
     @include desktop {
-      font-size: 24px;
+      padding-top: 100px;
+      padding-bottom: 40px;
+      height: auto;
     }
   }
-  @include mobile {
-    padding-top: 50px;
-    flex-direction: column;
-    height: 700px;
-    overflow: hidden;
-  }
-  
-  @include tablet-mini {
-    padding-top: 50px;
-
-  }
-  
-  @include tablet {
-
-  }
-  
-  @include desktop {
-    height: 90vh;
+  hr {
+    border:solid 0.5px black;
+    @include mobile {
+      display: block;
+      position: absolute;
+      top: 260px;
+      left: 0;
+      right: 0;
+      width: 100vw;
+    }
+    @include tablet-mini {
+      display: none;
+    }
   }
 }
