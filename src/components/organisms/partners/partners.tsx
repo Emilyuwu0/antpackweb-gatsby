@@ -22,7 +22,7 @@ export default function Partners() {
             className='partnersMarque'
           >
             <div className='partnerLogo'>
-              <a href="">
+              <a href="https://www.designrush.com/agency/branding/trends/how-to-measure-brand-awareness" target={'_blank'}>
                 <StaticImage
                   src='../../../assets/images/partnersImages/AccreditedAgency1.png'
                   alt=''
