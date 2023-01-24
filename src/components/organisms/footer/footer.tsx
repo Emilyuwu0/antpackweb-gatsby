@@ -76,7 +76,7 @@ export default function Footer() {
             </div>
 
             <div className='terms'>
-              <Link to='TermsAndPrivacy'>Terms & Privacy</Link>
+              <a target={'_blank'} href='TermsAndPrivacy'>Terms & Privacy</a>
             </div>
 
           </div>
