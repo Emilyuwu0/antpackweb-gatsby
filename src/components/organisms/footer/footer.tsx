@@ -48,11 +48,8 @@ export default function Footer() {
               <Title level='h4' text='BOGOTÁ' />
               <p> <OutboundLink href="tel:+57(601)4813202">+57 (601)4813202</OutboundLink>
                 <br />
-                Calle 100 #13-21 OF. 701</p>
-            </div>
-
-            <div className='InfoText'>
-              <Title level='h4' text='ANTPACK' />
+                Calle 100 #13-21 OF. 701
+              </p>
               <p>
                 <OutboundLink href='mailto:hello@antpack.co'>hello@antpack.co</OutboundLink>
               </p>
@@ -79,7 +76,7 @@ export default function Footer() {
             </div>
 
             <div className='terms'>
-              <Link to=''>Terms & Privacy</Link>
+              <Link to='TermsAndPrivacy'>Terms & Privacy</Link>
             </div>
 
           </div>

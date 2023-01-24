@@ -30,6 +30,7 @@ import NextU from '../../../assets/icons/brands/Next-U.svg'
 import Verdi from '../../../assets/icons/brands/VERDI.svg'
 import ScottBolden from '../../../assets/icons/brands/Logo_ScottBolden.svg'
 import HalfMoon from '../../../assets/icons/brands/HalfMoon.svg'
+import { useTranslation } from 'react-i18next';
 
 
 const brands2 = [
@@ -353,10 +354,12 @@ const brands2 = [
 export default function BrandsSeccion() {
   const [category, setCategorie] = useState<any>('Financial')
 
+  const [t] = useTranslation('global')
+
   return (
     <div className='brandsSeccionWrapper'>
       <div className='brandsSeccionContainer'>
-        <Title level='h1' text='These brands <span>trust us</span>' />
+        <Title level='h1' text={t('BrandsSeccion.title')} />
         {/* <div className='brandsFilterMenu'>
 
           <BrandButton text='Financial' toDO={() => setCategorie('Financial')} />

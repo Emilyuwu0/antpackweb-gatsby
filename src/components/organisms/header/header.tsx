@@ -9,6 +9,7 @@ import { Link } from 'gatsby';
 
 import Title from '@/components/atoms/title/title';
 import LenguageIcon from '../../../assets/icons/language.svg'
+import LenguageIconBlack from '../../../assets/icons/languageBlack.svg'
 
 import { useTranslation } from 'react-i18next'
 
@@ -22,19 +23,27 @@ export default function Header({ color }: headerProps) {
 
   const [t, i18n] = useTranslation('global')
 
-  console.log(i18n)
-
   return (
     <div className='headerContainer'>
       <div className='lenguageButtons'>
-        <LenguageIcon />
+        {
+          color === 'white' ?
+            <div className='menuAnim'>
+              <LenguageIcon />
+            </div>
+            : color === 'black' ?
+              <div className='menuAnim2'>
+                <LenguageIconBlack />
+              </div>
+              : <></>
+        }
         {
           i18n.language === 'es'
             ?
-            <button onClick={() => i18n.changeLanguage('en')}>EN</button>
+            <button style={{ color: (color === 'white' ? 'white' : 'black') }} onClick={() => i18n.changeLanguage('en')}>EN</button>
             : i18n.language === 'en'
               ?
-              <button onClick={() => i18n.changeLanguage('es')}>ES</button>
+              <button style={{ color: (color === 'white' ? 'white' : 'black') }} onClick={() => i18n.changeLanguage('es')}>ES</button>
               : <></>
         }
       </div>

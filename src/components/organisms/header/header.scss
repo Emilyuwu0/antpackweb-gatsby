@@ -19,7 +19,24 @@
     justify-content: end;
     align-items: center;
     margin-right: 30px;
-    button {
+    .menuAnim {
+      animation: menuAnim 2s;
+    }
+    // .menuAnim:hover {
+      //   z-index: 10000;
+      //   position: absolute;
+      //   transition: 1s;
+      //   background-color: black;
+      
+      // }
+      
+      .menuAnim2 {
+        animation: menuAnim 2s;
+      }
+      
+      button {
+      cursor: pointer;
+      transition-duration: 1s;
       background-color: transparent;
       border: none;
       color: white;
