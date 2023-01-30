@@ -14,14 +14,25 @@ import LenguageIconBlack from '../../../assets/icons/languageBlack.svg'
 import { useTranslation } from 'react-i18next'
 
 interface headerProps {
-  color: string
+  color: string,
+  lenguage: string,
+  setLenguage: any
 }
 
-export default function Header({ color }: headerProps) {
+export default function Header({ color, lenguage, setLenguage }: headerProps) {
   gsap.registerPlugin(ScrollTrigger);
   const [isOpen, setisOpen] = useState('')
 
   const [t, i18n] = useTranslation('global')
+
+  useEffect(() => {
+    if (lenguage === 'es') {
+      i18n.changeLanguage('es')
+    } else if (lenguage === 'en') {
+      i18n.changeLanguage('en')
+    }
+  }, [])
+
 
   return (
     <div className='headerContainer'>
@@ -40,10 +51,16 @@ export default function Header({ color }: headerProps) {
         {
           i18n.language === 'es'
             ?
-            <button style={{ color: (color === 'white' ? 'white' : 'black') }} onClick={() => i18n.changeLanguage('en')}>EN</button>
+            <button style={{ color: (color === 'white' ? 'white' : 'black') }} onClick={() => {
+              setLenguage('en')
+              i18n.changeLanguage('en')
+            }}>EN</button>
             : i18n.language === 'en'
               ?
-              <button style={{ color: (color === 'white' ? 'white' : 'black') }} onClick={() => i18n.changeLanguage('es')}>ES</button>
+              <button style={{ color: (color === 'white' ? 'white' : 'black') }} onClick={() => {
+                setLenguage('es')
+                i18n.changeLanguage('es')
+              }}>ES</button>
               : <></>
         }
       </div>
