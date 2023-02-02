@@ -7,10 +7,10 @@ const config: GatsbyConfig = {
     `gatsby-plugin-pnpm`,
     `gatsby-plugin-image`,
     {
-      resolve: "gatsby-plugin-anchor-links",
+      resolve: 'gatsby-plugin-anchor-links',
       options: {
-        offset: -100
-      }
+        offset: -100,
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -28,14 +28,14 @@ const config: GatsbyConfig = {
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [
-          "GA-TRACKING_ID", // Google Analytics / GA
-          "AW-CONVERSION_ID", // Google Ads / Adwords / AW
-          "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
+          'GA-TRACKING_ID', // Google Analytics / GA
+          'AW-CONVERSION_ID', // Google Ads / Adwords / AW
+          'DC-FLOODIGHT_ID', // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
         ],
         // This object gets passed directly to the gtag config command
         // This config will be shared across all trackingIds
         gtagConfig: {
-          optimize_id: "OPT_CONTAINER_ID",
+          optimize_id: 'OPT_CONTAINER_ID',
           anonymize_ip: true,
           cookie_expires: 0,
         },
@@ -46,9 +46,9 @@ const config: GatsbyConfig = {
           // Setting this parameter is also optional
           respectDNT: true,
           // Avoids sending pageview hits from custom paths
-          exclude: ["/preview/**", "/do-not-track/me/too/"],
+          exclude: ['/preview/**', '/do-not-track/me/too/'],
           // Defaults to https://www.googletagmanager.com
-          origin: "YOUR_SELF_HOSTED_ORIGIN",
+          origin: 'YOUR_SELF_HOSTED_ORIGIN',
           // Delays processing pageview events on route update (in milliseconds)
           delayOnRouteUpdate: 0,
         },
@@ -62,31 +62,34 @@ const config: GatsbyConfig = {
           formats: ['auto', 'webp', 'avif'],
           breakpoints: [640, 769, 1024, 1366, 1920],
           backgroundColor: 'transparent',
-        }
-      }
+        },
+      },
     },
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'images',
-        path: `${__dirname}/src/assets/images`
+        name: 'projects',
+        path: `${__dirname}/src/projects`,
       },
-      __key: 'images'
+      __key: 'projects',
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
     },
     {
       resolve: `gatsby-plugin-sass`,
       options: {
-        additionalData: "$env: " + process.env.NODE_ENV + ";",
+        additionalData: '$env: ' + process.env.NODE_ENV + ';',
       },
     },
     {
-      resolve: "gatsby-plugin-react-svg",
+      resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
-          include: /assets/ // See below to configure properly
-        }
-      }
+          include: /assets/, // See below to configure properly
+        },
+      },
     },
   ],
   jsxRuntime: `automatic`,
