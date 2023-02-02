@@ -1,28 +1,46 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql,Link } from 'gatsby';
 import './index.scss';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
 }) {
   const { markdownRemark } = data; // data.markdownRemark holds our post data
   const { frontmatter, html } = markdownRemark;
+  const backgroundHeader = getImage(
+    markdownRemark.frontmatter.backgroundHeaderProject?.childImageSharp,
+  );
   return (
     <div className="containerGeneral">
       <>
-        <div className="containerSections">
+        <div
+          className="containerSections"
+          style={{
+            background: `url(${frontmatter.backgroundHeaderProject.publicURL})`,
+            backgroundRepeat: ` no-repeat`,
+            backgroundSize: `cover`,
+          }}
+        >
           <span className="subtitlePageProduct colorWhiteText">
             {frontmatter.subtitle}
           </span>
           <span className="titlePageProduct colorWhiteText">
             {` `}
             <h1>{frontmatter.title}</h1>
+            {` `}
+
+            {/*    <img
+              src={frontmatter.backgroundHeaderProject.publicURL}
+              alt={frontmatter.title}
+            /> */}
+  
           </span>
         </div>
         <div>
           <div className="gridColumns">
             <span>Back</span>
             <span>Scroll</span>
-            <span>Next</span>
+            <Link to={frontmatter.path}>Next</Link>
           </div>
         </div>
         <div>
@@ -41,37 +59,60 @@ export default function Template({
               </span>
             </div>
             <div className="complementaryText">
-              <span>{frontmatter.complementarySectionTwo}</span>
+              <span className="colorTitles">
+                {frontmatter.complementarySectionTwo}
+              </span>
+              <span className="listStyle complementaryText">
+                {` `}
+                {frontmatter.complementarySectionListItemOne}
+              </span>
+              <span className="listStyle complementaryText">
+                {` `}
+                {frontmatter.complementarySectionListItemTwo}
+              </span>
+              <span className="listStyle colorTitles">
+                {` `}
+                {frontmatter.complementarySectionListItemThree}
+              </span>
+              <span className="listStyle complementaryText">
+                {frontmatter.complementarySectionListItemFour}
+              </span>
+              <span className="listStyle colorTitles">
+                {frontmatter.complementarySectionListItemFive}
+              </span>
+              <span className="listStyle complementaryText">
+                {frontmatter.complementarySectionListItemSix}
+              </span>
             </div>
           </div>
         </div>
         <div className="divContainerImgAlone">img</div>
         <div className="divContainerThree">
           <span className="subtitlePageProduct">
-            {/*     {data.subtitleSectionThree} */}
+            {frontmatter.subtitleSectionThree}
           </span>
           <span className="titleSubtitlePageProduct">
-            {/*   {data.titleSectionThree} */}
+            {frontmatter.titleSectionThree}
           </span>
           <span className="descriptionTitle divContainerThree">
-            {/*            {data.descriptionSectionThree} */}
+            {frontmatter.descriptionSectionThree}
           </span>
         </div>
         <div className="gridTwoColumns divContainerFour colorWhiteText">
           <div>
             <span className="subtitlePageProduct">
               {` `}
-              {/*   {data.subtitleSectionFour} */}
+              {frontmatter.subtitleSectionFour}
             </span>
             <span className="titleSubtitlePageProduct">
               {` `}
-              {/*      {data.titleSectionFour}{' '} */}
+              {frontmatter.titleSectionFour}
+              {` `}
             </span>
           </div>
           <div>2</div>
         </div>
       </>
-      );
     </div>
     /*   <div>
       <div>
@@ -95,6 +136,26 @@ export const pageQuery = graphql`
         titleSectionTwo
         descriptionSectionTwo
         complementarySectionTwo
+        complementarySectionListItemOne
+        complementarySectionListItemTwo
+        complementarySectionListItemThree
+        complementarySectionListItemFour
+        complementarySectionListItemFive
+        complementarySectionListItemSix
+        subtitleSectionThree
+        titleSectionThree
+        descriptionSectionThree
+        subtitleSectionFour
+        titleSectionFour
+        backgroundHeaderProject {
+          childImageSharp {
+            id
+          }
+          size
+          name
+          publicURL
+          relativePath
+        }
       }
     }
   }

@@ -78,6 +78,12 @@ const config: GatsbyConfig = {
       resolve: `gatsby-transformer-remark`,
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/assets`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-sass`,
       options: {
         additionalData: '$env: ' + process.env.NODE_ENV + ';',
