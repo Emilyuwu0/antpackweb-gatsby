@@ -1,15 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './videoMutedButton.scss'
+
+import Volumeup from '../../../assets/icons/volume_up.svg'
+import Volumeoff from '../../../assets/icons/volume_off.svg'
 
 interface videoMutedButtonProps {
   onclick: any
-  text: string
 }
 
-export default function VideoMutedButton({ onclick, text }: videoMutedButtonProps) {
+export default function VideoMutedButton({ onclick }: videoMutedButtonProps) {
+  const [mute, setMute] = useState(false)
   return (
-    <button onClick={onclick} className='videoMutedButton'>
-      {text}
+    <button onClick={() => {
+      onclick()
+      setMute(!mute)
+    }} className='videoMutedButton'>
+      {
+        mute
+          ?
+          <Volumeoff />
+          :
+          <Volumeup />
+      }
     </button>
   )
 }

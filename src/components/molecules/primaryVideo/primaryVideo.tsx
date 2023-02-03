@@ -19,7 +19,7 @@ export default function PrimaryVideo({ src, src2 }: primaryVideoProps) {
         {src2 && <source src={src2} />}
         Your browser does not support the video tag.
       </video>
-      <VideoMutedButton text='mute' onclick={() => {
+      <VideoMutedButton onclick={() => {
         let myVideo: any = first.current;
         if (myVideo) {
           if (myVideo?.muted) {
