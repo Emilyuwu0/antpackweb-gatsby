@@ -2,10 +2,8 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import './index.scss';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-export default function Template({
-  data, // this prop will be injected by the GraphQL query below.
-}) {
-  const { markdownRemark } = data; // data.markdownRemark holds our post data
+export default function Template({ data }) {
+  const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
   const backgroundHeader = getImage(
     markdownRemark.frontmatter.backgroundHeaderProject?.childImageSharp,
