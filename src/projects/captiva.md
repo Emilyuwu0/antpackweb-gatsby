@@ -1,5 +1,5 @@
 ---
-path: "/blog/captiva"
+path: "/projects/captiva"
 date: "2019-06-19"
 title: "Captiva"
 subtitle: "Website Design"

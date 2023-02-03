@@ -12,10 +12,35 @@ export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
   });
 };
 
+/* const path = require(`path`);
+const postTemplate = path.resolve(`src/template/templatePages.tsx`);
+exports.createPages = async ({ actions, graphql }) => {
+  const { data } = await graphql(`
+    query Projects {
+      allMarkdownRemark {
+        nodes {
+          frontmatter {
+            path
+          }
+        }
+      }
+    }
+  `);
+
+  data.allMarkdownRemark.nodes.forEach((node) => {
+    actions.createPages({
+      path: node.frontmatter.path,
+      component: postTemplate,
+      context: { path: node.frontmatter.path }, // additional data can be passed via context
+    });
+    console.log(path);
+  });
+}; */
+
 const path = require(`path`);
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
-  const postTemplate = path.resolve(`src/template/templatePages.js`);
+  const postTemplate = path.resolve(`src/template/templatePages.tsx`);
   return graphql(`
     {
       allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 1000) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql,Link } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import './index.scss';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 export default function Template({
@@ -33,7 +33,6 @@ export default function Template({
               src={frontmatter.backgroundHeaderProject.publicURL}
               alt={frontmatter.title}
             /> */}
-  
           </span>
         </div>
         <div>
