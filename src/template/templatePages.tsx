@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import './index.scss';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-export default function Template({ data }) {
+export default function Template({ data }: any) {
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
   const backgroundHeader = getImage(
