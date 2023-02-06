@@ -1,5 +1,5 @@
 ---
-path: "/blog/redflag"
+path: "/projects/redflag/"
 date: "2019-06-19"
 title: "redflag"
 subtitle: "Website Design"
