@@ -10,6 +10,14 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import React, { useEffect, useRef, useState } from 'react'
 import Marquee from 'react-fast-marquee';
 
+import ProjectsTemplate from '@/components/templates/defaultLayout/projectsTemplate'
+
+import i18next from 'i18next';
+import { I18nextProvider } from 'react-i18next'
+
+import projectsES from '../translations/es/projects.json'
+import projectsEN from '../translations/en/projects.json'
+
 import Arrow from '../assets/icons/arrow.svg'
 
 const HtmlToReactParser = require('html-to-react').Parser;
@@ -18,12 +26,14 @@ const HtmlToReactParser = require('html-to-react').Parser;
 import './projectsTemplate.scss'
 
 
-interface projectsTemplateProps {
+interface projectsProps {
   data: any,
   projectInfo: any,
 }
 
-export default function ProjectsTemplate({ data, projectInfo }: projectsTemplateProps) {
+export default function Projects({ data, projectInfo }: projectsProps) {
+
+  const [lenguage, setLenguage] = useState('en')
 
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
@@ -33,469 +43,175 @@ export default function ProjectsTemplate({ data, projectInfo }: projectsTemplate
 
   const htmlToReactParser = new HtmlToReactParser();
 
-  gsap.registerPlugin(ScrollTrigger);
-
-  const containerRef = useRef<any>(null);
-
-  // setInterval(() => {
-  //     console.log(scroll)
-  // }, 100)
-
-
-  const delay = 18;
-
-  const dot = useRef<any>(null);
-  const dotOutline = useRef<any>(null);
-
-  const [showcursor, setshowcursor] = useState(false)
-
-  const cursorVisible = useRef(true);
-  const cursorEnlarged = useRef(false);
-  const onPositionTitle = useRef(false);
-
-  const endX = useRef<any>(containerRef.current);
-  const endY = useRef<any>(containerRef.current);
-  const _x = useRef(0);
-  const _y = useRef(0);
-
-  const requestRef = useRef<any>(null);
-
-
-  const toggleCursorVisibility = () => {
-    if (cursorVisible.current) {
-      dot.current.style.opacity = 1;
-      dotOutline.current.style.opacity = 1;
-    } else {
-      dot.current.style.opacity = 0;
-      dotOutline.current.style.opacity = 0;
-    }
-  };
-
-  const toggleCursorSize = () => {
-    if (cursorEnlarged.current) {
-      dot.current.style.transform = 'translate(-50%, -50%) scale(0.75)';
-      dotOutline.current.style.transform = 'translate(-50%, -50%) scale(3)';
-
-    } else {
-      dot.current.style.transform = 'translate(-50%, -50%) scale(1)';
-      dotOutline.current.style.transform = 'translate(-50%, -50%) scale(1)';
-    }
-  };
-
-  const toggleCursorTitles = () => {
-    if (onPositionTitle.current) {
-      dot.current.style.transform = 'translate(-50%, -50%) scale(0.75)';
-      dot.current.style.background = 'transparent';
-      dotOutline.current.style.background = 'transparent';
-      dotOutline.current.style.border = 'solid 1px #FFF100';
-      dotOutline.current.style.transform = 'translate(-50%, -50%) scale(2)';
-
-    } else {
-      dot.current.style.transform = 'translate(-50%, -50%) scale(1)';
-      dot.current.style.background = '#FFF100';
-      dotOutline.current.style.border = 'none';
-      dotOutline.current.style.background = '#FFF100';
-      dotOutline.current.style.transform = 'translate(-50%, -50%) scale(1)';
-    }
-  };
-
-  const mouseOverEvent = () => {
-    cursorEnlarged.current = true;
-    toggleCursorSize();
-  };
-
-  const mouseOutEvent = () => {
-    cursorEnlarged.current = false;
-    toggleCursorSize();
-  };
-
-  const mouseEnterEvent = () => {
-    cursorVisible.current = true;
-    toggleCursorVisibility();
-  };
-
-  const mouseLeaveEvent = () => {
-    cursorVisible.current = false;
-    toggleCursorVisibility();
-  };
-
-  const mouseMoveEvent = (e: any) => {
-    cursorVisible.current = true;
-    toggleCursorVisibility();
-
-    endX.current = e.pageX;
-    endY.current = e.pageY;
-
-    dot.current.style.top = endY.current + 'px';
-    dot.current.style.left = endX.current + 'px';
-  };
-
-  const animateDotOutline = () => {
-    _x.current += (endX.current - _x.current) / delay;
-    _y.current += (endY.current - _y.current) / delay;
-
-    dotOutline.current.style.top = _y.current + 'px';
-    dotOutline.current.style.left = _x.current + 'px';
-
-    requestRef.current = requestAnimationFrame(animateDotOutline);
-  };
-
-
-  useEffect(() => {
-    const wrapper: any = containerRef.current;
-
-    wrapper.addEventListener('mousedown', mouseOverEvent);
-    wrapper.addEventListener('mouseup', mouseOutEvent);
-    wrapper.addEventListener('mousemove', mouseMoveEvent);
-    wrapper.addEventListener('mouseenter', mouseEnterEvent);
-    wrapper.addEventListener('mouseleave', mouseLeaveEvent);
-
-    if (dot.current && dotOutline.current) {
-      animateDotOutline();
-    }
-
-    return () => {
-      wrapper.removeEventListener('mousedown', mouseOverEvent);
-      wrapper.removeEventListener('mouseup', mouseOutEvent);
-      wrapper.removeEventListener('mousemove', mouseMoveEvent);
-      wrapper.removeEventListener('mouseenter', mouseEnterEvent);
-      wrapper.removeEventListener('mouseleave', mouseLeaveEvent);
-
-      cancelAnimationFrame(requestRef.current);
-    };
-  }, []);
-
-
-  useEffect(() => {
-
-    const animation = () => {
-      gsap.fromTo('.parallaxImageSec2', {
-        y: -300,
-      }, {
-        y: 300,
-        duration: 5,
-        scrollTrigger: {
-          trigger: '.parallaxImageSec2',
-          start: "top",
-          end: "bottom",
-          scrub: true,
-          markers: true,
+  const data2 = {
+    header: {
+      colorText: '#fff',
+      paragraph: frontmatter.subtitle,
+      title: frontmatter.title,
+      img: frontmatter.backgroundHeaderProject.publicURL
+    },
+    section_1: {
+      subtitle: 'overview',
+      title: 'challenge',
+      paragraph: `REDFLAG wanted to expand their brand presence into other cities, and countries. <br/> <br/>
+        The brand needed a robust e-Commerce platform which could provide fulfillment solutions for their national 
+        and international markets.`,
+      data: [
+        {
+          title: 'SERVICES PROVIDED',
+          elements: [
+            { title: 'Consulting' },
+            { title: 'Web design' },
+            { title: 'Web development' }
+          ]
+        },
+        {
+          title: 'TECHNOLOGIES',
+          elements: [
+            { title: 'Wordpress' },
+            { title: 'MySQL' }
+          ]
+        },
+        {
+          title: 'YEAR',
+          elements: [
+            { title: '2020' }
+          ]
         }
-      })
-
-      gsap.fromTo('.titles', {
-        y: 0,
-      }, {
-        y: 1500,
-        scrollTrigger: {
-          trigger: '.projSection4',
-          start: "top",
-          end: "bottom",
-          scrub: true,
-          markers: true,
-        }
-      })
-    }
-
-    requestAnimationFrame(animation)
-  }, [])
-
-
-
-  //backgroun change color
-
-  const bgChange = (color: string) => {
-    const contain = containerRef.current
-    gsap.to(contain.querySelector('.projSection4'), {
-      backgroundColor: color,
-      duration: 2
-    })
-  }
-
-  const pointerChangeScroll = (show: boolean) => {
-    const contain = containerRef.current
-    if (show) {
-      console.log('entro')
-      gsap.to(contain.querySelector('.cursor-dot-outline'), {
-        // backgroundImage: 'url(../../../assets/images/dragIcon.svg)',
-        // backgroundPosition: 'center',
-        // backgroundSize: 'contain',
-      })
-    } else {
-      console.log('salio')
-      gsap.to(contain.querySelector('.cursor-dot-outline'), {
-        backgroundImage: 'none',
-      })
-    }
-  }
-  return (
-    <>
-      {/* <Header color='black' /> */}
-      <div className='wrapper' ref={containerRef}>
-        <div ref={dotOutline} className={'cursor-dot-outline'}></div>
-        <div ref={dot} className={'cursor-dot'}></div>
-
-        {/* <HeroProyectSec data={projectInfo.header}
-          enterHoverText={() => {
-            onPositionTitle.current = true
-            toggleCursorTitles()
-          }
-          }
-
-          leaveHoverText={() => {
-            onPositionTitle.current = false
-            toggleCursorTitles()
-          }} /> */}
-
-        <div className="projSection1">
-          <div className='projectsNavbar'>
-            <button>BACK</button>
-            <button>SCROLL</button>
-            <button>NEXT</button>
-          </div>
-          <div className='content'>
-            <div
-              onMouseEnter={() => {
-                onPositionTitle.current = true
-                toggleCursorTitles()
-              }}
-              onMouseLeave={() => {
-                onPositionTitle.current = false
-                toggleCursorTitles()
-              }}
-            >
-              <h2 >{htmlToReactParser.parse(projectInfo?.section_1.subtitle)}</h2>
-              <h1 >{htmlToReactParser.parse(projectInfo?.section_1.title)}</h1>
-            </div>
-
-            <p>{htmlToReactParser.parse(projectInfo?.section_1.paragraph)}</p>
-          </div>
-          <div className='infoContent'>
-            {
-              projectInfo?.section_1.data.map((item: any) => {
-                return (
-                  <>
-                    <h3 >{item.title}</h3>
-                    <ul>
-                      {
-                        item.elements.map((elem: any) => {
-                          return (
-                            <>
-                              <li >{elem.title}</li>
-                            </>
-                          )
-                        })
-                      }
-                    </ul>
-                  </>
-                )
-              })
-            }
-          </div>
-        </div>
-
-        <div className="projSection2">
-          <StaticImage
-            src='../../../assets/images/sliderImages/mubicoScreen.jpg'
+      ]
+    },
+    section_2: {
+      img: '/images/section_2_img.png'
+    },
+    section_3: {
+      subtitle: 'overview',
+      title: 'STRATEGY',
+      content: '<p>Develop the shopping platform in Shopify. Configure real-time reporting for in-site analytics.</p>' +
+        '<p>Automate the fulfillment operations with on demand quotes from shipping providers.</p>' +
+        '<p>Easily track returns and refunds.</p>'
+    },
+    section_4: {
+      subtitle: 'overview',
+      title: 'PLATFORM',
+      img: <StaticImage
+        src='../../assets/images/projects/Web-redflag.png'
+        alt=""
+        className="image"
+        style={{ height: '200vh' }}
+      />,
+      background_color: '#E9213E',
+      background_color_hover: 'blue'
+    },
+    section_5: {
+      img: <StaticImage
+        src='../../assets/images/projects/redflagBanner3.png'
+        alt=""
+        style={{ position: 'absolute' }}
+        className='img'
+      />,
+      content: `80% of international sales take place on the site. E-mail marketing campaigns for subscribers increase <br/>
+         recurring purchases by 2x. Simple product and inventory management.`
+    },
+    section_6: [
+      { title: '80%', subtitle: 'International sales' },
+      { title: '2x', subtitle: 'Marketing campaings' },
+    ],
+    section_7: {
+      background_color: '#000000',
+      data: [
+        {
+          img: <StaticImage
+            src='../../assets/images/projects/mobile1redflag_.png'
             alt=""
-            className="parallaxImageSec2"
+            className='page'
           />
-        </div>
-
-        <div className="projSection3">
-          <div>
-            <div>
-              <div className='content'>
-                <div
-                  onMouseEnter={() => {
-                    onPositionTitle.current = true
-                    toggleCursorTitles()
-                  }}
-                  onMouseLeave={() => {
-                    onPositionTitle.current = false
-                    toggleCursorTitles()
-                  }}
-                >
-                  <h2 >{projectInfo?.section_3.subtitle}</h2>
-                  <h1 >{projectInfo?.section_3.title}</h1>
-                </div>
-                <p>
-                  {htmlToReactParser.parse(projectInfo?.section_3.content)}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="projSection4"
-          style={{ backgroundColor: projectInfo?.section_4.background_color }}
-          onMouseEnter={() => {
-            bgChange(projectInfo?.section_4.background_color_hover || '')
-          }}
-          onMouseLeave={() => {
-            bgChange(projectInfo?.section_4.background_color || '')
-          }}>
-          {
-            projectInfo?.section_4.scrollImage
-              ?
-              <>
-                <div className="content">
-                  <div
-                    onMouseEnter={() => {
-                      onPositionTitle.current = true
-                      toggleCursorTitles()
-                    }}
-                    onMouseLeave={() => {
-                      onPositionTitle.current = false
-                      toggleCursorTitles()
-                    }}
-                    className='titles'>
-                    <h2  >{projectInfo?.section_4.subtitle}</h2>
-                    <h1 >{projectInfo?.section_4.title}</h1>
-                  </div>
-                </div>
-
-                <div className="page">
-                  <div className='scrollImages' style={{ display: 'flex' }}>
-                    {/* <PhonesSliders over={mouseOverEvent} out={mouseOutEvent} enterPointer={() => pointerChangeScroll(true)} leavePointer={() => pointerChangeScroll(false)} data={projectInfo.section_4.images}></PhonesSliders> */}
-                    {/* {
-                                    projectInfo.section_4.images.map((item: any) => {
-                                        return (
-                                        <>
-                                        <CardMedia component="img" image={item?.img} className="page" alt="AntPack" />                           
-                                        </>
-                                        )
-                                        })
-                                    } */}
-
-                  </div>
-                </div>
-              </>
-              :
-              <>
-                <div id='sec4_fixed_title' className="content">
-                  <div data-scroll data-scroll-sticky data-scroll-offset='0, 700' data-scroll-target="#sec4" className='titles'>
-                    <div
-                      onMouseEnter={() => {
-                        onPositionTitle.current = true
-                        toggleCursorTitles()
-                      }}
-                      onMouseLeave={() => {
-                        onPositionTitle.current = false
-                        toggleCursorTitles()
-                      }}
-                    >
-                      <h2  >{projectInfo?.section_4.subtitle}</h2>
-                      <h1 >{projectInfo?.section_4.title}</h1>
-
-                    </div>
-                  </div>
-                </div>
-                <div className="page">
-
-                  <div onMouseEnter={() => pointerChangeScroll(true)} onMouseLeave={() => pointerChangeScroll(false)} className='bg'>
-                    {projectInfo?.section_4.img}
-                  </div>
-                </div>
-              </>
-          }
-        </div>
+        },
+        {
+          img: <StaticImage
+            src='../../assets/images/projects/mobile2redflag_.png'
+            alt=""
+            className='page'
+          />
+        },
+        {
+          img: <StaticImage
+            src='../../assets/images/projects/mobile3redflag_.png'
+            alt=""
+            className='page'
+          />
+        },
+        {
+          img: <StaticImage
+            src='../../assets/images/projects/mobile4redflag_.png'
+            alt=""
+            className='page'
+          />
+        },
+        {
+          img: <StaticImage
+            src='../../assets/images/projects/mobile5redflag_.png'
+            alt=""
+            className='page'
+          />
+        },
+        {
+          img: <StaticImage
+            src='../../assets/images/projects/mobile6redflag_.png'
+            alt=""
+            className='page'
+          />
+        },
+        {
+          img: <StaticImage
+            src='../../assets/images/projects/mobile7redflag_.png'
+            alt=""
+            className='page'
+          />
+        },
+        {
+          img: <StaticImage
+            src='../../assets/images/projects/mobile8redflag_.png'
+            alt=""
+            className='page'
+          />
+        },
+      ]
+    },
+    section_8: {
+      title: 'Next project',
+      subtitle: 'Captiva',
+      img: <StaticImage
+        src='../../assets/images/projects/BannerPrincipalCap.png'
+        alt=""
+        style={{ position: 'absolute' }}
+        className='img'
+      />,
+      content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod <br />
+        tempor incididunt ut labore et dolore magna aliqua.`,
+      background_color: '#FFF100',
+      link: '#',
+      arrowColor: 'white'
+    }
+  }
 
 
-        <div className="resultsSection"
-          onMouseEnter={() => {
-            onPositionTitle.current = true
-            toggleCursorTitles()
-          }}
-          onMouseLeave={() => {
-            onPositionTitle.current = false
-            toggleCursorTitles()
-          }}
-        >
-          <Marquee
-            speed={100}
-            className='sliderText'
-            gradient={false}
-            delay={-20}
-            style={{ cursor: 'none' }}
-          >
-            <div className="ctnTitle">
-              <label className='text1'>
-                Results Results Results
-              </label>
-              <label className='text2'>
-                Results &nbsp; Results &nbsp; Results &nbsp;
-              </label>
-            </div>
-          </Marquee>
+  i18next.init({
+    interpolation: { escapeValue: false },
+    lng: lenguage,
+    resources: {
+      es: {
+        projects: projectsES
+      },
+      en: {
+        projects: projectsEN
+      },
+    }
+  })
 
-          <Marquee
-            speed={50}
-            className='sliderTextMobile'
-            gradient={false}
-            delay={-20}
-          >
-            <div className="ctn-title">
-              <label className='text-2'>
-                Result  Result  Result  &nbsp;
-              </label>
-            </div>
-          </Marquee>
-        </div>
-
-        <div className="projSection5">
-          <div>
-            {projectInfo?.section_5.img}
-          </div>
-          <div>
-            <p>
-              {htmlToReactParser.parse(projectInfo?.section_5.content)}
-            </p>
-          </div>
-        </div>
-
-        <div className="projSection6">
-          {
-            projectInfo?.section_6.map((item: any) => {
-              return (
-                <>
-                  <div className='content'>
-                    <h1 >{item.title}</h1>
-                    <h2 >{item.subtitle}</h2>
-                  </div>
-                </>
-              )
-            })
-          }
-        </div>
-
-        <div onMouseEnter={() => pointerChangeScroll(true)} onMouseLeave={() => pointerChangeScroll(false)} className="projSection7">
-          <DragComponentProject over={mouseOverEvent} out={mouseOutEvent} data={projectInfo?.section_7}></DragComponentProject>
-        </div>
-
-
-        <div className="projSection8" style={{ backgroundColor: projectInfo?.section_8.background_color, color: projectInfo?.section_8.color }}>
-
-          <div>
-            <h1 >{projectInfo?.section_8.title}</h1>
-            <div className='content'>
-              <h2  >{projectInfo?.section_8.subtitle}</h2>
-              <p style={{ color: projectInfo?.section_8.color }}> {htmlToReactParser.parse(projectInfo?.section_8.content)}</p>
-              <a href={projectInfo?.section_8.link}>
-
-                <div style={{ background: projectInfo?.section_8.arrowBg, fill: projectInfo?.section_8.arrowColor }} className='icon'>
-                  <Arrow />
-                </div>
-              </a>
-            </div>
-          </div>
-          <div>
-            {projectInfo?.section_8.img}
-          </div>
-        </div>
-        <Footer />
-      </div>
-    </>
+  return (
+    <I18nextProvider i18n={i18next}>
+      <ProjectsTemplate projectInfo={data2} />
+    </I18nextProvider>
   )
 }
 
