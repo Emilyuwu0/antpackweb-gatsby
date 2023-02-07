@@ -30,6 +30,7 @@ import Partners from '@/components/organisms/partners/partners';
 export default function Home() {
 
   const [menuColor, setMenu] = useState('white')
+  const [lenguage, setLenguage] = useState('en')
 
   const container0 = useRef<any>(null)
   const container1 = useRef<any>(null)
@@ -138,7 +139,7 @@ export default function Home() {
 
   i18next.init({
     interpolation: { escapeValue: false },
-    lng: 'en',
+    lng: lenguage,
     resources: {
       es: {
         global: globalES
@@ -148,6 +149,7 @@ export default function Home() {
       },
     }
   })
+
 
   return (
     <>
@@ -168,7 +170,7 @@ export default function Home() {
         </SEO>
         <div className='mainWrapper'>
           <div ref={container0} className='child'>
-            <Header color={menuColor} />
+            <Header lenguage={lenguage} setLenguage={setLenguage} color={menuColor} />
             <HeroSeccion />
           </div>
 

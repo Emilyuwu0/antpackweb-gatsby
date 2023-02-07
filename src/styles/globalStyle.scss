@@ -21,7 +21,7 @@ body::-webkit-scrollbar {
 }
 
 .termsAndPrivacy {
-  text-align: start;
+  text-align: justify;
   width: 70%;
   margin: auto;
   padding: 100px 0;
@@ -46,6 +46,7 @@ body::-webkit-scrollbar {
   }
   ul {
     list-style: disc;
+    margin-left: 20px;
   }
 }
 
