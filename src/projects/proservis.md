@@ -1,0 +1,33 @@
+---
+path: "/projects/proservis/"
+data: "2023-02-01"
+title: "proservis.title"
+subtitle: "proservis.subtitle"
+subtitleSectionTwo: "proservis.subtitleSectionTwo"
+titleSectionTwo: "proservis.titleSectionTwo"
+descriptionSectionTwo: "proservis.descriptionSectionTwo"
+complementarySectionTwo: "proservis.complementarySectionTwo"
+complementarySectionListItemOne: "proservis.complementarySectionListItemOne"
+complementarySectionListItemTwo: "proservis.complementarySectionListItemTwo"
+complementarySectionListItemTwoPartTwo: "proservis.complementarySectionListItemTwoPartTwo"
+complementarySectionListItemThree: "proservis.complementarySectionListItemThree"
+complementarySectionListItemFour: "proservis.complementarySectionListItemFour"
+complementarySectionListItemFourPartTwo: "proservis.complementarySectionListItemFourPartTwo"
+complementarySectionListItemFourPartThree: "proservis.complementarySectionListItemFourPartThree"
+complementarySectionListItemFive: "proservis.complementarySectionListItemFive"
+complementarySectionListItemSix: "proservis.complementarySectionListItemSix"
+subtitleSectionThree: "proservis.subtitleSectionThree"
+titleSectionThree: "proservis.titleSectionThree"
+descriptionSectionThree: "proservis.descriptionSectionThree"
+subtitleSectionFour: "proservis.subtitleSectionFour"
+titleSectionFour: "proservis.titleSectionFour"
+result: "proservis.result"
+resultDescription: "proservis.resultDescription"
+complementDescriptionOne: "proservis.complementDescriptionOne"
+complementDescriptionTwo: "proservis.complementDescriptionTwo"
+
+
+backgroundHeaderProject: "../assets/projects/results/proservis/background-proservis-header.png
+backgroundSection: "../assets/projects/results/proservis/section-proservis.png"
+sectionProject: "../assets/projects/results/bluepalm/result-bluepalm.png"
+---

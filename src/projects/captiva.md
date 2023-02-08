@@ -1,6 +1,6 @@
 ---
 path: '/projects/captiva'
-date: '2019-06-19'
+data: "2023-02-01"
 title: 'captiva.title'
 subtitle: 'captiva.subtitle'
 subtitleSectionTwo: 'captiva.subtitleSectionTwo'
@@ -18,7 +18,13 @@ titleSectionThree: 'captiva.titleSectionThree'
 descriptionSectionThree: 'captiva.descriptionSectionThree'
 subtitleSectionFour: 'captiva.subtitleSectionFour'
 titleSectionFour: 'captiva.titleSectionFour'
+result: "captiva.result"
+resultDescription: "captiva.resultDescription"
+complementDescriptionOne: "captiva.complementDescriptionOne"
+complementDescriptionTwo: "captiva.complementDescriptionTwo"
 
-backgroundHeaderProject: '../assets/projects/sections/section-background.png'
-backgroundSection: '../assets/projects/sections/section-background-captiva.png'
+
+backgroundHeaderProject: '../assets/projects/results/captiva/background-captiva-header.png'
+backgroundSection: '../assets/projects/results/captiva/section-captiva.png'
+sectionProject: "../assets/projects/results/captiva/result-captiva.png"
 ---

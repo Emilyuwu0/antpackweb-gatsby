@@ -1,0 +1,33 @@
+---
+path: "/projects/scottbolcen/"
+data: "2023-02-01"
+title: "scottbolcen.title"
+subtitle: "scottbolcen.subtitle"
+subtitleSectionTwo: "scottbolcen.subtitleSectionTwo"
+titleSectionTwo: "scottbolcen.titleSectionTwo"
+descriptionSectionTwo: "scottbolcen.descriptionSectionTwo"
+complementarySectionTwo: "scottbolcen.complementarySectionTwo"
+complementarySectionListItemOne: "scottbolcen.complementarySectionListItemOne"
+complementarySectionListItemTwo: "scottbolcen.complementarySectionListItemTwo"
+complementarySectionListItemTwoPartTwo: "scottbolcen.complementarySectionListItemTwoPartTwo"
+complementarySectionListItemThree: "scottbolcen.complementarySectionListItemThree"
+complementarySectionListItemFour: "scottbolcen.complementarySectionListItemFour"
+complementarySectionListItemFourPartTwo: "scottbolcen.complementarySectionListItemFourPartTwo" 
+complementarySectionListItemFive: "scottbolcen.complementarySectionListItemFive"
+complementarySectionListItemSix: "scottbolcen.complementarySectionListItemSix"
+subtitleSectionThree: "scottbolcen.subtitleSectionThree"
+titleSectionThree: "scottbolcen.titleSectionThree"
+descriptionSectionThree: "scottbolcen.descriptionSectionThree"
+subtitleSectionFour: "scottbolcen.subtitleSectionFour"
+titleSectionFour: "scottbolcen.titleSectionFour"
+result: "scottbolcen.result"
+resultDescription: "scottbolcen.resultDescription"
+complementDescriptionOne: "scottbolcen.complementDescriptionOne"
+complementDescriptionTwo: "scottbolcen.complementDescriptionTwo"
+
+
+backgroundHeaderProject: "../assets/projects/results/scottbolcen/background-scottbolcen-header.png"
+backgroundSection: "../assets/projects/results/scottbolcen/section-scottbolcen.png"
+sectionProject: "../assets/projects/results/scottbolcen/result-scottbolcen.png"
+
+---
