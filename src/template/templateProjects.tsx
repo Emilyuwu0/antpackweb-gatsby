@@ -51,25 +51,23 @@ export default function Projects({ data, projectInfo }: projectsProps) {
       img: frontmatter.backgroundHeaderProject.publicURL
     },
     section_1: {
-      subtitle: 'overview',
-      title: 'challenge',
-      paragraph: `REDFLAG wanted to expand their brand presence into other cities, and countries. <br/> <br/>
-        The brand needed a robust e-Commerce platform which could provide fulfillment solutions for their national 
-        and international markets.`,
+      subtitle: frontmatter.subtitleSectionTwo,
+      title: frontmatter.titleSectionTwo,
+      paragraph: frontmatter.descriptionSectionTwo,
       data: [
         {
-          title: 'SERVICES PROVIDED',
+          title: frontmatter.complementarySectionTwo,
           elements: [
-            { title: 'Consulting' },
-            { title: 'Web design' },
-            { title: 'Web development' }
+            { title: frontmatter.complementarySectionListItemOne },
+            { title: frontmatter.complementarySectionListItemTwo },
+            { title: frontmatter.complementarySectionListItemThree }
           ]
         },
         {
-          title: 'TECHNOLOGIES',
+          title: frontmatter.complementarySectionListItemFour,
           elements: [
-            { title: 'Wordpress' },
-            { title: 'MySQL' }
+            { title: frontmatter.complementarySectionListItemFive },
+            { title: frontmatter.complementarySectionListItemSix }
           ]
         },
         {
@@ -84,15 +82,13 @@ export default function Projects({ data, projectInfo }: projectsProps) {
       img: '/images/section_2_img.png'
     },
     section_3: {
-      subtitle: 'overview',
-      title: 'STRATEGY',
-      content: '<p>Develop the shopping platform in Shopify. Configure real-time reporting for in-site analytics.</p>' +
-        '<p>Automate the fulfillment operations with on demand quotes from shipping providers.</p>' +
-        '<p>Easily track returns and refunds.</p>'
+      subtitle: frontmatter.subtitleSectionThree,
+      title: frontmatter.titleSectionThree,
+      content: frontmatter.descriptionSectionThree
     },
     section_4: {
-      subtitle: 'overview',
-      title: 'PLATFORM',
+      subtitle: frontmatter.subtitleSectionFour,
+      title: frontmatter.titleSectionFour,
       img: <StaticImage
         src='../../assets/images/projects/Web-redflag.png'
         alt=""
