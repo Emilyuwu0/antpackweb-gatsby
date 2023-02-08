@@ -1,6 +1,6 @@
 ---
 path: "/projects/miele/"
-data: "2023-02-01"
+date: "2023-02-01"
 title: "miele.title"
 subtitle: "miele.subtitle"
 subtitleSectionTwo: "miele.subtitleSectionTwo"

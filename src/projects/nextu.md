@@ -1,6 +1,6 @@
 ---
 path: "/projects/nextu/"
-data: "2023-02-01"
+date: "2023-02-01"
 title: "nextu.title"
 subtitle: "nextu.subtitle"
 subtitleSectionTwo: "nextu.subtitleSectionTwo"

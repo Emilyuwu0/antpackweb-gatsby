@@ -1,6 +1,6 @@
 ---
 path: '/projects/captiva'
-data: "2023-02-01"
+date: "2023-02-01"
 title: 'captiva.title'
 subtitle: 'captiva.subtitle'
 subtitleSectionTwo: 'captiva.subtitleSectionTwo'

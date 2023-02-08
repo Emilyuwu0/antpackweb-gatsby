@@ -1,6 +1,6 @@
 ---
 path: "/projects/bluepalm/"
-data: "2023-02-01"
+date: "2023-02-01"
 title: "bluepalm.title"
 subtitle: "bluepalm.subtitle"
 subtitleSectionTwo: "bluepalm.subtitleSectionTwo"

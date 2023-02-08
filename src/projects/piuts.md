@@ -1,6 +1,6 @@
 ---
 path: "/projects/piuts/"
-data: "2023-02-01"
+date: "2023-02-01"
 title: "piuts.title"
 subtitle: "piuts.subtitle"
 subtitleSectionTwo: "piuts.subtitleSectionTwo"

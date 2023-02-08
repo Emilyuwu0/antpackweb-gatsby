@@ -1,6 +1,6 @@
 ---
 path: "/projects/scottbolcen/"
-data: "2023-02-01"
+date: "2023-02-01"
 title: "scottbolcen.title"
 subtitle: "scottbolcen.subtitle"
 subtitleSectionTwo: "scottbolcen.subtitleSectionTwo"

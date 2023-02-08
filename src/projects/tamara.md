@@ -1,6 +1,6 @@
 ---
 path: "/projects/tamara/"
-data: "2023-02-01"
+date: "2023-02-01"
 title: "tamara.title"
 subtitle: "tamara.subtitle"
 subtitleSectionTwo: "tamara.subtitleSectionTwo"

@@ -1,6 +1,6 @@
 ---
 path: "/projects/sierracol/"
-data: "2023-02-01"
+date: "2023-02-01"
 title: "sierracol.title"
 subtitle: "sierracol.subtitle"
 subtitleSectionTwo: "sierracol.subtitleSectionTwo"

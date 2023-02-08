@@ -1,6 +1,6 @@
 ---
 path: "/projects/studybuddy/"
-data: "2023-02-01"
+date: "2023-02-01"
 title: "studybuddy.title"
 subtitle: "studybuddy.subtitle"
 subtitleSectionTwo: "studybuddy.subtitleSectionTwo"

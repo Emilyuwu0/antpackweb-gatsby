@@ -1,6 +1,6 @@
 ---
 path: "/projects/redflag/"
-data: "2023-02-01"
+date: "2023-02-01"
 title: "redflag.title"
 subtitle: "redflag.subtitle"
 subtitleSectionTwo: "redflag.subtitleSectionTwo"
