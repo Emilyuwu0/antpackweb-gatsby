@@ -7,6 +7,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import React, { useEffect, useRef, useState } from 'react'
 import Marquee from 'react-fast-marquee';
+import { useTranslation } from 'react-i18next';
 
 import Arrow from '../../../assets/icons/arrow.svg'
 
@@ -21,6 +22,9 @@ interface projectsTemplateProps {
 }
 
 export default function ProjectsTemplate({ projectInfo }: projectsTemplateProps) {
+  const [lenguage, setLenguage] = useState('en')
+
+  const [t] = useTranslation('projects')
 
   const htmlToReactParser = new HtmlToReactParser();
 
@@ -221,7 +225,7 @@ export default function ProjectsTemplate({ projectInfo }: projectsTemplateProps)
   }
   return (
     <>
-      <Header color='black' />
+      <Header lenguage={lenguage} setLenguage={setLenguage} color='black' />
       <div className='wrapper' ref={containerRef}>
         <div ref={dotOutline} className={'cursor-dot-outline'}></div>
         <div ref={dot} className={'cursor-dot'}></div>

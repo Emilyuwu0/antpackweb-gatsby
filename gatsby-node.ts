@@ -40,7 +40,7 @@ exports.createPages = async ({ actions, graphql }) => {
 const path = require(`path`);
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
-  const postTemplate = path.resolve(`src/template/templatePages.tsx`);
+  const postTemplate = path.resolve(`src/template/templateProjects.tsx`);
   return graphql(`
     {
       allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 1000) {

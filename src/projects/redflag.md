@@ -22,6 +22,6 @@ subtitleSectionFour: "overview"
 titleSectionFour: "Platform"
 
 
-backgroundHeaderProject: "../assets/projects/header/background-redflag-header.png"
+backgroundHeaderProject: "../assets/projects/sections/section-background.png"
 backgroundSection: "../assets/projects/sections/section-background.png"
 ---
