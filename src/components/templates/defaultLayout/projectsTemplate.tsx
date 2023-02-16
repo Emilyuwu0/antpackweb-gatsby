@@ -1,30 +1,32 @@
 import DragComponentProject from '@/components/organisms/DragComponentProject/DragComponentProject';
 import Footer from '@/components/organisms/footer/footer';
 import Header from '@/components/organisms/header/header';
-import HeroProyectSec from '@/components/organisms/heroProyectSec/heroProyectSec'
+import HeroProyectSec from '@/components/organisms/heroProyectSec/heroProyectSec';
+import HeroSection from '@/components/organisms/heroSectionProjects/heroSectionProjects';
 import { StaticImage } from 'gatsby-plugin-image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react';
 import Marquee from 'react-fast-marquee';
 import { useTranslation } from 'react-i18next';
 
-import Arrow from '../../../assets/icons/arrow.svg'
+import Arrow from '../../../assets/icons/arrow.svg';
 
 const HtmlToReactParser = require('html-to-react').Parser;
 
-
-import './projectsTemplate.scss'
-
+import './projectsTemplate.scss';
+import heroSectionProjects from '../../organisms/heroSectionProjects/heroSectionProjects';
 
 interface projectsTemplateProps {
-  projectInfo: any,
+  projectInfo: any;
 }
 
-export default function ProjectsTemplate({ projectInfo }: projectsTemplateProps) {
-  const [lenguage, setLenguage] = useState('en')
+export default function ProjectsTemplate({
+  projectInfo,
+}: projectsTemplateProps) {
+  const [lenguage, setLenguage] = useState('en');
 
-  const [t] = useTranslation('projects')
+  const [t] = useTranslation('projects');
 
   const htmlToReactParser = new HtmlToReactParser();
 
@@ -36,13 +38,12 @@ export default function ProjectsTemplate({ projectInfo }: projectsTemplateProps)
   //     console.log(scroll)
   // }, 100)
 
-
   const delay = 18;
 
   const dot = useRef<any>(null);
   const dotOutline = useRef<any>(null);
 
-  const [showcursor, setshowcursor] = useState(false)
+  const [showcursor, setshowcursor] = useState(false);
 
   const cursorVisible = useRef(true);
   const cursorEnlarged = useRef(false);
@@ -54,7 +55,6 @@ export default function ProjectsTemplate({ projectInfo }: projectsTemplateProps)
   const _y = useRef(0);
 
   const requestRef = useRef<any>(null);
-
 
   const toggleCursorVisibility = () => {
     if (cursorVisible.current) {
@@ -70,7 +70,6 @@ export default function ProjectsTemplate({ projectInfo }: projectsTemplateProps)
     if (cursorEnlarged.current) {
       dot.current.style.transform = 'translate(-50%, -50%) scale(0.75)';
       dotOutline.current.style.transform = 'translate(-50%, -50%) scale(3)';
-
     } else {
       dot.current.style.transform = 'translate(-50%, -50%) scale(1)';
       dotOutline.current.style.transform = 'translate(-50%, -50%) scale(1)';
@@ -84,7 +83,6 @@ export default function ProjectsTemplate({ projectInfo }: projectsTemplateProps)
       dotOutline.current.style.background = 'transparent';
       dotOutline.current.style.border = 'solid 1px #FFF100';
       dotOutline.current.style.transform = 'translate(-50%, -50%) scale(2)';
-
     } else {
       dot.current.style.transform = 'translate(-50%, -50%) scale(1)';
       dot.current.style.background = '#FFF100';
@@ -135,7 +133,6 @@ export default function ProjectsTemplate({ projectInfo }: projectsTemplateProps)
     requestRef.current = requestAnimationFrame(animateDotOutline);
   };
 
-
   useEffect(() => {
     const wrapper: any = containerRef.current;
 
@@ -160,159 +157,161 @@ export default function ProjectsTemplate({ projectInfo }: projectsTemplateProps)
     };
   }, []);
 
-
   useEffect(() => {
-
     const animation = () => {
-      gsap.fromTo('.parallaxImageSec2', {
-        y: -300,
-      }, {
-        y: 300,
-        duration: 5,
-        scrollTrigger: {
-          trigger: '.parallaxImageSec2',
-          start: "top",
-          end: "bottom",
-          scrub: true,
-          markers: true,
-        }
-      })
+      gsap.fromTo(
+        '.parallaxImageSec2',
+        {
+          y: -300,
+        },
+        {
+          y: 300,
+          duration: 5,
+          scrollTrigger: {
+            trigger: '.parallaxImageSec2',
+            start: 'top',
+            end: 'bottom',
+            scrub: true,
+            markers: true,
+          },
+        },
+      );
 
-      gsap.fromTo('.titles', {
-        y: 0,
-      }, {
-        y: 1500,
-        scrollTrigger: {
-          trigger: '.projSection4',
-          start: "top",
-          end: "bottom",
-          scrub: true,
-          markers: true,
-        }
-      })
-    }
+      gsap.fromTo(
+        '.titles',
+        {
+          y: 0,
+        },
+        {
+          y: 1500,
+          scrollTrigger: {
+            trigger: '.projSection4',
+            start: 'top',
+            end: 'bottom',
+            scrub: true,
+            markers: true,
+          },
+        },
+      );
+    };
 
-    requestAnimationFrame(animation)
-  }, [])
-
-
+    requestAnimationFrame(animation);
+  }, []);
 
   //backgroun change color
 
   const bgChange = (color: string) => {
-    const contain = containerRef.current
+    const contain = containerRef.current;
     gsap.to(contain.querySelector('.projSection4'), {
       backgroundColor: color,
-      duration: 2
-    })
-  }
+      duration: 2,
+    });
+  };
 
   const pointerChangeScroll = (show: boolean) => {
-    const contain = containerRef.current
+    const contain = containerRef.current;
     if (show) {
-      console.log('entro')
+      console.log('entro');
       gsap.to(contain.querySelector('.cursor-dot-outline'), {
         // backgroundImage: 'url(../../../assets/images/dragIcon.svg)',
         // backgroundPosition: 'center',
         // backgroundSize: 'contain',
-      })
+      });
     } else {
-      console.log('salio')
+      console.log('salio');
       gsap.to(contain.querySelector('.cursor-dot-outline'), {
         backgroundImage: 'none',
-      })
+      });
     }
-  }
+  };
   return (
     <>
-      <Header lenguage={lenguage} setLenguage={setLenguage} color='black' />
-      <div className='wrapper' ref={containerRef}>
+      <Header lenguage={lenguage} setLenguage={setLenguage} color="black" />
+      <div className="wrapper" ref={containerRef}>
         <div ref={dotOutline} className={'cursor-dot-outline'}></div>
         <div ref={dot} className={'cursor-dot'}></div>
 
-        <HeroProyectSec data={projectInfo.header}
+        <HeroProyectSec
+          data={projectInfo.header}
           enterHoverText={() => {
-            onPositionTitle.current = true
-            toggleCursorTitles()
-          }
-          }
-
+            onPositionTitle.current = true;
+            toggleCursorTitles();
+          }}
           leaveHoverText={() => {
-            onPositionTitle.current = false
-            toggleCursorTitles()
-          }} />
+            onPositionTitle.current = false;
+            toggleCursorTitles();
+          }}
+        />
 
         <div className="projSection1">
-          <div className='projectsNavbar'>
+          <div className="projectsNavbar">
             <button>BACK</button>
             <button>SCROLL</button>
             <button>NEXT</button>
           </div>
-          <div className='content'>
+          <div className="content">
             <div
               onMouseEnter={() => {
-                onPositionTitle.current = true
-                toggleCursorTitles()
+                onPositionTitle.current = true;
+                toggleCursorTitles();
               }}
               onMouseLeave={() => {
-                onPositionTitle.current = false
-                toggleCursorTitles()
+                onPositionTitle.current = false;
+                toggleCursorTitles();
               }}
             >
-              <h2 >{htmlToReactParser.parse(t(projectInfo?.section_1.subtitle))}</h2>
-              <h1 >{htmlToReactParser.parse(t(projectInfo?.section_1.title))}</h1>
+              <h2>
+                {htmlToReactParser.parse(t(projectInfo?.section_1.subtitle))}
+              </h2>
+              <h1>
+                {htmlToReactParser.parse(t(projectInfo?.section_1.title))}
+              </h1>
             </div>
 
-            <p>{htmlToReactParser.parse(t(projectInfo?.section_1.paragraph))}</p>
+            <p>
+              {htmlToReactParser.parse(t(projectInfo?.section_1.paragraph))}
+            </p>
           </div>
-          <div className='infoContent'>
-            {
-              projectInfo?.section_1.data.map((item: any) => {
-                return (
-                  <>
-                    <h3 >{t(item.title)}</h3>
-                    <ul>
-                      {
-                        item.elements.map((elem: any) => {
-                          return (
-                            <>
-                              <li >{t(elem.title)}</li>
-                            </>
-                          )
-                        })
-                      }
-                    </ul>
-                  </>
-                )
-              })
-            }
+          <div className="infoContent">
+            {projectInfo?.section_1.data.map((item: any) => {
+              return (
+                <>
+                  <h3>{t(item.title)}</h3>
+                  <ul>
+                    {item.elements.map((elem: any) => {
+                      return (
+                        <>
+                          <li>{t(elem.title)}</li>
+                        </>
+                      );
+                    })}
+                  </ul>
+                </>
+              );
+            })}
           </div>
         </div>
 
         <div className="projSection2">
-          <StaticImage
-            src='../../../assets/images/sliderImages/mubicoScreen.jpg'
-            alt=""
-            className="parallaxImageSec2"
-          />
+          <img src={projectInfo.section_2.img} className="parallaxImageSec2" />
         </div>
 
         <div className="projSection3">
           <div>
             <div>
-              <div className='content'>
+              <div className="content">
                 <div
                   onMouseEnter={() => {
-                    onPositionTitle.current = true
-                    toggleCursorTitles()
+                    onPositionTitle.current = true;
+                    toggleCursorTitles();
                   }}
                   onMouseLeave={() => {
-                    onPositionTitle.current = false
-                    toggleCursorTitles()
+                    onPositionTitle.current = false;
+                    toggleCursorTitles();
                   }}
                 >
-                  <h2 >{t(projectInfo?.section_3.subtitle)}</h2>
-                  <h1 >{t(projectInfo?.section_3.title)}</h1>
+                  <h2>{t(projectInfo?.section_3.subtitle)}</h2>
+                  <h1>{t(projectInfo?.section_3.title)}</h1>
                 </div>
                 <p>
                   {htmlToReactParser.parse(t(projectInfo?.section_3.content))}
@@ -322,38 +321,39 @@ export default function ProjectsTemplate({ projectInfo }: projectsTemplateProps)
           </div>
         </div>
 
-        <div className="projSection4"
+        <div
+          className="projSection4"
           style={{ backgroundColor: projectInfo?.section_4.background_color }}
           onMouseEnter={() => {
-            bgChange(projectInfo?.section_4.background_color_hover || '')
+            bgChange(projectInfo?.section_4.background_color_hover || '');
           }}
           onMouseLeave={() => {
-            bgChange(projectInfo?.section_4.background_color || '')
-          }}>
-          {
-            projectInfo?.section_4.scrollImage
-              ?
-              <>
-                <div className="content">
-                  <div
-                    onMouseEnter={() => {
-                      onPositionTitle.current = true
-                      toggleCursorTitles()
-                    }}
-                    onMouseLeave={() => {
-                      onPositionTitle.current = false
-                      toggleCursorTitles()
-                    }}
-                    className='titles'>
-                    <h2  >{t(projectInfo?.section_4.subtitle)}</h2>
-                    <h1 >{t(projectInfo?.section_4.title)}</h1>
-                  </div>
+            bgChange(projectInfo?.section_4.background_color || '');
+          }}
+        >
+          {projectInfo?.section_4.scrollImage ? (
+            <>
+              <div className="content">
+                <div
+                  onMouseEnter={() => {
+                    onPositionTitle.current = true;
+                    toggleCursorTitles();
+                  }}
+                  onMouseLeave={() => {
+                    onPositionTitle.current = false;
+                    toggleCursorTitles();
+                  }}
+                  className="titles"
+                >
+                  <h2>{t(projectInfo?.section_4.subtitle)}</h2>
+                  <h1>{t(projectInfo?.section_4.title)}</h1>
                 </div>
+              </div>
 
-                <div className="page">
-                  <div className='scrollImages' style={{ display: 'flex' }}>
-                    {/* <PhonesSliders over={mouseOverEvent} out={mouseOutEvent} enterPointer={() => pointerChangeScroll(true)} leavePointer={() => pointerChangeScroll(false)} data={projectInfo.section_4.images}></PhonesSliders> */}
-                    {/* {
+              <div className="page">
+                <div className="scrollImages" style={{ display: 'flex' }}>
+                  {/* <PhonesSliders over={mouseOverEvent} out={mouseOutEvent} enterPointer={() => pointerChangeScroll(true)} leavePointer={() => pointerChangeScroll(false)} data={projectInfo.section_4.images}></PhonesSliders> */}
+                  {/* {
                                     projectInfo.section_4.images.map((item: any) => {
                                         return (
                                         <>
@@ -362,63 +362,68 @@ export default function ProjectsTemplate({ projectInfo }: projectsTemplateProps)
                                         )
                                         })
                                     } */}
-
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
+              <div id="sec4_fixed_title" className="content">
+                <div
+                  data-scroll
+                  data-scroll-sticky
+                  data-scroll-offset="0, 700"
+                  data-scroll-target="#sec4"
+                  className="titles"
+                >
+                  <div
+                    onMouseEnter={() => {
+                      onPositionTitle.current = true;
+                      toggleCursorTitles();
+                    }}
+                    onMouseLeave={() => {
+                      onPositionTitle.current = false;
+                      toggleCursorTitles();
+                    }}
+                  >
+                    <h2>{t(projectInfo?.section_4.subtitle)}</h2>
+                    <h1>{t(projectInfo?.section_4.title)}</h1>
                   </div>
                 </div>
-              </>
-              :
-              <>
-                <div id='sec4_fixed_title' className="content">
-                  <div data-scroll data-scroll-sticky data-scroll-offset='0, 700' data-scroll-target="#sec4" className='titles'>
-                    <div
-                      onMouseEnter={() => {
-                        onPositionTitle.current = true
-                        toggleCursorTitles()
-                      }}
-                      onMouseLeave={() => {
-                        onPositionTitle.current = false
-                        toggleCursorTitles()
-                      }}
-                    >
-                      <h2  >{t(projectInfo?.section_4.subtitle)}</h2>
-                      <h1 >{t(projectInfo?.section_4.title)}</h1>
-
-                    </div>
-                  </div>
+              </div>
+              <div className="page">
+                <div
+                  onMouseEnter={() => pointerChangeScroll(true)}
+                  onMouseLeave={() => pointerChangeScroll(false)}
+                  className="bg"
+                >
+                  {projectInfo?.section_4.img}
                 </div>
-                <div className="page">
-
-                  <div onMouseEnter={() => pointerChangeScroll(true)} onMouseLeave={() => pointerChangeScroll(false)} className='bg'>
-                    {projectInfo?.section_4.img}
-                  </div>
-                </div>
-              </>
-          }
+              </div>
+            </>
+          )}
         </div>
 
-
-        <div className="resultsSection"
+        <div
+          className="resultsSection"
           onMouseEnter={() => {
-            onPositionTitle.current = true
-            toggleCursorTitles()
+            onPositionTitle.current = true;
+            toggleCursorTitles();
           }}
           onMouseLeave={() => {
-            onPositionTitle.current = false
-            toggleCursorTitles()
+            onPositionTitle.current = false;
+            toggleCursorTitles();
           }}
         >
           <Marquee
             speed={100}
-            className='sliderText'
+            className="sliderText"
             gradient={false}
             delay={-20}
             style={{ cursor: 'none' }}
           >
             <div className="ctnTitle">
-              <label className='text1'>
-                Results Results Results
-              </label>
-              <label className='text2'>
+              <label className="text1">Results Results Results</label>
+              <label className="text2">
                 Results &nbsp; Results &nbsp; Results &nbsp;
               </label>
             </div>
@@ -426,70 +431,80 @@ export default function ProjectsTemplate({ projectInfo }: projectsTemplateProps)
 
           <Marquee
             speed={50}
-            className='sliderTextMobile'
+            className="sliderTextMobile"
             gradient={false}
             delay={-20}
           >
             <div className="ctn-title">
-              <label className='text-2'>
-                Result  Result  Result  &nbsp;
-              </label>
+              <label className="text-2">Result Result Result &nbsp;</label>
             </div>
           </Marquee>
         </div>
 
         <div className="projSection5">
+          <div>{projectInfo?.section_5.img}</div>
           <div>
-            {projectInfo?.section_5.img}
-          </div>
-          <div>
-            <p>
-              {htmlToReactParser.parse(projectInfo?.section_5.content)}
-            </p>
+            <p>{htmlToReactParser.parse(projectInfo?.section_5.content)}</p>
           </div>
         </div>
 
         <div className="projSection6">
-          {
-            projectInfo?.section_6.map((item: any) => {
-              return (
-                <>
-                  <div className='content'>
-                    <h1 >{item.title}</h1>
-                    <h2 >{item.subtitle}</h2>
-                  </div>
-                </>
-              )
-            })
-          }
+          {projectInfo?.section_6.map((item: any) => {
+            return (
+              <>
+                <div className="content">
+                  <h1>{item.title}</h1>
+                  <h2>{item.subtitle}</h2>
+                </div>
+              </>
+            );
+          })}
         </div>
 
-        <div onMouseEnter={() => pointerChangeScroll(true)} onMouseLeave={() => pointerChangeScroll(false)} className="projSection7">
-          <DragComponentProject over={mouseOverEvent} out={mouseOutEvent} data={projectInfo?.section_7}></DragComponentProject>
+        <div
+          onMouseEnter={() => pointerChangeScroll(true)}
+          onMouseLeave={() => pointerChangeScroll(false)}
+          className="projSection7"
+        >
+          <DragComponentProject
+            over={mouseOverEvent}
+            out={mouseOutEvent}
+            data={projectInfo?.section_7}
+          ></DragComponentProject>
         </div>
 
-
-        <div className="projSection8" style={{ backgroundColor: projectInfo?.section_8.background_color, color: projectInfo?.section_8.color }}>
-
+        <div
+          className="projSection8"
+          style={{
+            backgroundColor: projectInfo?.section_8.background_color,
+            color: projectInfo?.section_8.color,
+          }}
+        >
           <div>
-            <h1 >{projectInfo?.section_8.title}</h1>
-            <div className='content'>
-              <h2  >{projectInfo?.section_8.subtitle}</h2>
-              <p style={{ color: projectInfo?.section_8.color }}> {htmlToReactParser.parse(projectInfo?.section_8.content)}</p>
+            <h1>{projectInfo?.section_8.title}</h1>
+            <div className="content">
+              <h2>{projectInfo?.section_8.subtitle}</h2>
+              <p style={{ color: projectInfo?.section_8.color }}>
+                {' '}
+                {htmlToReactParser.parse(projectInfo?.section_8.content)}
+              </p>
               <a href={projectInfo?.section_8.link}>
-
-                <div style={{ background: projectInfo?.section_8.arrowBg, fill: projectInfo?.section_8.arrowColor }} className='icon'>
+                <div
+                  style={{
+                    background: projectInfo?.section_8.arrowBg,
+                    fill: projectInfo?.section_8.arrowColor,
+                  }}
+                  className="icon"
+                >
                   <Arrow />
                 </div>
               </a>
             </div>
           </div>
-          <div>
-            {projectInfo?.section_8.img}
-          </div>
+          <div>{projectInfo?.section_8.img}</div>
         </div>
         <Footer />
       </div>
     </>
-  )
+  );
 }

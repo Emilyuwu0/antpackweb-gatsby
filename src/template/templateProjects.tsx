@@ -74,7 +74,7 @@ export default function Projects({ data, projectInfo }: projectsProps) {
       ],
     },
     section_2: {
-      img: '/images/section_2_img.png',
+      img: frontmatter.backgroundSection.publicURL,
     },
     section_3: {
       subtitle: frontmatter.subtitleSectionThree,
@@ -254,6 +254,12 @@ export const pageQuery = graphql`
         descriptionSectionThree
         subtitleSectionFour
         titleSectionFour
+        backgroundSection {
+          publicURL
+        }
+        sectionProject {
+          publicURL
+        }
         backgroundHeaderProject {
           childImageSharp {
             id
