@@ -1,39 +1,35 @@
-import React from "react"
+import React from 'react';
 
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next';
 
-interface SeoProps {
-  title: string,
-  description?: string,
-  pathname?: string,
-  children?: any
-}
+interface SeoProps {}
 
-export const SEO = ({ title, description, pathname, children }: SeoProps) => {
-
-  const [t, i18n] = useTranslation('global')
-
-  const seo = {
-    title: title || 'antpack',
-    description: description || 'description',
-    // image: `${siteUrl}${image}` || '',
-    // url: `${siteUrl}${pathname || ``}`,
-    // twitterUsername,
-  }
-
+export const SEO = ({}: SeoProps) => {
   return (
     <>
-      <title>{seo.title}</title>
-      <meta name="description" content={seo.description} />
-      {/* <meta name="image" content={seo.image} /> */}
+      <meta name="type" content="article" />
+      <meta name="title" content="LilInterns" />
+      <meta name="description" content="" />
+      <meta name="image" content="../../assets/images/favIcon.png" />
+      <meta property="og:type" content="" />
+      <meta property="og:title" content="" />
+      <meta property="og:description" content="" />
+      <meta property="og:image" content="../../assets/images/favIcon.png" />
+      <meta
+        property="og:image:secure_url"
+        content="../../assets/images/favIcon.png"
+      />
+      <meta
+        property="og:image:secure"
+        content="../../assets/images/favIcon.png"
+      />
+      <meta property="og:image:width" content="600" />
+      <meta property="og:image:height" content="450" />
+      <meta name="twitter:title" content="" />
+      <meta name="twitter:description" content="" />
+      <meta name="twitter:image" content="../../assets/images/favIcon.png" />
+      <meta name="twitter:card" content="summary" />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={seo.title} />
-      {/* <meta name="twitter:url" content={seo.url} /> */}
-      <meta name="twitter:description" content={seo.description} />
-      {/* <meta name="twitter:image" content={seo.image} /> */}
-      {/* <meta name="twitter:creator" content={seo.twitterUsername} /> */}
-      {/* <link rel="icon" href="src/assets/images/favIcon.png" /> */}
-      {children}
     </>
-  )
-}
+  );
+};
