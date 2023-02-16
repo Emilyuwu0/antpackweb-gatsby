@@ -115,7 +115,8 @@
 
   .projSection3 {
     padding: 100px 0;
-    margin-bottom: 106px;
+    height: 600px;
+    margin: 0 !important;
     .content {
       margin-left: 205px;
       h1 {
@@ -251,7 +252,7 @@
   }
 
   .resultsSection {
-    padding-top: 100px;
+    padding-top: 100px 0;
     display: flex;
     flex-direction: column;
     .sliderText {
@@ -262,9 +263,11 @@
       display: none !important;
     }
     .ctnTitle {
+      cursor: none;
       display: flex;
       flex-direction: column;
       .text1 {
+        cursor: none;
         font-family: $FontLight;
         font-weight: 400;
         font-size: 72px;
@@ -275,6 +278,7 @@
         letter-spacing: 0.3em;
       }
       .text2 {
+        cursor: none;
         background: #000000;
         background-size: cover;
         background-position: center;
@@ -293,10 +297,11 @@
     }
   }
   .projSection5 {
+    padding-top: 120px;
     height: 100vh;
     display: grid;
+    margin: 0 !important;
     grid-template-columns: 60% 40%;
-    margin-top: 124px;
     img {
       margin-left: -40%;
     }

@@ -22,6 +22,7 @@ export default function HeroProyectSec({ data, enterHoverText, leaveHoverText }:
                 background: `url(${data.img})`,
                 backgroundRepeat: 'no - repeat',
                 backgroundSize: 'cover',
+                backgroundPosition: 'center',
                 width: '100%',
                 height: '100%',
                 position: 'absolute'

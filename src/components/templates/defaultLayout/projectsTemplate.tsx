@@ -259,24 +259,24 @@ export default function ProjectsTemplate({ projectInfo }: projectsTemplateProps)
                 toggleCursorTitles()
               }}
             >
-              <h2 >{htmlToReactParser.parse(projectInfo?.section_1.subtitle)}</h2>
-              <h1 >{htmlToReactParser.parse(projectInfo?.section_1.title)}</h1>
+              <h2 >{htmlToReactParser.parse(t(projectInfo?.section_1.subtitle))}</h2>
+              <h1 >{htmlToReactParser.parse(t(projectInfo?.section_1.title))}</h1>
             </div>
 
-            <p>{htmlToReactParser.parse(projectInfo?.section_1.paragraph)}</p>
+            <p>{htmlToReactParser.parse(t(projectInfo?.section_1.paragraph))}</p>
           </div>
           <div className='infoContent'>
             {
               projectInfo?.section_1.data.map((item: any) => {
                 return (
                   <>
-                    <h3 >{item.title}</h3>
+                    <h3 >{t(item.title)}</h3>
                     <ul>
                       {
                         item.elements.map((elem: any) => {
                           return (
                             <>
-                              <li >{elem.title}</li>
+                              <li >{t(elem.title)}</li>
                             </>
                           )
                         })
@@ -311,11 +311,11 @@ export default function ProjectsTemplate({ projectInfo }: projectsTemplateProps)
                     toggleCursorTitles()
                   }}
                 >
-                  <h2 >{projectInfo?.section_3.subtitle}</h2>
-                  <h1 >{projectInfo?.section_3.title}</h1>
+                  <h2 >{t(projectInfo?.section_3.subtitle)}</h2>
+                  <h1 >{t(projectInfo?.section_3.title)}</h1>
                 </div>
                 <p>
-                  {htmlToReactParser.parse(projectInfo?.section_3.content)}
+                  {htmlToReactParser.parse(t(projectInfo?.section_3.content))}
                 </p>
               </div>
             </div>
@@ -345,8 +345,8 @@ export default function ProjectsTemplate({ projectInfo }: projectsTemplateProps)
                       toggleCursorTitles()
                     }}
                     className='titles'>
-                    <h2  >{projectInfo?.section_4.subtitle}</h2>
-                    <h1 >{projectInfo?.section_4.title}</h1>
+                    <h2  >{t(projectInfo?.section_4.subtitle)}</h2>
+                    <h1 >{t(projectInfo?.section_4.title)}</h1>
                   </div>
                 </div>
 
@@ -380,8 +380,8 @@ export default function ProjectsTemplate({ projectInfo }: projectsTemplateProps)
                         toggleCursorTitles()
                       }}
                     >
-                      <h2  >{projectInfo?.section_4.subtitle}</h2>
-                      <h1 >{projectInfo?.section_4.title}</h1>
+                      <h2  >{t(projectInfo?.section_4.subtitle)}</h2>
+                      <h1 >{t(projectInfo?.section_4.title)}</h1>
 
                     </div>
                   </div>
